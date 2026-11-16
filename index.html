@@ -313,7 +313,7 @@ var subjectsData = {
                   text: "هَذَا جِسْمِي.\nلِي رَأْس، وَعَيْنَان، وَأُذُنَان، وَأَنْف، وَفَم، وَيَدَان، وَقَدَمَان.\nعَيْنَايَ تَرَيَان، وَأُذُنَايَ تَسْمَعَان.\nأَنْفِي يَشُمّ، وَفَمِي يَتَكَلَّم وَيَتَذَوَّق.\nالْحَمْدُ لِلَّه عَلَى نِعْمَة الْجِسْم.",
                   textType: "story",
                   short: "قصة قصيرة يقرأها الطفل عن جسمه وأجزائه.",
-                  detailed: "قصة 'هذا جسمي' يقرأها الطفل ذاتيًا. النص يستخدم الحروف المدروسة ويصف أجزاء الجسم ووظائفها. بعد القراءة يُطلب من الطفل أن يشير إلى كل جزء من جسمه.",
+                  detailed: "قصة 'هذا جسمي' يقرأها الطفل ذاتيًا. النص يستخدم الحروف المدروسة ويصف أجزاء الجسم ووظائفها.",
                   questions: [
                     { q: "ماذا يصف النص في هذه القصة؟", options: ["أجزاء الجسم", "الحيوانات", "المدرسة"], answer: 0 },
                     { q: "كم عدد الحواس عند الإنسان؟", options: ["ثلاث", "خمس", "سبع"], answer: 1 },
@@ -404,25 +404,23 @@ var subjectsData = {
                   questions: [
                     { q: "من هو خالق كل شيء؟", options: ["الله تعالى", "الإنسان", "الحيوان"], answer: 0 },
                     { q: "من خلق السماء والأرض؟", options: ["الله تعالى", "الناس", "الطيور"], answer: 0 },
-                    { q: "ماذا نفعل تجاه نعم الله علينا؟", options: ["نشكره", "ننساها", "ننكرها"], answer: 0 },
-                    { q: "معنى اسم الله (الخالق) هو...", options: ["الذي يخلق الأشياء", "الذي ينام", "الذي يأكل"], answer: 0 }
+                    { q: "ماذا نفعل تجاه نعم الله علينا؟", options: ["نشكره", "ننساها", "ننكرها"], answer: 0 }
                   ] },
                 { id: "is_u1_l2", title: "سورة الفاتحة", type: "قرآن وتفسير", emoji: "📖", color: "#FF6B9D",
                   text: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿٣﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾",
                   textType: "quran",
                   short: "نتعلم سورة الفاتحة تلاوة وحفظًا وتفسيرًا، وهي أم الكتاب.",
-                  detailed: "سورة الفاتحة هي أول سورة في القرآن الكريم، عدد آياتها سبع. نقرأها في كل صلاة. معانيها: (الْحَمْدُ لِلَّهِ) الشكر لله، (الرَّحْمَٰنِ الرَّحِيمِ) كثير الرحمة، (مَالِكِ يَوْمِ الدِّينِ) مالك يوم الحساب، (إِيَّاكَ نَعْبُدُ) نعبد الله وحده.",
+                  detailed: "سورة الفاتحة هي أول سورة في القرآن الكريم، عدد آياتها سبع. نقرأها في كل صلاة. معانيها: (الْحَمْدُ لِلَّهِ) الشكر لله، (الرَّحْمَٰنِ الرَّحِيمِ) كثير الرحمة، (مَالِكِ يَوْمِ الدِّينِ) مالك يوم الحساب.",
                   questions: [
                     { q: "ما أول سورة في القرآن الكريم؟", options: ["الفاتحة", "البقرة", "الناس"], answer: 0 },
                     { q: "كم عدد آيات سورة الفاتحة؟", options: ["خمس", "سبع", "عشر"], answer: 1 },
-                    { q: "بماذا تبدأ سورة الفاتحة؟", options: ["بسم الله الرحمن الرحيم", "الحمد لله", "قل هو الله أحد"], answer: 0 },
                     { q: "ماذا يعني (الْحَمْدُ لِلَّهِ)؟", options: ["الشكر لله", "السلام لله", "الصلاة لله"], answer: 0 }
                   ] },
                 { id: "is_u1_l3", title: "سور الإخلاص والفلق والناس", type: "قرآن وتفسير", emoji: "📿", color: "#9B5DE5",
                   text: "سُورَةُ الْإِخْلَاصِ:\nقُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ ﴿٤﴾\n\nسُورَةُ الْفَلَقِ:\nقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ﴿١﴾ مِنْ شَرِّ مَا خَلَقَ ﴿٢﴾ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٣﴾ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ﴿٤﴾ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ ﴿٥﴾\n\nسُورَةُ النَّاسِ:\nقُلْ أَعُوذُ بِرَبِّ النَّاسِ ﴿١﴾ مَلِكِ النَّاسِ ﴿٢﴾ إِلَٰهِ النَّاسِ ﴿٣﴾ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ﴿٤﴾ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ﴿٥﴾ مِنَ الْجِنَّةِ وَالنَّاسِ ﴿٦﴾",
                   textType: "quran",
                   short: "نتعلم تلاوة وحفظ ثلاث سور قصار: الإخلاص والفلق والناس.",
-                  detailed: "سورة الإخلاص تتحدث عن توحيد الله وأنه واحد لا شريك له. سورة الفلق نستعيذ بالله من كل الشرور. سورة الناس نستعيذ بالله من شر الوسواس. هذه السور الثلاث تسمى (المعوذات).",
+                  detailed: "سورة الإخلاص تتحدث عن توحيد الله وأنه واحد لا شريك له. سورة الفلق نستعيذ بالله من كل الشرور. سورة الناس نستعيذ بالله من شر الوسواس.",
                   questions: [
                     { q: "سورة الإخلاص تبدأ بـ...", options: ["قل هو الله أحد", "قل أعوذ برب الفلق", "قل أعوذ برب الناس"], answer: 0 },
                     { q: "كم عدد آيات سورة الإخلاص؟", options: ["أربع", "خمس", "ست"], answer: 0 },
@@ -436,36 +434,33 @@ var subjectsData = {
                   questions: [
                     { q: "كم عدد أركان الإسلام؟", options: ["ثلاثة", "خمسة", "سبعة"], answer: 1 },
                     { q: "ما أول أركان الإسلام؟", options: ["الصلاة", "الشهادة", "الصوم"], answer: 1 },
-                    { q: "في أي شهر نصوم؟", options: ["رمضان", "شعبان", "محرم"], answer: 0 },
-                    { q: "ما الركن الذي نفعله بزيارة بيت الله؟", options: ["الحج", "الصلاة", "الزكاة"], answer: 0 }
+                    { q: "في أي شهر نصوم؟", options: ["رمضان", "شعبان", "محرم"], answer: 0 }
                   ] },
                 { id: "is_u1_l5", title: "مولد النبي ﷺ", type: "سيرة", emoji: "🌹", color: "#FF6B9D",
                   text: "وُلِدَ النَّبِيُّ مُحَمَّدٌ ﷺ فِي مَكَّةَ عَامَ الْفِيلِ.\nوُلِدَ يَتِيمًا، فَمَاتَ أَبُوهُ عَبْدُ اللَّهِ قَبْلَ وِلَادَتِهِ، وَمَاتَتْ أُمُّهُ آمِنَةُ وَهُوَ صَغِير.\nكَفَلَهُ جَدُّهُ عَبْدُ الْمُطَّلِبِ ثُمَّ عَمُّهُ أَبُو طَالِب.\nأَرْضَعَتْهُ حَلِيمَةُ السَّعْدِيَّةُ فِي بَادِيَةِ بَنِي سَعْد.\nنَشَأَ النَّبِيُّ ﷺ مَحْبُوبًا بَيْنَ النَّاسِ، صَادِقًا أَمِينًا.",
                   textType: "story",
                   short: "نتعرف على مولد النبي محمد ﷺ ونشأته في مكة.",
-                  detailed: "وُلد النبي محمد ﷺ في مكة عام الفيل. وُلد يتيمًا: مات أبوه عبد الله قبل ولادته، وماتت أمه آمنة وهو صغير. كفله جده عبد المطلب، ثم عمه أبو طالب. أرضعته حليمة السعدية. نشأ النبي ﷺ صادقًا أمينًا.",
+                  detailed: "وُلد النبي محمد ﷺ في مكة عام الفيل. وُلد يتيمًا: مات أبوه عبد الله قبل ولادته، وماتت أمه آمنة وهو صغير. كفله جده عبد المطلب، ثم عمه أبو طالب. أرضعته حليمة السعدية.",
                   questions: [
                     { q: "أين وُلد النبي محمد ﷺ؟", options: ["مكة", "المدينة", "الطائف"], answer: 0 },
                     { q: "في أي عام وُلد النبي ﷺ؟", options: ["عام الفيل", "عام الهجرة", "عام الفتح"], answer: 0 },
-                    { q: "من جد النبي ﷺ الذي كفله؟", options: ["عبد المطلب", "أبو طالب", "عبد الله"], answer: 0 },
                     { q: "من أرضعت النبي ﷺ؟", options: ["حليمة السعدية", "آمنة", "خديجة"], answer: 0 }
                   ] },
                 { id: "is_u1_l6", title: "أبو البشر آدم ﷺ", type: "سيرة", emoji: "🌱", color: "#27AE60",
                   text: "خَلَقَ اللَّهُ آدَمَ ﷺ مِنْ طِين.\nوَجَعَلَهُ أَبَا الْبَشَرِ جَمِيعًا.\nأَسْجَدَ اللَّهُ الْمَلَائِكَةَ لِآدَمَ، فَسَجَدُوا إِلَّا إِبْلِيس.\nعَلَّمَ اللَّهُ آدَمَ الْأَسْمَاءَ كُلَّهَا.\nأَسْكَنَ اللَّهُ آدَمَ وَزَوْجَهُ حَوَّاءَ الْجَنَّةَ، ثُمَّ أَنْزَلَهُمَا إِلَى الْأَرْض.",
                   textType: "story",
                   short: "نتعرف على قصة خلق آدم ﷺ أبي البشر.",
-                  detailed: "خلق الله آدم ﷺ من طين، وأسجد له الملائكة إلا إبليس. علّم الله آدم الأسماء كلها، وأسكنه وزوجه حواء الجنة، ثم أنزلهما إلى الأرض. آدم ﷺ هو أبو البشر جميعًا.",
+                  detailed: "خلق الله آدم ﷺ من طين، وأسجد له الملائكة إلا إبليس. علّم الله آدم الأسماء كلها، وأسكنه وزوجه حواء الجنة، ثم أنزلهما إلى الأرض.",
                   questions: [
                     { q: "من خلق الله آدم من؟", options: ["من طين", "من نور", "من نار"], answer: 0 },
                     { q: "من هو أبو البشر؟", options: ["آدم ﷺ", "نوح ﷺ", "إبراهيم ﷺ"], answer: 0 },
-                    { q: "من رفض السجود لآدم؟", options: ["إبليس", "جبريل", "ميكائيل"], answer: 0 },
                     { q: "من زوجة آدم؟", options: ["حواء", "مريم", "خديجة"], answer: 0 }
                   ] },
                 { id: "is_u1_l7", title: "إلقاء السلام", type: "قيم وأخلاق", emoji: "🤝", color: "#FFD23F",
                   text: "السَّلَامُ سُنَّةٌ جَمِيلَةٌ بَيْنَ الْمُسْلِمِينَ.\nنَقُولُ: (السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ).\nوَيُرَدُّ عَلَيْنَا: (وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ).\nالسَّلَامُ يُزَرِعُ الْمَحَبَّةَ بَيْنَ النَّاسِ.",
                   textType: "story",
                   short: "نتعلم أهمية إلقاء السلام بين الناس وكيفية إلقائه والرد عليه.",
-                  detailed: "إلقاء السلام من أجمل العادات الإسلامية. نقول (السلام عليكم ورحمة الله وبركاته) عند اللقاء، ويرد الآخر (وعليكم السلام ورحمة الله). السلام يزرع المحبة والألفة بين الناس. قال النبي ﷺ: (أفشوا السلام بينكم).",
+                  detailed: "إلقاء السلام من أجمل العادات الإسلامية. نقول (السلام عليكم ورحمة الله وبركاته) عند اللقاء، ويرد الآخر (وعليكم السلام ورحمة الله). قال النبي ﷺ: (أفشوا السلام بينكم).",
                   questions: [
                     { q: "ماذا نقول عند لقاء الآخرين؟", options: ["السلام عليكم", "مرحبًا فقط", "لا شيء"], answer: 0 },
                     { q: "كيف نرد على من يقول لنا السلام عليكم؟", options: ["وعليكم السلام", "شكرًا", "لا نرد"], answer: 0 },
@@ -477,8 +472,7 @@ var subjectsData = {
                   questions: [
                     { q: "كم عدد أركان الإسلام؟", options: ["3", "5", "7"], answer: 1 },
                     { q: "ما أول سورة في القرآن؟", options: ["الفاتحة", "البقرة", "الناس"], answer: 0 },
-                    { q: "من هو أبو البشر؟", options: ["آدم", "نوح", "إبراهيم"], answer: 0 },
-                    { q: "من خالق كل شيء؟", options: ["الله", "الإنسان", "الحيوان"], answer: 0 }
+                    { q: "من هو أبو البشر؟", options: ["آدم", "نوح", "إبراهيم"], answer: 0 }
                   ] }
             ]
         },
@@ -488,7 +482,7 @@ var subjectsData = {
             lessons: [
                 { id: "is_u2_l1", title: "لماذا خلقنا الله تعالى؟", type: "عقيدة", emoji: "💡", color: "#9B5DE5",
                   short: "نتعلم أن الله خلقنا لعبادته وحده لا شريك له.",
-                  detailed: "خلق الله الجن والإنس لعبادته وحده. قال تعالى: (وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ). العبادة هي: الطاعة والانقياد لأوامر الله. من العبادة: الصلاة، الصوم، الدعاء، بر الوالدين، الصدق، مساعدة الآخرين.",
+                  detailed: "خلق الله الجن والإنس لعبادته وحده. قال تعالى: (وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ). العبادة هي: الطاعة والانقياد لأوامر الله. من العبادة: الصلاة، الصوم، الدعاء، بر الوالدين، الصدق.",
                   questions: [
                     { q: "لماذا خلقنا الله؟", options: ["لنعبده", "لنلعب", "لننام"], answer: 0 },
                     { q: "ما معنى العبادة؟", options: ["طاعة الله واتباع أوامره", "اللعب", "النوم"], answer: 0 },
@@ -581,7 +575,7 @@ var subjectsData = {
                     { q: "ما البيت الذي ذُكر في سورة قريش؟", options: ["الكعبة", "المسجد الأقصى", "المسجد النبوي"], answer: 0 }
                   ] },
                 { id: "is_u3_l3", title: "سور الماعون والكوثر", type: "قرآن وتفسير", emoji: "📿", color: "#9B5DE5",
-                  text: "سُورَةُ الْمَاعُونِ:\nأَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ ﴿١﴾ فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ ﴿٢﴾ وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ ﴿٣﴾ فَوَيْلٌ لِّلْمُصَلِّينَ ﴿٤﴾ الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ ﴿٥﴾ الَّذِينَ هُمْ يُرَاءُونَ ﴿٦﴾ وَيَمْنَعُونَ الْمَاعُونَ ﴿٧﴾\n\nسُورَةُ الْكَوْثَرِ:\nإِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ ﴿١﴾ فَصَلِّ لِرَبِّكَ وَانْحَرْ ﴿٢﴾ إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ ﴿٣﴾",
+                  text: "سُورَةُ الْمَاعُونِ:\nأَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ ﴿١﴾ فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ ﴿٢﴾ وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ ﴿٣﴾ فَوَيْلٌ لِّلْمُصَلِّينَ ﴿٤﴾ الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ ﴿٥﴾\n\nسُورَةُ الْكَوْثَرِ:\nإِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ ﴿١﴾ فَصَلِّ لِرَبِّكَ وَانْحَرْ ﴿٢﴾ إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ ﴿٣﴾",
                   textType: "quran",
                   short: "نتعلم سورتي الماعون والكوثر.",
                   detailed: "سورة الماعون تتحدث عن صفات من يكذب بالدين (يدع اليتيم ولا يطعم المسكين). سورة الكوثر بشرى للنبي ﷺ بالخير الكثير، وتأمره بالصلاة والنحر شكرًا لله.",
@@ -592,11 +586,10 @@ var subjectsData = {
                   ] },
                 { id: "is_u3_l4", title: "الصلاة", type: "عبادات", emoji: "🕌", color: "#27AE60",
                   short: "نتعلم الصلاة وأهميتها وعدد الصلوات المفروضة.",
-                  detailed: "الصلاة هي الركن الثاني من أركان الإسلام، وهي عمود الدين. عدد الصلوات المفروضة خمس: الفجر، الظهر، العصر، المغرب، العشاء. الصلاة تقوي علاقة المسلم بربه، وتنهاه عن الفحشاء والمنكر.",
+                  detailed: "الصلاة هي الركن الثاني من أركان الإسلام، وهي عمود الدين. عدد الصلوات المفروضة خمس: الفجر، الظهر، العصر، المغرب، العشاء. الصلاة تقوي علاقة المسلم بربه.",
                   questions: [
                     { q: "كم عدد الصلوات المفروضة في اليوم؟", options: ["ثلاث", "خمس", "سبع"], answer: 1 },
                     { q: "ما أول صلاة في اليوم؟", options: ["الفجر", "الظهر", "العشاء"], answer: 0 },
-                    { q: "ما آخر صلاة في اليوم؟", options: ["العشاء", "المغرب", "العصر"], answer: 0 },
                     { q: "ماذا نحتاج قبل الصلاة؟", options: ["الوضوء", "الطعام", "النوم"], answer: 0 }
                   ] },
                 { id: "is_u3_l5", title: "(تابع) طفولة النبي ﷺ", type: "سيرة", emoji: "🌱", color: "#FF6B9D",
@@ -609,7 +602,7 @@ var subjectsData = {
                   ] },
                 { id: "is_u3_l6", title: "نبي الله نوح ﷺ", type: "سيرة", emoji: "🚢", color: "#48CAE4",
                   short: "نتعرف على قصة نبي الله نوح ﷺ والسفينة.",
-                  detailed: "نبي الله نوح ﷺ أول رسول أرسله الله إلى قومه. دعاهم إلى عبادة الله وحده ليلًا ونهارًا، لكنهم كذبوه. أمره الله ببناء سفينة عظيمة. ركب فيها المؤمنون ومعهم من كل الحيوانات زوجان. أرسل الله الطوفان فغرق الكافرون.",
+                  detailed: "نبي الله نوح ﷺ أول رسول أرسله الله إلى قومه. دعاهم إلى عبادة الله وحده ليلًا ونهارًا، لكنهم كذبوه. أمره الله ببناء سفينة عظيمة. ركب فيها المؤمنون ومعهم من كل الحيوانات زوجان.",
                   questions: [
                     { q: "من هو أول رسول أرسله الله؟", options: ["نوح ﷺ", "إبراهيم ﷺ", "موسى ﷺ"], answer: 0 },
                     { q: "ماذا بنى نوح ﷺ بأمر الله؟", options: ["سفينة", "بيتًا", "مسجدًا"], answer: 0 },
@@ -637,7 +630,7 @@ var subjectsData = {
 },
 
 // ============================================================
-// 🔢 الرياضيات (فصول - مطابقة للكتاب)
+// 🔢 الرياضيات (فصول)
 // ============================================================
 "math": {
     name: "الرياضيات", emoji: "🔢", color: "#2E86AB",
@@ -798,7 +791,7 @@ var subjectsData = {
 },
 
 // ============================================================
-// 🇬🇧 اللغة الإنجليزية (6 وحدات × 4 دروس + مراجعة)
+// 🇬🇧 اللغة الإنجليزية (بدون أي رموز صوتية - مطابقة للكتاب)
 // ============================================================
 "english": {
     name: "اللغة الإنجليزية", emoji: "🇬🇧", color: "#FF5722",
@@ -815,20 +808,22 @@ var subjectsData = {
                   short: "Learning greetings (Hello, Goodbye) and school vocabulary.",
                   detailed: "In this lesson, students learn how to greet each other in English. They practice 'Hello! What's your name? My name is...'. They also learn classroom vocabulary like teacher, board, desk, chair, book, and pencil.",
                   questions: [
-                    { q: "What do we say when we meet someone?", options: ["Hello! 👋", "Goodbye! 👋", "Sit down"], answer: 0 },
-                    { q: "What do we say when we leave?", options: ["Hello! 👋", "Goodbye! 👋", "Stand up"], answer: 1 },
+                    { q: "What do we say when we meet someone?", options: ["Hello 👋", "Goodbye 👋", "Sit down"], answer: 0 },
+                    { q: "What do we say when we leave?", options: ["Hello 👋", "Goodbye 👋", "Stand up"], answer: 1 },
                     { q: "Who teaches us in the classroom?", options: ["Teacher 👩‍🏫", "Pencil ✏️", "Desk 🪑"], answer: 0 },
-                    { q: "What do we write with?", options: ["Book 📚", "Pencil ✏️", "Chair 🪑"], answer: 1 }
+                    { q: "What do we write with?", options: ["Book 📚", "Pencil ✏️", "Chair 🪑"], answer: 1 },
+                    { q: "What's this? (🎒)", options: ["bag 🎒", "book 📚", "chair 🪑"], answer: 0 }
                   ] },
                 { id: "en_u1_l2", title: "Lesson 2: Phonics Tt & Ii", type: "Phonics", emoji: "🔤", color: "#FF9800",
-                  text: "Tt /t/:\nTomato 🍅\nTable 🪑\nTree 🌳\n\nIi /i/:\nInk 🖋️\nInsect 🐛\nIll 🤒",
+                  text: "Tt:\nTomato 🍅\nTable 🪑\nTree 🌳\n\nIi:\nInk 🖋️\nInsect 🐛\nIll 🤒",
                   textType: "english",
-                  short: "Learning the sounds and words of letters Tt and Ii.",
-                  detailed: "In this phonics lesson, students learn the sound of the letter T (/t/) and words starting with T: Tomato, Table, Tree. They also learn the short sound of the letter I (/i/) and words starting with I: Ink, Insect, Ill.",
+                  short: "Learning words that start with letters Tt and Ii.",
+                  detailed: "In this phonics lesson, students learn words starting with T: Tomato, Table, Tree. They also learn words starting with I: Ink, Insect, Ill.",
                   questions: [
-                    { q: "Which word starts with T?", options: ["Tomato 🍅", "Ink 🖋️", "Apple 🍎"], answer: 0 },
-                    { q: "Which word starts with I?", options: ["Tree 🌳", "Insect 🐛", "Table 🪑"], answer: 1 },
-                    { q: "What is the sound of T?", options: ["/t/", "/i/", "/s/"], answer: 0 }
+                    { q: "Which word starts with the letter T?", options: ["Tomato 🍅", "Ink 🖋️", "Apple 🍎"], answer: 0 },
+                    { q: "Which word starts with the letter I?", options: ["Tree 🌳", "Insect 🐛", "Table 🪑"], answer: 1 },
+                    { q: "Which letter does 'Tomato' start with?", options: ["T", "I", "S"], answer: 0 },
+                    { q: "Which letter does 'Ink' start with?", options: ["T", "I", "S"], answer: 1 }
                   ] },
                 { id: "en_u1_l3", title: "Lesson 3: Around My Classroom", type: "Vocabulary", emoji: "🏫", color: "#FF9800",
                   text: "door 🚪\nwindow 🪟\nwall 🧱\nfloor ⬜\nlight 💡",
@@ -838,25 +833,26 @@ var subjectsData = {
                   questions: [
                     { q: "What do we open to enter the classroom?", options: ["door 🚪", "window 🪟", "wall 🧱"], answer: 0 },
                     { q: "What do we look through to see outside?", options: ["door 🚪", "window 🪟", "floor ⬜"], answer: 1 },
-                    { q: "What gives us light in the classroom?", options: ["light 💡", "wall 🧱", "floor ⬜"], answer: 0 }
+                    { q: "What gives us light in the classroom?", options: ["light 💡", "wall 🧱", "floor ⬜"], answer: 0 },
+                    { q: "Which word starts with the letter D?", options: ["Door 🚪", "Window 🪟", "Light 💡"], answer: 0 }
                   ] },
                 { id: "en_u1_l4", title: "Lesson 4: More Phonics Ii", type: "Phonics", emoji: "🔤", color: "#FF9800",
-                  text: "Ii /i/:\nigloo 🛖\nink 🖋️\ninsect 🐛\nill 🤒",
+                  text: "Ii:\nigloo 🛖\nink 🖋️\ninsect 🐛\nill 🤒",
                   textType: "english",
-                  short: "More practice on the short sound of letter Ii.",
-                  detailed: "Students practice more words with the short /i/ sound: igloo, ink, insect, ill. They learn to recognize the sound and match it to words.",
+                  short: "More practice on words that start with letter Ii.",
+                  detailed: "Students practice more words starting with I: igloo, ink, insect, ill. They learn to recognize words that start with I.",
                   questions: [
-                    { q: "Which word starts with I?", options: ["igloo 🛖", "tree 🌳", "table 🪑"], answer: 0 },
-                    { q: "What is the sound of I in 'insect'?", options: ["/i/", "/t/", "/s/"], answer: 0 },
-                    { q: "Which of these has the /i/ sound?", options: ["Tomato 🍅", "Ink 🖋️", "Tree 🌳"], answer: 1 }
+                    { q: "Which word starts with the letter I?", options: ["igloo 🛖", "tree 🌳", "table 🪑"], answer: 0 },
+                    { q: "Which letter does 'Igloo' start with?", options: ["I", "T", "S"], answer: 0 },
+                    { q: "Which of these starts with the letter I?", options: ["Tomato 🍅", "Ink 🖋️", "Tree 🌳"], answer: 1 }
                   ] },
                 { id: "en_u1_review", title: "Unit 1 Review", type: "Review", emoji: "📝", color: "#FFD23F",
-                  short: "Review of Unit 1: Greetings, school vocabulary, and phonics Tt & Ii.",
-                  detailed: "Review of greetings (Hello, Goodbye), school objects (bag, teacher, board, desk, chair, book, pencil), and the sounds of Tt and Ii.",
+                  short: "Review of Unit 1: Greetings, school vocabulary, and phonics.",
+                  detailed: "Review of greetings (Hello, Goodbye), school objects (bag, teacher, board, desk, chair, book, pencil), and words starting with Tt and Ii.",
                   questions: [
                     { q: "What do we say when we meet?", options: ["Hello 👋", "Goodbye 👋", "Sit down"], answer: 0 },
-                    { q: "Which word starts with T?", options: ["Tomato 🍅", "Ink 🖋️", "Apple 🍎"], answer: 0 },
-                    { q: "What is the sound of Ii?", options: ["/i/", "/t/", "/s/"], answer: 0 }
+                    { q: "Which word starts with the letter T?", options: ["Tomato 🍅", "Ink 🖋️", "Apple 🍎"], answer: 0 },
+                    { q: "Which letter does 'Igloo' start with?", options: ["I", "T", "S"], answer: 0 }
                   ] }
             ]
         },
@@ -872,17 +868,19 @@ var subjectsData = {
                   questions: [
                     { q: "What is green in the garden?", options: ["grass 🌿", "sky ☁️", "flower 🌸"], answer: 0 },
                     { q: "What flies in the sky?", options: ["bird 🐦", "tree 🌳", "grass 🌿"], answer: 0 },
-                    { q: "What is red in the garden?", options: ["flower 🌸", "tree 🌳", "sky ☁️"], answer: 0 }
+                    { q: "What is red in the garden?", options: ["flower 🌸", "tree 🌳", "sky ☁️"], answer: 0 },
+                    { q: "What's this? (🦋)", options: ["butterfly 🦋", "bird 🐦", "tree 🌳"], answer: 0 }
                   ] },
                 { id: "en_u2_l2", title: "Lesson 2: Phonics Ss", type: "Phonics", emoji: "🔤", color: "#8BC34A",
-                  text: "Ss /s/:\nSun ☀️\nStar ⭐\nSnake 🐍",
+                  text: "Ss:\nSun ☀️\nStar ⭐\nSnake 🐍",
                   textType: "english",
-                  short: "Learning the sound and words of letter Ss.",
-                  detailed: "Students learn the sound /s/ for Ss and words starting with S: Sun, Star, Snake.",
+                  short: "Learning words that start with letter Ss.",
+                  detailed: "Students learn words starting with S: Sun, Star, Snake.",
                   questions: [
-                    { q: "Which word starts with S?", options: ["Sun ☀️", "Ant 🐜", "Apple 🍎"], answer: 0 },
-                    { q: "What is the sound of S?", options: ["/s/", "/a/", "/t/"], answer: 0 },
-                    { q: "Which of these is a star?", options: ["⭐", "☀️", "🐍"], answer: 0 }
+                    { q: "Which word starts with the letter S?", options: ["Sun ☀️", "Ant 🐜", "Apple 🍎"], answer: 0 },
+                    { q: "Which letter does 'Star' start with?", options: ["S", "A", "T"], answer: 0 },
+                    { q: "Which picture starts with the letter S?", options: ["⭐ (Star)", "🐜 (Ant)", "🍎 (Apple)"], answer: 0 },
+                    { q: "Which word does NOT start with the letter S?", options: ["Sun ☀️", "Star ⭐", "Apple 🍎"], answer: 2 }
                   ] },
                 { id: "en_u2_l3", title: "Lesson 3: Shapes and Colors", type: "Vocabulary", emoji: "🔺", color: "#4CAF50",
                   text: "circle ⚫\nsquare ⬛\ntriangle 🔺\nrectangle ▬\ngreen 🟢\nblue 🔵\nred 🔴\nyellow 🟡",
@@ -892,24 +890,26 @@ var subjectsData = {
                   questions: [
                     { q: "Which shape is round?", options: ["circle ⚫", "square ⬛", "triangle 🔺"], answer: 0 },
                     { q: "Which shape has 3 sides?", options: ["square ⬛", "triangle 🔺", "circle ⚫"], answer: 1 },
-                    { q: "What color is the sky?", options: ["blue 🔵", "green 🟢", "red 🔴"], answer: 0 }
+                    { q: "What color is the sky?", options: ["blue 🔵", "green 🟢", "red 🔴"], answer: 0 },
+                    { q: "What's this? (🔴)", options: ["red", "blue", "green"], answer: 0 }
                   ] },
                 { id: "en_u2_l4", title: "Lesson 4: Phonics Aa", type: "Phonics", emoji: "🔤", color: "#8BC34A",
-                  text: "Aa /æ/:\nAnt 🐜\nAxe 🪓\nApple 🍎",
+                  text: "Aa:\nAnt 🐜\nAxe 🪓\nApple 🍎",
                   textType: "english",
-                  short: "Learning the short sound and words of letter Aa.",
-                  detailed: "Students learn the short sound /æ/ for Aa and words starting with A: Ant, Axe, Apple.",
+                  short: "Learning words that start with letter Aa.",
+                  detailed: "Students learn words starting with A: Ant, Axe, Apple.",
                   questions: [
-                    { q: "Which word starts with A?", options: ["Apple 🍎", "Sun ☀️", "Star ⭐"], answer: 0 },
-                    { q: "What is the sound of A?", options: ["/æ/", "/s/", "/t/"], answer: 0 },
-                    { q: "Which of these is an apple?", options: ["🍎", "🐜", "🪓"], answer: 0 }
+                    { q: "Which word starts with the letter A?", options: ["Apple 🍎", "Sun ☀️", "Star ⭐"], answer: 0 },
+                    { q: "Which letter does 'Ant' start with?", options: ["A", "S", "T"], answer: 0 },
+                    { q: "Which picture starts with the letter A?", options: ["🍎 (Apple)", "🐜 (Ant)", "🪓 (Axe)"], answer: 0 },
+                    { q: "Which word does NOT start with the letter A?", options: ["Apple 🍎", "Ant 🐜", "Sun ☀️"], answer: 2 }
                   ] },
                 { id: "en_u2_review", title: "Unit 2 Review", type: "Review", emoji: "📝", color: "#FFD23F",
-                  short: "Review of Unit 2: Colors, shapes, and phonics Ss & Aa.",
-                  detailed: "Review of colors, shapes, nature vocabulary, and the sounds of Ss and Aa.",
+                  short: "Review of Unit 2: Colors, shapes, and phonics.",
+                  detailed: "Review of colors, shapes, nature vocabulary, and words starting with Ss and Aa.",
                   questions: [
                     { q: "Which shape is round?", options: ["circle ⚫", "square ⬛", "triangle 🔺"], answer: 0 },
-                    { q: "Which word starts with S?", options: ["Sun ☀️", "Ant 🐜", "Apple 🍎"], answer: 0 },
+                    { q: "Which word starts with the letter S?", options: ["Sun ☀️", "Ant 🐜", "Apple 🍎"], answer: 0 },
                     { q: "What color is the sky?", options: ["blue 🔵", "green 🟢", "red 🔴"], answer: 0 }
                   ] }
             ]
@@ -925,18 +925,20 @@ var subjectsData = {
                   detailed: "Students learn family vocabulary (father, mother, sister, brother, grandmother, grandfather, parents). They practice asking and answering 'Who's this?'.",
                   questions: [
                     { q: "Who is the father of your father?", options: ["Grandfather 👴", "Brother 👦", "Uncle"], answer: 0 },
-                    { q: "Who is the female parent?", options: ["Mother 👩", "Father 👨", "Sister 👧"], answer: 0 },
-                    { q: "Who is your mother's daughter?", options: ["Sister 👧", "Brother 👦", "Father 👨"], answer: 0 }
+                    { q: "Who's this? (👩)", options: ["This is my mother 👩", "This is my father 👨", "This is my sister 👧"], answer: 0 },
+                    { q: "Who is your mother's daughter?", options: ["Sister 👧", "Brother 👦", "Father 👨"], answer: 0 },
+                    { q: "Who's this? (👦)", options: ["This is my brother 👦", "This is my mother 👩", "This is my grandfather 👴"], answer: 0 }
                   ] },
                 { id: "en_u3_l2", title: "Lesson 2: Phonics Nn, Pp", type: "Phonics", emoji: "🔤", color: "#E91E63",
-                  text: "Nn /n/:\nnose 👃\nneck 🦒\nnet 🕸️\n\nPp /p/:\npencil ✏️\npizza 🍕\npanda 🐼",
+                  text: "Nn:\nnose 👃\nneck 🦒\nnet 🕸️\n\nPp:\npencil ✏️\npizza 🍕\npanda 🐼",
                   textType: "english",
-                  short: "Learning phonics for letters Nn and Pp.",
-                  detailed: "Students learn the sounds and vocabulary for letters Nn (/n/) and Pp (/p/).",
+                  short: "Learning words that start with letters Nn and Pp.",
+                  detailed: "Students learn words starting with N (nose, neck, net) and words starting with P (pencil, pizza, panda).",
                   questions: [
-                    { q: "Which word starts with N?", options: ["Nose 👃", "Pencil ✏️", "Panda 🐼"], answer: 0 },
-                    { q: "Which word starts with P?", options: ["Panda 🐼", "Nose 👃", "Net 🕸️"], answer: 0 },
-                    { q: "What is the sound of N?", options: ["/n/", "/p/", "/d/"], answer: 0 }
+                    { q: "Which word starts with the letter N?", options: ["Nose 👃", "Pencil ✏️", "Panda 🐼"], answer: 0 },
+                    { q: "Which word starts with the letter P?", options: ["Panda 🐼", "Nose 👃", "Net 🕸️"], answer: 0 },
+                    { q: "Which letter does 'Pizza' start with?", options: ["P", "N", "D"], answer: 0 },
+                    { q: "Which picture starts with the letter P?", options: ["🍕 (Pizza)", "👃 (Nose)", "🕸️ (Net)"], answer: 0 }
                   ] },
                 { id: "en_u3_l3", title: "Lesson 3: Numbers from 1 to 5", type: "Numbers", emoji: "1️⃣", color: "#E91E63",
                   text: "1 1️⃣\n2 2️⃣\n3 3️⃣\n4 4️⃣\n5 5️⃣",
@@ -946,25 +948,27 @@ var subjectsData = {
                   questions: [
                     { q: "What number comes after 3?", options: ["2 2️⃣", "4 4️⃣", "5 5️⃣"], answer: 1 },
                     { q: "How many fingers on one hand?", options: ["3 3️⃣", "4 4️⃣", "5 5️⃣"], answer: 2 },
-                    { q: "What number comes before 5?", options: ["4 4️⃣", "3 3️⃣", "6 6️⃣"], answer: 0 }
+                    { q: "What number comes before 5?", options: ["4 4️⃣", "3 3️⃣", "6 6️⃣"], answer: 0 },
+                    { q: "How many eyes do you have?", options: ["1 1️⃣", "2 2️⃣", "3 3️⃣"], answer: 1 }
                   ] },
                 { id: "en_u3_l4", title: "Lesson 4: Phonics Hh, Dd", type: "Phonics", emoji: "🔤", color: "#E91E63",
-                  text: "Hh /h/:\nhat 🎩\nhair 💇\nhorse 🐴\n\nDd /d/:\ndoor 🚪\ndog 🐕\ndrum 🥁",
+                  text: "Hh:\nhat 🎩\nhair 💇\nhorse 🐴\n\nDd:\ndoor 🚪\ndog 🐕\ndrum 🥁",
                   textType: "english",
-                  short: "Learning phonics for letters Hh and Dd.",
-                  detailed: "Students learn the sounds and vocabulary for letters Hh (/h/) and Dd (/d/).",
+                  short: "Learning words that start with letters Hh and Dd.",
+                  detailed: "Students learn words starting with H (hat, hair, horse) and words starting with D (door, dog, drum).",
                   questions: [
-                    { q: "Which word starts with H?", options: ["Hat 🎩", "Dog 🐕", "Door 🚪"], answer: 0 },
-                    { q: "Which word starts with D?", options: ["Dog 🐕", "Hat 🎩", "Horse 🐴"], answer: 0 },
-                    { q: "What is the sound of H?", options: ["/h/", "/d/", "/n/"], answer: 0 }
+                    { q: "Which word starts with the letter H?", options: ["Hat 🎩", "Dog 🐕", "Door 🚪"], answer: 0 },
+                    { q: "Which word starts with the letter D?", options: ["Dog 🐕", "Hat 🎩", "Horse 🐴"], answer: 0 },
+                    { q: "Which letter does 'Horse' start with?", options: ["H", "D", "N"], answer: 0 },
+                    { q: "Which picture starts with the letter D?", options: ["🐕 (Dog)", "🎩 (Hat)", "🐴 (Horse)"], answer: 0 }
                   ] },
                 { id: "en_u3_review", title: "Unit 3 Review", type: "Review", emoji: "📝", color: "#FFD23F",
                   short: "Review of Unit 3: Family members, numbers 1-5, and phonics.",
-                  detailed: "Review of family vocabulary, numbers 1 to 5, and the sounds of Nn, Pp, Hh, and Dd.",
+                  detailed: "Review of family vocabulary, numbers 1 to 5, and words starting with Nn, Pp, Hh, and Dd.",
                   questions: [
                     { q: "Who is the father of your father?", options: ["Grandfather 👴", "Brother 👦", "Uncle"], answer: 0 },
                     { q: "What number comes after 3?", options: ["2 2️⃣", "4 4️⃣", "5 5️⃣"], answer: 1 },
-                    { q: "Which word starts with P?", options: ["Panda 🐼", "Nose 👃", "Net 🕸️"], answer: 0 }
+                    { q: "Which word starts with the letter P?", options: ["Panda 🐼", "Nose 👃", "Net 🕸️"], answer: 0 }
                   ] }
             ]
         },
@@ -980,17 +984,19 @@ var subjectsData = {
                   questions: [
                     { q: "What do we use to see?", options: ["Eyes 👀", "Ears 👂", "Nose 👃"], answer: 0 },
                     { q: "What do we use to hear?", options: ["Eyes 👀", "Ears 👂", "Mouth 👄"], answer: 1 },
-                    { q: "How many noses do you have?", options: ["1 👃", "2 👃", "3 👃"], answer: 0 }
+                    { q: "How many noses do you have?", options: ["1 👃", "2 👃", "3 👃"], answer: 0 },
+                    { q: "What's this? (👀)", options: ["eyes 👀", "ears 👂", "nose 👃"], answer: 0 }
                   ] },
                 { id: "en_u4_l2", title: "Lesson 2: Phonics Rr, Ee", type: "Phonics", emoji: "🔤", color: "#03A9F4",
-                  text: "Rr /r/:\nred 🔴\nrabbit 🐰\nrocket 🚀\n\nEe /e/:\negg 🥚\nelephant 🐘\nelbow 💪",
+                  text: "Rr:\nred 🔴\nrabbit 🐰\nrocket 🚀\n\nEe:\negg 🥚\nelephant 🐘\nelbow 💪",
                   textType: "english",
-                  short: "Learning phonics for letters Rr and Ee.",
-                  detailed: "Students learn the sounds and vocabulary for letters Rr (/r/) and Ee (/e/).",
+                  short: "Learning words that start with letters Rr and Ee.",
+                  detailed: "Students learn words starting with R (red, rabbit, rocket) and words starting with E (egg, elephant, elbow).",
                   questions: [
-                    { q: "Which word starts with R?", options: ["Rabbit 🐰", "Egg 🥚", "Elephant 🐘"], answer: 0 },
-                    { q: "Which word starts with E?", options: ["Egg 🥚", "Red 🔴", "Rabbit 🐰"], answer: 0 },
-                    { q: "What is the sound of R?", options: ["/r/", "/e/", "/k/"], answer: 0 }
+                    { q: "Which word starts with the letter R?", options: ["Rabbit 🐰", "Egg 🥚", "Elephant 🐘"], answer: 0 },
+                    { q: "Which word starts with the letter E?", options: ["Egg 🥚", "Red 🔴", "Rabbit 🐰"], answer: 0 },
+                    { q: "Which letter does 'Rocket' start with?", options: ["R", "E", "C"], answer: 0 },
+                    { q: "Which picture starts with the letter E?", options: ["🥚 (Egg)", "🔴 (Red)", "🐰 (Rabbit)"], answer: 0 }
                   ] },
                 { id: "en_u4_l3", title: "Lesson 3: My 5 Senses", type: "Vocabulary", emoji: "✋", color: "#00BCD4",
                   text: "see 👀\nhear 👂\nsmell 👃\ntaste 👅\ntouch ✋",
@@ -1000,24 +1006,26 @@ var subjectsData = {
                   questions: [
                     { q: "What do we use to taste?", options: ["Tongue 👅", "Eyes 👀", "Ears 👂"], answer: 0 },
                     { q: "What do we use to smell?", options: ["Nose 👃", "Eyes 👀", "Hand ✋"], answer: 0 },
-                    { q: "What do we use to touch?", options: ["Hand ✋", "Ear 👂", "Tongue 👅"], answer: 0 }
+                    { q: "What do we use to touch?", options: ["Hand ✋", "Ear 👂", "Tongue 👅"], answer: 0 },
+                    { q: "I can see with my ___", options: ["eyes 👀", "ears 👂", "nose 👃"], answer: 0 }
                   ] },
                 { id: "en_u4_l4", title: "Lesson 4: Phonics Cc, Kk", type: "Phonics", emoji: "🔤", color: "#03A9F4",
-                  text: "Cc /k/:\ncat 🐱\ncake 🎂\ncup 🥤\n\nKk /k/:\nkite 🪁\nking 👑\nkitchen 🍳",
+                  text: "Cc:\ncat 🐱\ncake 🎂\ncup 🥤\n\nKk:\nkite 🪁\nking 👑\nkitchen 🍳",
                   textType: "english",
-                  short: "Learning phonics for letters Cc and Kk.",
-                  detailed: "Students learn the sounds and vocabulary for letters Cc (/k/) and Kk (/k/).",
+                  short: "Learning words that start with letters Cc and Kk.",
+                  detailed: "Students learn words starting with C (cat, cake, cup) and words starting with K (kite, king, kitchen).",
                   questions: [
-                    { q: "Which word starts with C?", options: ["Cat 🐱", "Kite 🪁", "King 👑"], answer: 0 },
-                    { q: "Which word starts with K?", options: ["Kite 🪁", "Cat 🐱", "Cake 🎂"], answer: 0 },
-                    { q: "What is the sound of C?", options: ["/k/", "/r/", "/e/"], answer: 0 }
+                    { q: "Which word starts with the letter C?", options: ["Cat 🐱", "Kite 🪁", "King 👑"], answer: 0 },
+                    { q: "Which word starts with the letter K?", options: ["Kite 🪁", "Cat 🐱", "Cake 🎂"], answer: 0 },
+                    { q: "Which letter does 'Cake' start with?", options: ["C", "K", "R"], answer: 0 },
+                    { q: "Which picture starts with the letter K?", options: ["🪁 (Kite)", "🐱 (Cat)", "🎂 (Cake)"], answer: 0 }
                   ] },
                 { id: "en_u4_review", title: "Unit 4 Review", type: "Review", emoji: "📝", color: "#FFD23F",
                   short: "Review of Unit 4: Body parts, senses, and phonics.",
-                  detailed: "Review of body parts, the five senses, and the sounds of Rr, Ee, Cc, and Kk.",
+                  detailed: "Review of body parts, the five senses, and words starting with Rr, Ee, Cc, and Kk.",
                   questions: [
                     { q: "What do we use to see?", options: ["Eyes 👀", "Ears 👂", "Nose 👃"], answer: 0 },
-                    { q: "Which word starts with E?", options: ["Egg 🥚", "Red 🔴", "Rabbit 🐰"], answer: 0 },
+                    { q: "Which word starts with the letter E?", options: ["Egg 🥚", "Red 🔴", "Rabbit 🐰"], answer: 0 },
                     { q: "What do we use to taste?", options: ["Tongue 👅", "Eyes 👀", "Ears 👂"], answer: 0 }
                   ] }
             ]
@@ -1034,27 +1042,30 @@ var subjectsData = {
                   questions: [
                     { q: "Which animal gives us milk?", options: ["Cow 🐄", "Duck 🦆", "Chicken 🐔"], answer: 0 },
                     { q: "Which animal is small?", options: ["Duck 🦆", "Cow 🐄", "Horse 🐴"], answer: 0 },
-                    { q: "Which animal gives us eggs?", options: ["Chicken 🐔", "Cow 🐄", "Horse 🐴"], answer: 0 }
+                    { q: "Which animal gives us eggs?", options: ["Chicken 🐔", "Cow 🐄", "Horse 🐴"], answer: 0 },
+                    { q: "What's this? (🐄)", options: ["cow 🐄", "duck 🦆", "horse 🐴"], answer: 0 }
                   ] },
                 { id: "en_u5_l2", title: "Lesson 2: Phonics Mm", type: "Phonics", emoji: "🔤", color: "#FF9800",
-                  text: "Mm /m/:\nmoon 🌙\nmilk 🥛\nmonkey 🐒",
+                  text: "Mm:\nmoon 🌙\nmilk 🥛\nmonkey 🐒",
                   textType: "english",
-                  short: "Learning the sound and words of letter Mm.",
-                  detailed: "Students learn the sound /m/ for Mm and words starting with M: Moon, Milk, Monkey.",
+                  short: "Learning words that start with letter Mm.",
+                  detailed: "Students learn words starting with M: Moon, Milk, Monkey.",
                   questions: [
-                    { q: "Which word starts with M?", options: ["Moon 🌙", "Fish 🐟", "Goat 🐐"], answer: 0 },
-                    { q: "What is the sound of M?", options: ["/m/", "/g/", "/f/"], answer: 0 },
-                    { q: "Which of these is milk?", options: ["🥛", "🌙", "🐒"], answer: 0 }
+                    { q: "Which word starts with the letter M?", options: ["Moon 🌙", "Fish 🐟", "Goat 🐐"], answer: 0 },
+                    { q: "Which letter does 'Milk' start with?", options: ["M", "G", "F"], answer: 0 },
+                    { q: "Which picture starts with the letter M?", options: ["🌙 (Moon)", "🐟 (Fish)", "🐐 (Goat)"], answer: 0 },
+                    { q: "Which word does NOT start with the letter M?", options: ["Moon 🌙", "Milk 🥛", "Fish 🐟"], answer: 2 }
                   ] },
                 { id: "en_u5_l3", title: "Lesson 3: Phonics Gg", type: "Phonics", emoji: "🔤", color: "#FF9800",
-                  text: "Gg /g/:\ngoat 🐐\ngirl 👧\ngrapes 🍇",
+                  text: "Gg:\ngoat 🐐\ngirl 👧\ngrapes 🍇",
                   textType: "english",
-                  short: "Learning the sound and words of letter Gg.",
-                  detailed: "Students learn the sound /g/ for Gg and words starting with G: Goat, Girl, Grapes.",
+                  short: "Learning words that start with letter Gg.",
+                  detailed: "Students learn words starting with G: Goat, Girl, Grapes.",
                   questions: [
-                    { q: "Which word starts with G?", options: ["Goat 🐐", "Moon 🌙", "Fish 🐟"], answer: 0 },
-                    { q: "What is the sound of G?", options: ["/g/", "/m/", "/f/"], answer: 0 },
-                    { q: "Which of these is a goat?", options: ["🐐", "👧", "🍇"], answer: 0 }
+                    { q: "Which word starts with the letter G?", options: ["Goat 🐐", "Moon 🌙", "Fish 🐟"], answer: 0 },
+                    { q: "Which letter does 'Girl' start with?", options: ["G", "M", "F"], answer: 0 },
+                    { q: "Which picture starts with the letter G?", options: ["🍇 (Grapes)", "🌙 (Moon)", "🐟 (Fish)"], answer: 0 },
+                    { q: "Which word does NOT start with the letter G?", options: ["Goat 🐐", "Girl 👧", "Moon 🌙"], answer: 2 }
                   ] },
                 { id: "en_u5_l4", title: "Lesson 4: Numbers from 6 to 10", type: "Numbers", emoji: "🔟", color: "#FFC107",
                   text: "6 6️⃣\n7 7️⃣\n8 8️⃣\n9 9️⃣\n10 🔟",
@@ -1064,35 +1075,38 @@ var subjectsData = {
                   questions: [
                     { q: "What number comes after 7?", options: ["6 6️⃣", "8 8️⃣", "9 9️⃣"], answer: 1 },
                     { q: "How many fingers on two hands?", options: ["10 🔟", "8 8️⃣", "9 9️⃣"], answer: 0 },
-                    { q: "What number comes before 10?", options: ["8 8️⃣", "9 9️⃣", "7 7️⃣"], answer: 1 }
+                    { q: "What number comes before 10?", options: ["8 8️⃣", "9 9️⃣", "7 7️⃣"], answer: 1 },
+                    { q: "What number comes after 9?", options: ["8 8️⃣", "10 🔟", "7 7️⃣"], answer: 1 }
                   ] },
                 { id: "en_u5_l5", title: "Lesson 5: Phonics Oo", type: "Phonics", emoji: "🔤", color: "#FF9800",
-                  text: "Oo /ɒ/:\noctopus 🐙\non 🔛\nostrich 🦩",
+                  text: "Oo:\noctopus 🐙\non 🔛\nostrich 🦩",
                   textType: "english",
-                  short: "Learning the sound and words of letter Oo.",
-                  detailed: "Students learn the short sound /ɒ/ for Oo and words starting with O: Octopus, On, Ostrich.",
+                  short: "Learning words that start with letter Oo.",
+                  detailed: "Students learn words starting with O: Octopus, On, Ostrich.",
                   questions: [
-                    { q: "Which word starts with O?", options: ["Octopus 🐙", "Goat 🐐", "Fish 🐟"], answer: 0 },
-                    { q: "What is the sound of O?", options: ["/ɒ/", "/g/", "/m/"], answer: 0 },
-                    { q: "Which of these is an octopus?", options: ["🐙", "🐐", "🍇"], answer: 0 }
+                    { q: "Which word starts with the letter O?", options: ["Octopus 🐙", "Goat 🐐", "Fish 🐟"], answer: 0 },
+                    { q: "Which letter does 'Ostrich' start with?", options: ["O", "G", "M"], answer: 0 },
+                    { q: "Which picture starts with the letter O?", options: ["🐙 (Octopus)", "🐐 (Goat)", "🍇 (Grapes)"], answer: 0 },
+                    { q: "Which word does NOT start with the letter O?", options: ["Octopus 🐙", "On 🔛", "Goat 🐐"], answer: 2 }
                   ] },
                 { id: "en_u5_l6", title: "Lesson 6: Phonics Ff", type: "Phonics", emoji: "🔤", color: "#FF9800",
-                  text: "Ff /f/:\nfish 🐟\nfan 🪭\nfrog 🐸",
+                  text: "Ff:\nfish 🐟\nfan 🪭\nfrog 🐸",
                   textType: "english",
-                  short: "Learning the sound and words of letter Ff.",
-                  detailed: "Students learn the sound /f/ for Ff and words starting with F: Fish, Fan, Frog.",
+                  short: "Learning words that start with letter Ff.",
+                  detailed: "Students learn words starting with F: Fish, Fan, Frog.",
                   questions: [
-                    { q: "Which word starts with F?", options: ["Fish 🐟", "Goat 🐐", "Moon 🌙"], answer: 0 },
-                    { q: "What is the sound of F?", options: ["/f/", "/m/", "/g/"], answer: 0 },
-                    { q: "Which of these is a fish?", options: ["🐟", "🪭", "🐸"], answer: 0 }
+                    { q: "Which word starts with the letter F?", options: ["Fish 🐟", "Goat 🐐", "Moon 🌙"], answer: 0 },
+                    { q: "Which letter does 'Fan' start with?", options: ["F", "M", "G"], answer: 0 },
+                    { q: "Which picture starts with the letter F?", options: ["🐟 (Fish)", "🪭 (Fan)", "🐸 (Frog)"], answer: 0 },
+                    { q: "Which word does NOT start with the letter F?", options: ["Fish 🐟", "Fan 🪭", "Moon 🌙"], answer: 2 }
                   ] },
                 { id: "en_u5_review", title: "Unit 5 Review", type: "Review", emoji: "📝", color: "#FFD23F",
                   short: "Review of Unit 5: Farm animals, numbers 6-10, and phonics.",
-                  detailed: "Review of farm animals, numbers 6 to 10, and the sounds of Mm, Gg, Oo, and Ff.",
+                  detailed: "Review of farm animals, numbers 6 to 10, and words starting with Mm, Gg, Oo, and Ff.",
                   questions: [
                     { q: "Which animal gives us milk?", options: ["Cow 🐄", "Duck 🦆", "Chicken 🐔"], answer: 0 },
                     { q: "What number comes after 7?", options: ["6 6️⃣", "8 8️⃣", "9 9️⃣"], answer: 1 },
-                    { q: "Which word starts with M?", options: ["Moon 🌙", "Fish 🐟", "Goat 🐐"], answer: 0 }
+                    { q: "Which word starts with the letter M?", options: ["Moon 🌙", "Fish 🐟", "Goat 🐐"], answer: 0 }
                   ] }
             ]
         },
@@ -1108,17 +1122,19 @@ var subjectsData = {
                   questions: [
                     { q: "Which animal has a long neck?", options: ["Giraffe 🦒", "Lion 🦁", "Tiger 🐯"], answer: 0 },
                     { q: "Which animal is the king of the jungle?", options: ["Lion 🦁", "Monkey 🐒", "Snake 🐍"], answer: 0 },
-                    { q: "Which animal is very big?", options: ["Elephant 🐘", "Snake 🐍", "Monkey 🐒"], answer: 0 }
+                    { q: "Which animal is very big?", options: ["Elephant 🐘", "Snake 🐍", "Monkey 🐒"], answer: 0 },
+                    { q: "What's this? (🐒)", options: ["monkey 🐒", "lion 🦁", "tiger 🐯"], answer: 0 }
                   ] },
                 { id: "en_u6_l2", title: "Lesson 2: Phonics Bb", type: "Phonics", emoji: "🔤", color: "#4CAF50",
-                  text: "Bb /b/:\nboy 👦\nball ⚽\nbanana 🍌",
+                  text: "Bb:\nboy 👦\nball ⚽\nbanana 🍌",
                   textType: "english",
-                  short: "Learning the sound and words of letter Bb.",
-                  detailed: "Students learn the sound /b/ for Bb and words starting with B: Boy, Ball, Banana.",
+                  short: "Learning words that start with letter Bb.",
+                  detailed: "Students learn words starting with B: Boy, Ball, Banana.",
                   questions: [
-                    { q: "Which word starts with B?", options: ["Ball ⚽", "Lion 🦁", "Jam 🍓"], answer: 0 },
-                    { q: "What is the sound of B?", options: ["/b/", "/l/", "/j/"], answer: 0 },
-                    { q: "Which of these is a banana?", options: ["🍌", "⚽", "👦"], answer: 0 }
+                    { q: "Which word starts with the letter B?", options: ["Ball ⚽", "Lion 🦁", "Jam 🍓"], answer: 0 },
+                    { q: "Which letter does 'Boy' start with?", options: ["B", "L", "J"], answer: 0 },
+                    { q: "Which picture starts with the letter B?", options: ["🍌 (Banana)", "⚽ (Ball)", "👦 (Boy)"], answer: 0 },
+                    { q: "Which word does NOT start with the letter B?", options: ["Ball ⚽", "Boy 👦", "Lion 🦁"], answer: 2 }
                   ] },
                 { id: "en_u6_l3", title: "Lesson 3: My Pets", type: "Vocabulary", emoji: "🐱", color: "#4CAF50",
                   text: "cat 🐱\ndog 🐕\nturtle 🐢\nbird 🐦",
@@ -1128,25 +1144,27 @@ var subjectsData = {
                   questions: [
                     { q: "Which animal is a pet?", options: ["Cat 🐱", "Lion 🦁", "Tiger 🐯"], answer: 0 },
                     { q: "Where is the bird if it is in the cage?", options: ["in", "on", "under"], answer: 0 },
-                    { q: "The cat is _____ the chair.", options: ["under", "in", "on"], answer: 0 }
+                    { q: "The cat is _____ the chair.", options: ["under", "in", "on"], answer: 0 },
+                    { q: "What's this? (🐢)", options: ["turtle 🐢", "cat 🐱", "dog 🐕"], answer: 0 }
                   ] },
                 { id: "en_u6_l4", title: "Lesson 4: Phonics Ll, Uu, Jj", type: "Phonics", emoji: "🔤", color: "#4CAF50",
-                  text: "Ll /l/:\nlamp 💡\nleaf 🍃\nlion 🦁\n\nUu /ʌ/:\numbrella ☂️\nup ⬆️\n\nJj /dʒ/:\njar 🫙\njam 🍓\njacket 🧥",
+                  text: "Ll:\nlamp 💡\nleaf 🍃\nlion 🦁\n\nUu:\numbrella ☂️\nup ⬆️\n\nJj:\njar 🫙\njam 🍓\njacket 🧥",
                   textType: "english",
-                  short: "Learning phonics for letters Ll, Uu, Jj.",
-                  detailed: "Students learn the sounds and vocabulary for letters Ll (/l/), Uu (/ʌ/), and Jj (/dʒ/).",
+                  short: "Learning words that start with letters Ll, Uu, Jj.",
+                  detailed: "Students learn words starting with L (lamp, leaf, lion), U (umbrella, up), and J (jar, jam, jacket).",
                   questions: [
-                    { q: "Which word starts with L?", options: ["Lion 🦁", "Umbrella ☂️", "Jam 🍓"], answer: 0 },
-                    { q: "Which word starts with J?", options: ["Jam 🍓", "Lamp 💡", "Up ⬆️"], answer: 0 },
-                    { q: "Which word starts with U?", options: ["Umbrella ☂️", "Leaf 🍃", "Jar 🫙"], answer: 0 }
+                    { q: "Which word starts with the letter L?", options: ["Lion 🦁", "Umbrella ☂️", "Jam 🍓"], answer: 0 },
+                    { q: "Which word starts with the letter J?", options: ["Jam 🍓", "Lamp 💡", "Up ⬆️"], answer: 0 },
+                    { q: "Which word starts with the letter U?", options: ["Umbrella ☂️", "Leaf 🍃", "Jar 🫙"], answer: 0 },
+                    { q: "Which letter does 'Lamp' start with?", options: ["L", "U", "J"], answer: 0 }
                   ] },
                 { id: "en_u6_review", title: "Unit 6 Review", type: "Review", emoji: "📝", color: "#FFD23F",
                   short: "Review of Unit 6: Jungle animals, pets, and phonics.",
-                  detailed: "Review of jungle animals, pets, prepositions, and the sounds of Bb, Ll, Uu, and Jj.",
+                  detailed: "Review of jungle animals, pets, prepositions, and words starting with Bb, Ll, Uu, and Jj.",
                   questions: [
                     { q: "Which animal has a long neck?", options: ["Giraffe 🦒", "Lion 🦁", "Tiger 🐯"], answer: 0 },
                     { q: "Which animal is a pet?", options: ["Cat 🐱", "Lion 🦁", "Tiger 🐯"], answer: 0 },
-                    { q: "Which word starts with J?", options: ["Jam 🍓", "Lamp 💡", "Up ⬆️"], answer: 0 }
+                    { q: "Which word starts with the letter J?", options: ["Jam 🍓", "Lamp 💡", "Up ⬆️"], answer: 0 }
                   ] }
             ]
         }
