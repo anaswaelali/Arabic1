@@ -6,308 +6,106 @@
 <title>منصة الصف الأول الابتدائي - الترم الأول</title>
 <style>
     :root {
-        --primary: #2E86AB;
-        --secondary: #F18F01;
-        --pink: #FF6B9D;
-        --purple: #9B5DE5;
-        --green: #27AE60;
-        --yellow: #FFD23F;
-        --sky: #48CAE4;
-        --dark: #2C3E50;
-        --danger: #E74C3C;
-        --font-stack: 'Segoe UI', 'Tahoma', 'Arial', 'Helvetica Neue', 'Noto Sans Arabic', 'Droid Arabic Naskh', sans-serif;
+        --primary: #2E86AB; --secondary: #F18F01; --pink: #FF6B9D;
+        --purple: #9B5DE5; --green: #27AE60; --yellow: #FFD23F;
+        --sky: #48CAE4; --dark: #2C3E50; --danger: #E74C3C;
+        --font-stack: 'Segoe UI', 'Tahoma', 'Arial', 'Helvetica Neue', 'Noto Sans Arabic', sans-serif;
         --english-font: 'Segoe UI', 'Arial', 'Helvetica Neue', sans-serif;
     }
     * { box-sizing: border-box; font-family: var(--font-stack); }
     html, body { margin: 0; padding: 0; min-height: 100%; }
-    body {
-        background: linear-gradient(135deg, #FFE5F1 0%, #E0F7FA 50%, #FFF9C4 100%);
-        background-attachment: fixed;
-        color: var(--dark); min-height: 100vh;
-        position: relative; overflow-x: hidden;
-        font-size: 16px; line-height: 1.6;
-    }
-    body::before {
-        content: "⭐"; position: fixed; top: 8%; left: 5%;
-        font-size: 3rem; opacity: 0.12; pointer-events: none;
-        animation: twinkle 3s ease-in-out infinite alternate;
-    }
-    body::after {
-        content: "✨"; position: fixed; bottom: 8%; right: 5%;
-        font-size: 2.4rem; opacity: 0.12; pointer-events: none;
-        animation: twinkle 4s ease-in-out infinite alternate;
-    }
-    @keyframes twinkle {
-        0% { opacity: 0.08; transform: scale(0.9); }
-        100% { opacity: 0.2; transform: scale(1.1); }
-    }
+    body { background: linear-gradient(135deg, #FFE5F1 0%, #E0F7FA 50%, #FFF9C4 100%); background-attachment: fixed; color: var(--dark); min-height: 100vh; position: relative; overflow-x: hidden; font-size: 16px; line-height: 1.6; }
+    body::before { content: "⭐"; position: fixed; top: 8%; left: 5%; font-size: 3rem; opacity: 0.12; pointer-events: none; animation: twinkle 3s ease-in-out infinite alternate; }
+    body::after { content: "✨"; position: fixed; bottom: 8%; right: 5%; font-size: 2.4rem; opacity: 0.12; pointer-events: none; animation: twinkle 4s ease-in-out infinite alternate; }
+    @keyframes twinkle { 0% { opacity: 0.08; transform: scale(0.9); } 100% { opacity: 0.2; transform: scale(1.1); } }
     .container { max-width: 1050px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
-
-    .top-bar {
-        display: flex; align-items: center; justify-content: space-between;
-        margin-bottom: 20px; padding: 14px 22px;
-        background: white; border-radius: 60px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        flex-wrap: wrap; gap: 10px;
-    }
-    .top-bar h1 {
-        margin: 0; font-size: 1.25rem; font-weight: 900;
-        background: linear-gradient(45deg, var(--primary), var(--purple), var(--pink));
-        -webkit-background-clip: text; background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+    .top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding: 14px 22px; background: white; border-radius: 60px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex-wrap: wrap; gap: 10px; }
+    .top-bar h1 { margin: 0; font-size: 1.25rem; font-weight: 900; background: linear-gradient(45deg, var(--primary), var(--purple), var(--pink)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     .top-bar .stars { font-size: 1.4rem; animation: bounce 2s infinite; }
-    @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-6px); }
-    }
-
-    /* بطاقات المواد */
-    .subjects-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px; margin-top: 20px;
-    }
-    .subject-card {
-        border-radius: 26px; padding: 30px 24px; color: white; cursor: pointer;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        transition: transform 0.3s, box-shadow 0.3s;
-        min-height: 240px; display: flex; flex-direction: column;
-        justify-content: space-between; position: relative; overflow: hidden;
-    }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    .subjects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+    .subject-card { border-radius: 26px; padding: 30px 24px; color: white; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.3s, box-shadow 0.3s; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between; }
     .subject-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 18px 40px rgba(0,0,0,0.25); }
-    .subject-card .emoji {
-        font-size: 4rem; display: inline-block;
-        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-        transition: transform 0.4s;
-    }
+    .subject-card .emoji { font-size: 4rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25)); transition: transform 0.4s; }
     .subject-card:hover .emoji { transform: scale(1.15) rotate(-6deg); }
-    .subject-card h2 {
-        margin: 10px 0 8px; font-size: 1.35rem; font-weight: 900;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.25);
-    }
-    .subject-card p {
-        margin: 0; font-size: 0.95rem; line-height: 1.7;
-        opacity: 0.95; text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    }
-    .subject-card .count-badge {
-        display: inline-block; padding: 4px 14px; border-radius: 20px;
-        background: rgba(255,255,255,0.25); font-size: 0.8rem;
-        margin-top: 12px; font-weight: 700; backdrop-filter: blur(4px);
-    }
-
-    .back-btn {
-        background: linear-gradient(135deg, var(--secondary), var(--pink));
-        color: white; border: none; padding: 12px 24px;
-        border-radius: 30px; cursor: pointer; font-size: 1rem;
-        font-weight: 700; margin-bottom: 20px;
-        box-shadow: 0 6px 16px rgba(241,143,1,0.4);
-        transition: transform 0.2s, box-shadow 0.2s;
-        font-family: var(--font-stack);
-    }
+    .subject-card h2 { margin: 10px 0 8px; font-size: 1.35rem; font-weight: 900; text-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+    .subject-card p { margin: 0; font-size: 0.95rem; line-height: 1.7; opacity: 0.95; }
+    .subject-card .count-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; background: rgba(255,255,255,0.25); font-size: 0.8rem; margin-top: 12px; font-weight: 700; }
+    .back-btn { background: linear-gradient(135deg, var(--secondary), var(--pink)); color: white; border: none; padding: 12px 24px; border-radius: 30px; cursor: pointer; font-size: 1rem; font-weight: 700; margin-bottom: 20px; box-shadow: 0 6px 16px rgba(241,143,1,0.4); transition: transform 0.2s; }
     .back-btn:hover { transform: translateY(-3px); }
-    .back-btn:active { transform: translateY(0); }
-
-    .section-header {
-        background: white; border-radius: 22px; padding: 20px 26px;
-        margin-bottom: 22px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        position: relative; overflow: hidden;
-    }
-    .section-header::after {
-        content: "⭐"; position: absolute; left: 20px; top: 50%;
-        transform: translateY(-50%); font-size: 2.8rem; opacity: 0.3;
-    }
+    .section-header { background: white; border-radius: 22px; padding: 20px 26px; margin-bottom: 22px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); position: relative; overflow: hidden; }
+    .section-header::after { content: "⭐"; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 2.8rem; opacity: 0.3; }
     .section-header h2 { margin: 0 0 8px; font-weight: 900; font-size: 1.4rem; }
     .section-header p { margin: 0; color: #666; line-height: 1.6; font-size: 0.95rem; }
-
-    .units-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 18px;
-    }
-    .unit-card {
-        border-radius: 22px; padding: 22px; color: white; cursor: pointer;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        transition: transform 0.3s, box-shadow 0.3s;
-        min-height: 160px; display: flex; flex-direction: column;
-        justify-content: space-between;
-    }
+    .units-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .unit-card { border-radius: 22px; padding: 22px; color: white; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,0.12); transition: transform 0.3s; min-height: 160px; display: flex; flex-direction: column; justify-content: space-between; }
     .unit-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
     .unit-card .emoji { font-size: 2.6rem; margin-bottom: 8px; }
     .unit-card h3 { margin: 4px 0 6px; font-size: 1.1rem; font-weight: 800; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
     .unit-card p { margin: 0; font-size: 0.85rem; opacity: 0.95; line-height: 1.6; }
-
     .lessons-list { display: flex; flex-direction: column; gap: 14px; }
-    .lesson-item {
-        background: white; border-radius: 18px; padding: 16px 20px;
-        cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-        display: flex; justify-content: space-between; align-items: center;
-        gap: 12px; transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
-        border-right: 6px solid var(--primary); flex-wrap: wrap;
-    }
+    .lesson-item { background: white; border-radius: 18px; padding: 16px 20px; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; gap: 12px; transition: all 0.25s; border-right: 6px solid var(--primary); flex-wrap: wrap; }
     .lesson-item:hover { transform: translateX(-6px); box-shadow: 0 8px 22px rgba(0,0,0,0.14); background: #F0F8FF; }
     .lesson-item .lesson-info { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
-    .lesson-item .lesson-icon {
-        width: 50px; height: 50px; border-radius: 14px;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 1.6rem; flex-shrink: 0;
-        box-shadow: inset 0 -3px 0 rgba(0,0,0,0.08);
-    }
+    .lesson-item .lesson-icon { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
     .lesson-item strong { font-size: 1.05rem; color: var(--dark); }
     .lesson-item small { color: #888; font-size: 0.82rem; }
-    .lesson-item .type-badge {
-        padding: 6px 14px; border-radius: 20px; font-size: 0.75rem;
-        font-weight: 700; color: white; white-space: nowrap;
-    }
-
-    .lesson-detail {
-        background: white; border-radius: 24px; padding: 26px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
+    .lesson-item .type-badge { padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: white; white-space: nowrap; }
+    .lesson-detail { background: white; border-radius: 24px; padding: 26px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
     .lesson-title-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
     .lesson-title-wrap .big-emoji { font-size: 2.4rem; animation: float 3s ease-in-out infinite; }
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
-    }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     .lesson-title-wrap h3 { color: var(--primary); margin: 0; font-size: 1.3rem; font-weight: 900; flex: 1; }
-
     .toggle-buttons { display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
-    .toggle-btn {
-        padding: 10px 22px; border: none; border-radius: 25px; cursor: pointer;
-        font-size: 0.95rem; font-weight: 700; transition: all 0.25s;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    }
+    .toggle-btn { padding: 10px 22px; border: none; border-radius: 25px; cursor: pointer; font-size: 0.95rem; font-weight: 700; transition: all 0.25s; box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
     .toggle-btn.active { background: linear-gradient(135deg, var(--primary), var(--purple)); color: white; transform: scale(1.05); }
     .toggle-btn:not(.active) { background: #EEE; color: #555; }
-    .toggle-btn:not(.active):hover { background: #DDD; }
-
-    .explanation-box {
-        background: linear-gradient(135deg, #FFF9E6, #FFE5F1);
-        padding: 20px; border-radius: 16px;
-        border-right: 6px solid var(--secondary);
-        line-height: 1.9; font-size: 1.05rem; color: #333;
-    }
-
-    .text-section {
-        margin-top: 22px; padding: 22px; border-radius: 18px;
-        position: relative; overflow: hidden;
-    }
-    .text-section.story {
-        background: linear-gradient(135deg, #FFF8E1, #FFECB3);
-        border: 3px dashed var(--secondary);
-    }
-    .text-section.quran {
-        background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
-        border: 3px solid var(--green);
-    }
+    .explanation-box { background: linear-gradient(135deg, #FFF9E6, #FFE5F1); padding: 20px; border-radius: 16px; border-right: 6px solid var(--secondary); line-height: 1.9; font-size: 1.05rem; color: #333; }
+    .text-section { margin-top: 22px; padding: 22px; border-radius: 18px; position: relative; }
+    .text-section.story { background: linear-gradient(135deg, #FFF8E1, #FFECB3); border: 3px dashed var(--secondary); }
+    .text-section.quran { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border: 3px solid var(--green); }
     .text-section.quran h4 { color: var(--green); }
-    .text-section h4 {
-        margin: 0 0 14px 0; font-size: 1.2rem; font-weight: 900;
-        color: var(--secondary);
-    }
-    .text-line {
-        font-size: 1.18rem; line-height: 2; padding: 6px 12px;
-        border-radius: 10px; margin-bottom: 4px;
-        transition: background 0.3s;
-    }
-    .text-section.quran .text-line {
-        font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', 'Noto Naskh Arabic', serif;
-        font-size: 1.4rem; text-align: center; font-weight: 600;
-        color: #1B5E20;
-    }
-    /* تنسيق خاص للنصوص الإنجليزية */
-    .text-section.english {
-        background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-        border: 3px dashed var(--primary);
-    }
+    .text-section.english { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); border: 3px dashed var(--primary); }
     .text-section.english h4 { color: var(--primary); }
-    .text-section.english .text-line {
-        font-family: var(--english-font);
-        direction: ltr; text-align: left; font-size: 1.2rem;
-        color: #0D47A1; font-weight: 600;
-    }
-    .text-line:hover { background: rgba(255,210,63,0.25); }
-
+    .text-section h4 { margin: 0 0 14px 0; font-size: 1.2rem; font-weight: 900; color: var(--secondary); }
+    .text-line { font-size: 1.18rem; line-height: 2; padding: 6px 12px; border-radius: 10px; margin-bottom: 4px; }
+    .text-section.quran .text-line { font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', 'Noto Naskh Arabic', serif; font-size: 1.4rem; text-align: center; font-weight: 600; color: #1B5E20; }
+    .text-section.english .text-line { font-family: var(--english-font); direction: ltr; text-align: left; font-size: 1.2rem; color: #0D47A1; font-weight: 600; }
     .quiz-section { margin-top: 30px; padding-top: 24px; border-top: 3px dashed #FFD23F; }
     .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
     .quiz-header h4 { color: var(--pink); font-size: 1.25rem; font-weight: 900; margin: 0; }
-    .reload-btn {
-        background: linear-gradient(135deg, var(--sky), var(--primary));
-        color: white; border: none; padding: 10px 18px; border-radius: 25px;
-        cursor: pointer; font-size: 0.88rem; font-weight: 700;
-        box-shadow: 0 4px 12px rgba(72,202,228,0.4);
-        transition: transform 0.2s;
-    }
+    .reload-btn { background: linear-gradient(135deg, var(--sky), var(--primary)); color: white; border: none; padding: 10px 18px; border-radius: 25px; cursor: pointer; font-size: 0.88rem; font-weight: 700; box-shadow: 0 4px 12px rgba(72,202,228,0.4); }
     .reload-btn:hover { transform: translateY(-2px); }
-    .reload-btn:active { transform: scale(0.96); }
     .hint { font-size: 0.82rem; color: #888; margin-bottom: 12px; font-style: italic; }
-
-    .question {
-        background: #FAFAFA; border-radius: 16px; padding: 18px;
-        margin-bottom: 16px; border: 2px solid #EEE;
-    }
+    .question { background: #FAFAFA; border-radius: 16px; padding: 18px; margin-bottom: 16px; border: 2px solid #EEE; }
     .question p { font-weight: 800; margin: 0 0 12px 0; font-size: 1.02rem; }
     .question.english-q p { font-family: var(--english-font); direction: ltr; text-align: left; }
     .question.english-q .option-btn { font-family: var(--english-font); direction: ltr; text-align: left; }
-    
     .options { display: flex; flex-direction: column; gap: 10px; }
-    .option-btn {
-        text-align: right; padding: 12px 18px; border: 2px solid #DDD;
-        background: white; border-radius: 12px; cursor: pointer;
-        font-size: 1rem; font-weight: 600;
-        transition: all 0.2s; font-family: var(--font-stack);
-    }
-    .option-btn:hover:not(:disabled) {
-        border-color: var(--primary); background: #F0F8FF;
-        transform: translateX(-4px);
-    }
+    .option-btn { text-align: right; padding: 12px 18px; border: 2px solid #DDD; background: white; border-radius: 12px; cursor: pointer; font-size: 1rem; font-weight: 600; transition: all 0.2s; }
+    .option-btn:hover:not(:disabled) { border-color: var(--primary); background: #F0F8FF; transform: translateX(-4px); }
     .option-btn.correct { background: #D4F5DD; border-color: var(--green); animation: correctPop 0.5s ease; }
     .option-btn.wrong { background: #FBD9D5; border-color: var(--danger); animation: shake 0.4s ease; }
     .option-btn:disabled { cursor: default; }
-    @keyframes correctPop { 0%{transform:scale(1);} 50%{transform:scale(1.06);} 100%{transform:scale(1);} }
+    @keyframes correctPop { 0%,100%{transform:scale(1);} 50%{transform:scale(1.06);} }
     @keyframes shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);} }
     .feedback { margin-top: 10px; font-weight: 800; font-size: 1rem; }
-
-    .confetti {
-        position: fixed; font-size: 1.6rem; pointer-events: none; z-index: 999;
-        animation: confettiFall 1.5s ease-out forwards;
-    }
-    @keyframes confettiFall {
-        0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
-        100% { transform: translateY(-160px) rotate(360deg) scale(0.4); opacity: 0; }
-    }
-
-    .progress-bar {
-        position: fixed; top: 0; right: 0; height: 5px;
-        background: linear-gradient(90deg, var(--pink), var(--purple), var(--sky), var(--green));
-        width: 0%; transition: width 0.6s; z-index: 100;
-    }
-
+    .confetti { position: fixed; font-size: 1.6rem; pointer-events: none; z-index: 999; animation: confettiFall 1.5s ease-out forwards; }
+    @keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(-160px) rotate(360deg) scale(0.4); opacity: 0; } }
+    .progress-bar { position: fixed; top: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--pink), var(--purple), var(--sky), var(--green)); width: 0%; transition: width 0.6s; z-index: 100; }
     .hidden { display: none !important; }
-
     @media (max-width: 600px) {
-        body { font-size: 15px; }
-        .container { padding: 12px; }
-        .top-bar { padding: 10px 16px; border-radius: 40px; }
-        .top-bar h1 { font-size: 1rem; }
-        .subject-card { min-height: 200px; padding: 22px 18px; }
-        .subject-card .emoji { font-size: 3rem; }
-        .subject-card h2 { font-size: 1.15rem; }
+        body { font-size: 15px; } .container { padding: 12px; }
+        .top-bar { padding: 10px 16px; border-radius: 40px; } .top-bar h1 { font-size: 1rem; }
+        .subject-card { min-height: 200px; padding: 22px 18px; } .subject-card .emoji { font-size: 3rem; }
         .unit-card { min-height: 140px; padding: 18px; }
-        .lesson-title-wrap h3 { font-size: 1.1rem; }
-        .lesson-title-wrap .big-emoji { font-size: 1.9rem; }
-        .text-line { font-size: 1.05rem; }
-        .text-section.quran .text-line { font-size: 1.25rem; }
-        .text-section.english .text-line { font-size: 1.1rem; }
         .lesson-detail { padding: 18px; border-radius: 18px; }
-        .explanation-box { padding: 15px; font-size: 1rem; }
         .section-header::after { display: none; }
     }
 </style>
 </head>
 <body>
-
 <div class="progress-bar" id="progressBar"></div>
-
 <div class="container">
     <div class="top-bar">
         <h1>🎓 منصة الصف الأول الابتدائي</h1>
@@ -333,492 +131,959 @@
 </div>
 
 <script>
-// ============================================================
-// بيانات المنهج الكامل (4 مواد)
-// ============================================================
 var subjectsData = {
-
-    // =========================================================
-    // مادة اللغة العربية
-    // =========================================================
-    "arabic": {
-        name: "اللغة العربية",
-        emoji: "📚",
-        color: "#FF6B9D",
-        gradient: "linear-gradient(135deg, #FF6B9D, #FFD23F)",
-        description: "قراءة، كتابة، حروف، أناشيد، وقصص ممتعة",
-        units: {
-            "الوحدة التمهيدية: التهيئة": {
-                emoji: "⭐",
-                gradient: "linear-gradient(135deg, #FF6B9D, #FFD23F)",
-                description: "وحدة تمهيدية للتعارف والوعي البصري والصوتي.",
-                lessons: [
-                    { id: "ar_t1", title: "التعارف وآداب الفصل", type: "درس تهيئة", emoji: "👋", color: "#FF6B9D",
-                      short: "نتعلم كيف نعرّف عن أنفسنا ونحيّي الآخرين ونلتزم بآداب الفصل.",
-                      detailed: "في هذا الدرس يتعلم الطفل مهارات التعارف الأساسية: ذكر اسمه واسم أسرته وسنه. كما يتدرب على إلقاء التحية (صباح الخير، السلام عليكم) والرد عليها. يتم التركيز على آداب التعامل داخل الفصل: الاستئذان قبل الكلام، رفع اليد للمشاركة، الاستماع للمعلم، والحفاظ على نظافة المكان.",
-                      questions: [
-                        { q: "ماذا نقول عندما ندخل الفصل في الصباح؟", options: ["صباح الخير", "تصبح على خير", "مع السلامة"], answer: 0 },
-                        { q: "ماذا نفعل قبل أن نتكلم في الفصل؟", options: ["نتكلم فورًا", "نستأذن ونرفع يدنا", "نقف على الكرسي"], answer: 1 },
-                        { q: "ماذا نقول للمعلم في الصباح؟", options: ["صباح الخير يا معلمي", "مع السلامة", "تصبح على خير"], answer: 0 },
-                        { q: "كيف نحافظ على نظافة الفصل؟", options: ["نرمي الأوراق على الأرض", "نضع المهملات في السلة", "نكسر المقاعد"], answer: 1 }
-                      ] },
-                    { id: "ar_t2", title: "الوعي البصري والتمهيد للكتابة", type: "تدريب بصري", emoji: "🎨", color: "#9B5DE5",
-                      short: "أناشيد وألعاب بصرية لتمييز الأشكال والاتجاهات استعدادًا لكتابة الحروف.",
-                      detailed: "يبدأ الطفل رحلته مع الكتابة من خلال أنشطة غير مباشرة. يتعرف على الأشكال الأساسية (دائرة، مربع، مثلث، خطوط). يتدرب على تمييز الاتجاهات (فوق/تحت، يمين/يسار). تُستخدم الأناشيد الحركية والألعاب البصرية لتقوية العضلات الدقيقة لليد.",
-                      questions: [
-                        { q: "أي من هذه الأشكال هو دائرة؟", options: ["مربع", "مثلث", "دائرة"], answer: 2 },
-                        { q: "أين ننظر عندما نرفع رؤوسنا؟", options: ["تحت", "فوق", "يمين فقط"], answer: 1 },
-                        { q: "ما شكل الشمس تقريبًا؟", options: ["دائرة", "مربع", "مثلث"], answer: 0 },
-                        { q: "الشكل الذي له 3 أضلاع هو...", options: ["مربع", "مثلث", "دائرة"], answer: 1 }
-                      ] },
-                    { id: "ar_t3", title: "الوعي الصوتي ومهارات الإدراك", type: "تدريب صوتي", emoji: "🎧", color: "#48CAE4",
-                      short: "تمارين على سماع الأصوات، تمييز أول الحروف، والمقارنة بين الكلمات.",
-                      detailed: "هذا الدرس هو حجر الأساس لتعلم القراءة. يتدرب الطفل على مهارات الوعي الصوتي: سماع صوت الحرف في بداية الكلمة، وآخره. يتعلم تجزئة الكلمات إلى مقاطع صوتية. هذه المهارات ضرورية قبل البدء في دراسة الحروف الهجائية.",
-                      questions: [
-                        { q: "بأي حرف تبدأ كلمة (ماما)؟", options: ["ب", "م", "س"], answer: 1 },
-                        { q: "كم مقطعًا صوتيًا في كلمة (با-با)؟", options: ["مقطع واحد", "مقطعان", "ثلاثة مقاطع"], answer: 1 },
-                        { q: "بأي حرف تبدأ كلمة (سَمَك)؟", options: ["م", "ب", "س"], answer: 2 }
-                      ] }
-                ]
-            },
-            "الوحدة الأولى: أُسْرَتِي": {
-                emoji: "🏠",
-                gradient: "linear-gradient(135deg, #9B5DE5, #48CAE4)",
-                description: "الأسرة والحروف: الألف، الباء، الميم، الحاء، الجيم، الدال، الخاء، التاء.",
-                lessons: [
-                    { id: "ar_u1_l1", title: "قصة الاستماع: أميرة وأسرتها", type: "قصة استماع", emoji: "📖", color: "#FF6B9D",
-                      text: "أَمِيرَة طِفْلَة صَغِيرَة تَعِيشُ فِي بَيْتٍ جَمِيل مَعَ أُسْرَتِهَا السَّعِيدَة.\nأَبُوهَا طَيِّب يُحِبُّهَا، وَأُمُّهَا حَنُونَة تَطْبُخُ لَهَا الطَّعَامَ اللَّذِيذ.\nلَهَا أَخٌ كَبِير يُسَاعِدُهَا فِي وَاجِبَاتِهَا، وَأُخْتٌ صَغِيرَة تَلْعَبُ مَعَهَا.\nفِي الصَّبَاح تَسْتَيْقِظ أَمِيرَة، وَتُسَلِّم عَلَى أُمِّهَا وَأَبِيهَا.\nتَتَنَاوَل الْإِفْطَار مَعَ أُسْرَتِهَا، ثُمَّ تَذْهَب إِلَى الْمَدْرَسَة.\nأَمِيرَة تُحِبُّ أُسْرَتَهَا كَثِيرًا، وَأُسْرَتُهَا تُحِبُّهَا.",
-                      textType: "story",
-                      short: "قصة عن أميرة وأفراد أسرتها، لتنمية مهارات الاستماع والتعبير الشفوي.",
-                      detailed: "تُقرأ القصة على الأطفال بصوت واضح ومعبر. تحكي القصة عن الطفلة أميرة التي تعيش مع أسرتها السعيدة. تصف القصة الأنشطة التي تقوم بها الأسرة معًا، مثل تناول الطعام، اللعب، والمساعدة في الأعمال المنزلية.",
-                      questions: [
-                        { q: "من هي بطلة القصة؟", options: ["أميرة", "سارة", "منى"], answer: 0 },
-                        { q: "مع من تعيش أميرة؟", options: ["مع أصدقائها", "مع أسرتها", "وحدها"], answer: 1 },
-                        { q: "ماذا تفعل أميرة في الصباح؟", options: ["تنام", "تستيقظ وتُسلّم على والديها", "تلعب"], answer: 1 },
-                        { q: "ماذا تفعل أميرة بعد الإفطار؟", options: ["تذهب إلى المدرسة", "تنام", "تلعب في الشارع"], answer: 0 }
-                      ] },
-                    { id: "ar_u1_l2", title: "نشيد: أُسْرَتِي", type: "نشيد", emoji: "🎵", color: "#F18F01",
-                      text: "أُسْرَتِي أُسْرَتِي أَحْلَى أُسْرَة فِي الدُّنْيَا\nأَبِي وَأُمِّي يُحِبَّانِنِي وَيَحْمِيَانِي\nأَخِي وَأُخْتِي نَلْعَبُ مَعًا وَنَتَعَاوَنُ\nأُحِبُّ أُسْرَتِي وَأُسْرَتِي تُحِبُّنِي",
-                      textType: "story",
-                      short: "نشيد شعري قصير عن حب الأسرة، يُحفظ ويُنشد لتقوية النطق والذاكرة.",
-                      detailed: "نشيد 'أُسْرَتِي' هو نص شعري بسيط وإيقاعي يتغنى بحب الأسرة وأهمية التعاون بين أفرادها. يساعد النشيد على تحسين النطق السليم للكلمات، إثراء الحصيلة اللغوية، وتقوية الذاكرة السمعية.",
-                      questions: [
-                        { q: "عن ماذا يتحدث النشيد؟", options: ["عن المدرسة", "عن الأسرة", "عن الحيوانات"], answer: 1 },
-                        { q: "ماذا نفعل عند إنشاد النشيد؟", options: ["ننشد مع الحركات", "نقف ساكنين", "ننام"], answer: 0 },
-                        { q: "من يحمينا ويحبنا حسب النشيد؟", options: ["الجيران", "أبي وأمي", "الأصدقاء فقط"], answer: 1 }
-                      ] },
-                    { id: "ar_u1_l3", title: "الحروف: الألف، الباء، الميم، الحاء، الجيم، الدال، الخاء، التاء", type: "حروف", emoji: "🔤", color: "#27AE60",
-                      short: "دراسة شكل وصوت وكتابة ثمانية حروف، مع كلمات تبدأ بكل حرف.",
-                      detailed: "يتم تقديم كل حرف على حدة: (1) التعرف على شكله. (2) الاستماع إلى صوته. (3) كتابته. (4) ذكر كلمات تبدأ به (أَلِف - أَسَد، بَاء - بَاب، مِيم - مَامَا، حَاء - حَمَامَة، جِيم - جَمَل، دَال - دِيك، خَاء - خُبْز، تَاء - تُفَّاح).",
-                      questions: [
-                        { q: "بأي حرف تبدأ كلمة (بَاب)؟", options: ["الباء", "التاء", "الدال"], answer: 0 },
-                        { q: "بأي حرف تبدأ كلمة (جَمَل)؟", options: ["الحاء", "الجيم", "الخاء"], answer: 1 },
-                        { q: "بأي حرف تبدأ كلمة (تُفَّاح)؟", options: ["التاء", "الباء", "الميم"], answer: 0 },
-                        { q: "بأي حرف تبدأ كلمة (حَمَامَة)؟", options: ["الجيم", "الحاء", "الخاء"], answer: 1 }
-                      ] }
-                ]
-            },
-            "الوحدة الثانية: حَيَوَانَاتِي": {
-                emoji: "🦁",
-                gradient: "linear-gradient(135deg, #27AE60, #48CAE4)",
-                description: "عالم الحيوان والحروف: اللام، السين، النون، الراء، الفاء، الكاف، القاف.",
-                lessons: [
-                    { id: "ar_u2_l1", title: "قصة الاستماع: عالم الحيوان", type: "قصة استماع", emoji: "🦁", color: "#F18F01",
-                      text: "فِي يَوْمٍ جَمِيل ذَهَبَ الْأَطْفَال إِلَى حَدِيقَةِ الْحَيَوَان.\nرَأَوْا الْأَسَد الْقَوِيّ يَجْلِس فِي قَفَصِه، وَالْفِيل الْكَبِير يَشْرَب الْمَاء.\nرَأَوْا الْقِرْد الْمَرِح يَقْفِز عَلَى الْأَشْجَار، وَالزَّرَافَة الطَّوِيلَة تَأْكُل أَوْرَاقَ الشَّجَر.\nعَادَ الْأَطْفَال إِلَى الْمَدْرَسَة سُعَدَاء بِمَا رَأَوْه.",
-                      textType: "story",
-                      short: "قصة عن حيوانات مختلفة وصفاتها وأصواتها، لتنمية الاستماع والمفردات.",
-                      detailed: "تُقرأ القصة على الأطفال وتحكي عن رحلة في عالم الحيوان. يتعرف فيها على حيوانات مثل الأسد، الفيل، القرد، والزرافة. بعد الاستماع يُسأل الأطفال عن أسماء الحيوانات وصفاتها.",
-                      questions: [
-                        { q: "أي حيوان يعيش في الغابة ويُسمى ملك الغابة؟", options: ["الأسد", "الأرنب", "الديك"], answer: 0 },
-                        { q: "ما هو أطول حيوان بين هذه الحيوانات؟", options: ["القرد", "الزرافة", "القط"], answer: 1 },
-                        { q: "ماذا كان الفيل يفعل في القصة؟", options: ["يشرب الماء", "ينام", "يطير"], answer: 0 }
-                      ] },
-                    { id: "ar_u2_l2", title: "نشيد: لَوْحَتِي الجَدِيدَة", type: "نشيد", emoji: "🎨", color: "#FF6B9D",
-                      text: "لَوْحَتِي الْجَدِيدَة لَوْنُهَا جَمِيل\nأَرْسُمُ عَلَيْهَا بِكُلِّ لَوْنٍ جَمِيل\nأَرْسُمُ أَسَدًا أَرْسُمُ فِيلًا\nأَرْسُمُ قِطًّا يَلْعَبُ كَثِيرًا",
-                      textType: "story",
-                      short: "نشيد عن الرسم والألوان والحيوانات، يُنشد مع الحركات.",
-                      detailed: "نشيد 'لوحتي الجديدة' يتحدث عن طفل يحب الرسم، ويرسم على لوحته حيوانات مختلفة بألوان جميلة. يساعد على ربط أسماء الحيوانات بالألوان وتقوية النطق.",
-                      questions: [
-                        { q: "ماذا يرسم الطفل في النشيد؟", options: ["بيوتًا", "حيوانات", "سيارات"], answer: 1 },
-                        { q: "أين يرسم الطفل؟", options: ["على لوحته", "على الحائط", "على الأرض"], answer: 0 },
-                        { q: "أي حيوان له رقبة طويلة حسب النشيد؟", options: ["الفيل", "الزرافة", "الأسد"], answer: 1 }
-                      ] },
-                    { id: "ar_u2_l3", title: "الحروف: اللام، السين، النون، الراء، الفاء، الكاف، القاف", type: "حروف", emoji: "🔠", color: "#9B5DE5",
-                      short: "دراسة شكل وصوت وكتابة سبعة حروف جديدة.",
-                      detailed: "يتم تقديم كل حرف: الشكل، الصوت، الكتابة، والكلمات (لَام - لَيْمُون، سِين - سَمَك، نُون - نَمِر، رَاء - رَجُل، فَاء - فِيل، كَاف - كِتَاب، قَاف - قَمَر).",
-                      questions: [
-                        { q: "بأي حرف تبدأ كلمة (سَمَك)؟", options: ["السين", "النون", "اللام"], answer: 0 },
-                        { q: "بأي حرف تبدأ كلمة (فِيل)؟", options: ["القاف", "الفاء", "الكاف"], answer: 1 },
-                        { q: "بأي حرف تبدأ كلمة (قَمَر)؟", options: ["القاف", "الكاف", "الراء"], answer: 0 }
-                      ] }
-                ]
-            }
-        }
-    },
-
-    // =========================================================
-    // مادة التربية الدينية الإسلامية
-    // =========================================================
-    "islamic": {
-        name: "التربية الدينية الإسلامية",
-        emoji: "🕌",
-        color: "#27AE60",
-        gradient: "linear-gradient(135deg, #27AE60, #FFD23F)",
-        description: "عقيدة، قرآن، عبادات، سيرة، وقيم إسلامية",
-        units: {
-            "الوحدة الأولى: اللَّهُ رَبِّي": {
-                emoji: "🌙",
-                gradient: "linear-gradient(135deg, #27AE60, #FFD23F)",
-                description: "الله الخالق - سورة الفاتحة - أركان الإسلام - مولد النبي - آدم - إلقاء السلام.",
-                lessons: [
-                    { id: "is_u1_l1", title: "الله تعالى (الخالق)", type: "عقيدة", emoji: "🌍", color: "#27AE60",
-                      text: "اللَّهُ هُوَ الْخَالِقُ، خَلَقَ كُلَّ شَيْءٍ فِي هَذَا الْكَوْنِ؛ خَلَقَ السَّمَاءَ، وَالْأَرْضَ، وَالشَّمْسَ، وَالْقَمَرَ، وَالنَّبَاتَاتِ، وَالْأَشْجَارَ، وَالْأَزْهَارَ الْجَمِيلَةَ، وَالْحَيَوَانَاتِ، وَالطُّيُورَ، وَخَلَقَنَا نَحْنُ أَيْضًا.\nقَالَ تَعَالَى: ﴿اللَّهُ خَالِقُ كُلِّ شَيْءٍ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ وَكِيلٌ﴾ [الزمر: 62]",
-                      textType: "quran",
-                      short: "نتعلم أن الله هو الخالق الذي خلق كل شيء في الكون.",
-                      detailed: "في هذا الدرس يتعرف الطفل على اسم الله (الخالق)، وأنه سبحانه خلق كل شيء: السماء والأرض والشمس والقمر والنباتات والحيوانات والإنسان. واجبنا أن نتأمل في خلق الله ونشكره على نعمه.",
-                      questions: [
-                        { q: "من هو خالق كل شيء؟", options: ["الله تعالى", "الإنسان", "الحيوان"], answer: 0 },
-                        { q: "من خلق السماء والأرض؟", options: ["الله تعالى", "الناس", "الطيور"], answer: 0 },
-                        { q: "ماذا نفعل تجاه نعم الله علينا؟", options: ["نشكره", "ننساها", "ننكرها"], answer: 0 },
-                        { q: "معنى اسم الله (الخالق) هو...", options: ["الذي يخلق الأشياء", "الذي ينام", "الذي يأكل"], answer: 0 }
-                      ] },
-                    { id: "is_u1_l2", title: "سورة الفاتحة", type: "قرآن وتفسير", emoji: "📖", color: "#FF6B9D",
-                      text: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿٣﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾",
-                      textType: "quran",
-                      short: "نتعلم سورة الفاتحة تلاوة وحفظًا وتفسيرًا، وهي أم الكتاب.",
-                      detailed: "سورة الفاتحة هي أول سورة في القرآن الكريم، عدد آياتها سبع. نقرأها في كل صلاة. نتعلم من السورة: التوحيد، الشكر، طلب الهداية.",
-                      questions: [
-                        { q: "ما أول سورة في القرآن الكريم؟", options: ["الفاتحة", "البقرة", "الناس"], answer: 0 },
-                        { q: "كم عدد آيات سورة الفاتحة؟", options: ["خمس", "سبع", "عشر"], answer: 1 },
-                        { q: "بماذا تبدأ سورة الفاتحة؟", options: ["بسم الله الرحمن الرحيم", "الحمد لله", "قل هو الله أحد"], answer: 0 },
-                        { q: "ماذا يعني (الْحَمْدُ لِلَّهِ)؟", options: ["الشكر لله", "السلام لله", "الصلاة لله"], answer: 0 }
-                      ] },
-                    { id: "is_u1_l3", title: "سور الإخلاص والفلق والناس", type: "قرآن وتفسير", emoji: "📿", color: "#9B5DE5",
-                      text: "سُورَةُ الْإِخْلَاصِ:\nقُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ ﴿٤﴾",
-                      textType: "quran",
-                      short: "نتعلم تلاوة وحفظ سورة الإخلاص.",
-                      detailed: "سورة الإخلاص تتحدث عن توحيد الله وأنه واحد لا شريك له. هذه السورة من المعوذات. نتعلم منها التوحيد.",
-                      questions: [
-                        { q: "سورة الإخلاص تبدأ بـ...", options: ["قل هو الله أحد", "قل أعوذ برب الفلق", "قل أعوذ برب الناس"], answer: 0 },
-                        { q: "كم عدد آيات سورة الإخلاص؟", options: ["أربع", "خمس", "ست"], answer: 0 },
-                        { q: "ماذا نتعلم من سورة الإخلاص؟", options: ["التوحيد", "اللعب", "النوم"], answer: 0 }
-                      ] },
-                    { id: "is_u1_l4", title: "أركان الإسلام", type: "عبادات", emoji: "🕋", color: "#F18F01",
-                      text: "أَرْكَانُ الْإِسْلَامِ خَمْسَة:\n١. شَهَادَةُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ.\n٢. إِقَامُ الصَّلَاةِ.\n٣. إِيتَاءُ الزَّكَاةِ.\n٤. صَوْمُ رَمَضَانَ.\n٥. حَجُّ الْبَيْتِ لِمَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا.",
-                      textType: "story",
-                      short: "نتعرف على أركان الإسلام الخمسة وأهميتها في حياة المسلم.",
-                      detailed: "أركان الإسلام خمسة: الشهادة، الصلاة، الزكاة، الصوم، الحج. أهمية الأركان: تقوي علاقة المسلم بربه، وتعلمه النظام، وتنمي التعاون.",
-                      questions: [
-                        { q: "كم عدد أركان الإسلام؟", options: ["ثلاثة", "خمسة", "سبعة"], answer: 1 },
-                        { q: "ما أول أركان الإسلام؟", options: ["الصلاة", "الشهادة", "الصوم"], answer: 1 },
-                        { q: "في أي شهر نصوم؟", options: ["رمضان", "شعبان", "محرم"], answer: 0 },
-                        { q: "ما الركن الذي نفعله بزيارة بيت الله؟", options: ["الحج", "الصلاة", "الزكاة"], answer: 0 }
-                      ] }
-                ]
-            },
-            "الوحدة الثانية: لِمَاذَا خَلَقَنَا اللَّهُ؟": {
-                emoji: "🤔",
-                gradient: "linear-gradient(135deg, #9B5DE5, #48CAE4)",
-                description: "لماذا خلقنا الله - سورة المسد - الطهارة والوضوء - طفولة النبي.",
-                lessons: [
-                    { id: "is_u2_l1", title: "لماذا خلقنا الله تعالى؟", type: "عقيدة", emoji: "💡", color: "#9B5DE5",
-                      short: "نتعلم أن الله خلقنا لعبادته وحده لا شريك له.",
-                      detailed: "خلق الله الجن والإنس لعبادته وحده. قال تعالى: (وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ). العبادة هي: الطاعة والانقياد لأوامر الله.",
-                      questions: [
-                        { q: "لماذا خلقنا الله؟", options: ["لنعبده", "لنلعب", "لننام"], answer: 0 },
-                        { q: "ما معنى العبادة؟", options: ["طاعة الله واتباع أوامره", "اللعب", "النوم"], answer: 0 },
-                        { q: "أي من هذه عبادة؟", options: ["الصلاة", "اللعب", "النوم فقط"], answer: 0 }
-                      ] },
-                    { id: "is_u2_l2", title: "سورة المسد", type: "قرآن وتفسير", emoji: "📖", color: "#FF6B9D",
-                      text: "تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ ﴿١﴾ مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ ﴿٢﴾ سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ ﴿٣﴾ وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ ﴿٤﴾ فِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ ﴿٥﴾",
-                      textType: "quran",
-                      short: "نتعلم سورة المسد تلاوة وحفظًا، وفيها قصة أبي لهب.",
-                      detailed: "سورة المسد عدد آياتها خمس. نزلت في أبي لهب وزوجته الذين كانا يؤذيان النبي. الدرس: أن إيذاء النبي عاقبته وخيمة، وأن المال لا ينفع صاحبه إذا عصى الله.",
-                      questions: [
-                        { q: "ما أول كلمة في سورة المسد؟", options: ["تبت", "قل", "سبح"], answer: 0 },
-                        { q: "كم عدد آيات سورة المسد؟", options: ["ثلاث", "خمس", "سبع"], answer: 1 },
-                        { q: "في من نزلت سورة المسد؟", options: ["في أبي لهب", "في أبي بكر", "في عمر"], answer: 0 }
-                      ] },
-                    { id: "is_u2_l3", title: "الطهارة والوضوء", type: "عبادات", emoji: "💧", color: "#48CAE4",
-                      text: "الطَّهَارَةُ نِصْفُ الْإِيمَانِ.\nالْوُضُوءُ شَرْطٌ لِلصَّلَاةِ.\nخُطُوَاتُ الْوُضُوءِ:\n١. النِّيَّةُ.\n٢. غَسْلُ الْكَفَّيْنِ ثَلَاثًا.\n٣. الْمَضْمَضَةُ.\n٤. الِاسْتِنْشَاقُ.\n٥. غَسْلُ الْوَجْهِ ثَلَاثًا.\n٦. غَسْلُ الْيَدَيْنِ إِلَى الْمِرْفَقَيْنِ.\n٧. مَسْحُ الرَّأْسِ.\n٨. غَسْلُ الْقَدَمَيْنِ إِلَى الْكَعْبَيْنِ.",
-                      textType: "story",
-                      short: "نتعلم الطهارة وخطوات الوضوء.",
-                      detailed: "الطهارة نصف الإيمان، وهي شرط لصحة الصلاة. الوضوء هو غسل أعضاء معينة قبل الصلاة. نتعلم من الدرس: النظافة، والاستعداد للصلاة.",
-                      questions: [
-                        { q: "ما هو الوضوء؟", options: ["غسل أعضاء معينة قبل الصلاة", "النوم", "اللعب"], answer: 0 },
-                        { q: "كم مرة نغسل الوجه في الوضوء؟", options: ["مرة", "ثلاث مرات", "خمس مرات"], answer: 1 },
-                        { q: "الطهارة نصف...", options: ["الإيمان", "الصلاة", "الصوم"], answer: 0 }
-                      ] }
-                ]
-            }
-        }
-    },
-
-    // =========================================================
-    // مادة الرياضيات
-    // =========================================================
-    "math": {
-        name: "الرياضيات",
-        emoji: "🔢",
-        color: "#2E86AB",
-        gradient: "linear-gradient(135deg, #2E86AB, #48CAE4)",
-        description: "أعداد، عد، مقارنة، جمع، طرح، أشكال، وأنماط",
-        units: {
-            "الوحدة الأولى: الأعداد من 1 إلى 5": {
-                emoji: "1️⃣",
-                gradient: "linear-gradient(135deg, #2E86AB, #48CAE4)",
-                description: "الأعداد 1، 2، 3، 4، 5 والعد والمقارنة بينها.",
-                lessons: [
-                    { id: "m_u1_l1", title: "الأعداد 1، 2، 3", type: "أعداد", emoji: "1️⃣", color: "#FF6B9D",
-                      short: "نتعلم الأعداد من 1 إلى 3، ونعد الأشياء من حولنا.",
-                      detailed: "الأعداد من 1 إلى 3 هي الأعداد الأولى التي نتعلمها. العدد 1 يعني شيئًا واحدًا. العدد 2 يعني شيئين. العدد 3 يعني ثلاثة أشياء. نتعلم: العد بالترتيب، قراءة الأرقام، كتابتها.",
-                      questions: [
-                        { q: "كم عدد التفاحات إذا كان لدينا تفاحتان؟", options: ["1", "2", "3"], answer: 1 },
-                        { q: "ما الرقم الذي يأتي بعد 1؟", options: ["2", "3", "4"], answer: 0 },
-                        { q: "كم عدد أصابع اليد الواحدة التي نرفعها للعدد 3؟", options: ["1", "2", "3"], answer: 2 }
-                      ] },
-                    { id: "m_u1_l2", title: "الأعداد 4، 5", type: "أعداد", emoji: "4️⃣", color: "#9B5DE5",
-                      short: "نتعلم الأعداد 4 و 5 والعد حتى 5.",
-                      detailed: "نتابع تعلم الأعداد: 4 (أربعة أشياء)، 5 (خمسة أشياء). عدد أصابع اليد الواحدة خمسة. نتعلم: العد من 1 إلى 5 بالترتيب.",
-                      questions: [
-                        { q: "كم عدد أصابع اليد الواحدة؟", options: ["3", "4", "5"], answer: 2 },
-                        { q: "ما الرقم الذي يأتي بعد 4؟", options: ["3", "5", "6"], answer: 1 },
-                        { q: "كم عدد الحواس عند الإنسان؟", options: ["3", "5", "7"], answer: 1 }
-                      ] },
-                    { id: "m_u1_l3", title: "المقارنة بين الأعداد", type: "مقارنة", emoji: "⚖️", color: "#F18F01",
-                      short: "نتعلم كيف نقارن بين الأعداد (أكبر - أصغر - يساوي).",
-                      detailed: "المقارنة بين الأعداد: نقول (أكبر من) عندما يكون العدد أكبر، (أصغر من) عندما يكون أصغر، (يساوي) عندما يكونان متساويين.",
-                      questions: [
-                        { q: "أي العددين أكبر: 3 أم 5؟", options: ["3", "5", "متساويان"], answer: 1 },
-                        { q: "أي العددين أصغر: 2 أم 4؟", options: ["2", "4", "متساويان"], answer: 0 },
-                        { q: "ماذا نقول عندما يكون العددان متساويين؟", options: ["أكبر", "أصغر", "يساوي"], answer: 2 }
-                      ] }
-                ]
-            },
-            "الوحدة الثانية: الجمع والطرح": {
-                emoji: "➕",
-                gradient: "linear-gradient(135deg, #F18F01, #FF6B9D)",
-                description: "الجمع والطرح حتى 10 والمسائل الكلامية.",
-                lessons: [
-                    { id: "m_u2_l1", title: "الجمع حتى 10", type: "جمع", emoji: "➕", color: "#27AE60",
-                      short: "نتعلم الجمع حتى العدد 10.",
-                      detailed: "الجمع يعني إضافة شيء إلى شيء آخر. نستخدم علامة (+). مثال: 2 + 3 = 5. نتعلم الجمع البسيط حتى 10.",
-                      questions: [
-                        { q: "كم يساوي 2 + 3؟", options: ["4", "5", "6"], answer: 1 },
-                        { q: "كم يساوي 1 + 1؟", options: ["1", "2", "3"], answer: 1 },
-                        { q: "كم يساوي 4 + 2؟", options: ["5", "6", "7"], answer: 1 }
-                      ] },
-                    { id: "m_u2_l2", title: "الطرح حتى 10", type: "طرح", emoji: "➖", color: "#E74C3C",
-                      short: "نتعلم الطرح حتى العدد 10.",
-                      detailed: "الطرح يعني إزالة شيء من شيء آخر. نستخدم علامة (-). مثال: 5 - 2 = 3. نتعلم الطرح البسيط حتى 10.",
-                      questions: [
-                        { q: "كم يساوي 5 - 2؟", options: ["2", "3", "4"], answer: 1 },
-                        { q: "كم يساوي 4 - 1؟", options: ["2", "3", "4"], answer: 1 },
-                        { q: "كم يساوي 7 - 3؟", options: ["3", "4", "5"], answer: 1 }
-                      ] }
-                ]
-            }
-        }
-    },
-
-    // =========================================================
-    // مادة اللغة الإنجليزية (English)
-    // =========================================================
-    "english": {
-        name: "اللغة الإنجليزية",
-        emoji: "🇬🇧",
-        color: "#FF5722",
-        gradient: "linear-gradient(135deg, #FF5722, #FFD23F)",
-        description: "English Vocabulary, Phonics, Dialogues & Fun",
-        units: {
-            "Unit 1: Welcome to My School": {
-                emoji: "🏫",
-                gradient: "linear-gradient(135deg, #FF5722, #FF9800)",
-                description: "Greetings, Classroom Instructions, Phonics Tt & Ii.",
-                lessons: [
-                    { id: "en_u1_l1", title: "Lesson 1: Greetings & School", type: "Dialogue & Vocab", emoji: "👋", color: "#FF5722",
-                      text: "Maya: Hello!\nHana: Hello! What's your name?\nMaya: My name is Maya.\nHana: I'm Hana! Nice to meet you, Maya!\nMaya: Nice to meet you, too, Hana!\n\nVocabulary:\n- Hello!\n- Goodbye!\n- shake hands\n- play\n- friends\n- teacher\n- board\n- desk\n- chair\n- book\n- pencil",
-                      textType: "english",
-                      short: "Learning greetings (Hello, Goodbye) and school vocabulary.",
-                      detailed: "In this lesson, students learn how to greet each other in English. They practice the dialogue: 'Hello! What's your name? My name is...'. They also learn classroom vocabulary like teacher, board, desk, chair, book, and pencil. Students are encouraged to shake hands and say 'Nice to meet you!'.",
-                      questions: [
-                        { q: "What do we say when we meet someone?", options: ["Hello!", "Goodbye!", "Sit down"], answer: 0 },
-                        { q: "What do we say when we leave?", options: ["Hello!", "Goodbye!", "Stand up"], answer: 1 },
-                        { q: "Who teaches us in the classroom?", options: ["Teacher", "Pencil", "Desk"], answer: 0 },
-                        { q: "What do we write with?", options: ["Book", "Pencil", "Chair"], answer: 1 },
-                        { q: "Complete: What's your _____?", options: ["name", "bag", "desk"], answer: 0 }
-                      ] },
-                    { id: "en_u1_l2", title: "Lesson 2: Phonics Tt & Ii", type: "Phonics", emoji: "🔤", color: "#FF9800",
-                      text: "Letter Tt /t/:\n- Tomato\n- Table\n- Tree\n\nLetter Ii /i/:\n- Ink\n- Insect\n- Ill",
-                      textType: "english",
-                      short: "Learning the sounds and words of letters Tt and Ii.",
-                      detailed: "In this phonics lesson, students learn the sound of the letter T (/t/) and words starting with T: Tomato, Table, Tree. They also learn the short sound of the letter I (/i/) and words starting with I: Ink, Insect, Ill.",
-                      questions: [
-                        { q: "Which word starts with T?", options: ["Tomato", "Ink", "Apple"], answer: 0 },
-                        { q: "Which word starts with I?", options: ["Tree", "Insect", "Table"], answer: 1 },
-                        { q: "What is the sound of T?", options: ["/t/", "/i/", "/s/"], answer: 0 },
-                        { q: "Which of these is a tree?", options: ["Table", "Tree", "Ink"], answer: 1 }
-                      ] }
-                ]
-            },
-            "Unit 2: The Garden of Colors and Shapes": {
-                emoji: "🎨",
-                gradient: "linear-gradient(135deg, #4CAF50, #8BC34A)",
-                description: "Colors, Shapes, Phonics Ss & Aa.",
-                lessons: [
-                    { id: "en_u2_l1", title: "Lesson 1: Colors & Shapes", type: "Vocabulary", emoji: "🔴", color: "#4CAF50",
-                      text: "Vocabulary:\n- grass (green)\n- flower (red)\n- tree (green)\n- sky (blue)\n- bird\n- butterfly\n- circle\n- square\n- triangle\n- rectangle\n- green, blue, red, yellow\n\nSentences:\n- I can see a red flower.\n- The grass is green.\n- The sky is blue.\n- What's this? This is a circle.",
-                      textType: "english",
-                      short: "Learning colors, shapes, and nature vocabulary.",
-                      detailed: "Students learn the names of colors (green, blue, red, yellow) and shapes (circle, square, triangle, rectangle). They also learn nature words like grass, flower, tree, sky, bird, and butterfly. They practice sentences like 'The grass is green' and 'I can see a red flower'.",
-                      questions: [
-                        { q: "What color is the sky?", options: ["Blue", "Green", "Red"], answer: 0 },
-                        { q: "What color is the grass?", options: ["Red", "Green", "Yellow"], answer: 1 },
-                        { q: "Which shape is round?", options: ["Square", "Triangle", "Circle"], answer: 2 },
-                        { q: "Which shape has 3 sides?", options: ["Square", "Triangle", "Circle"], answer: 1 },
-                        { q: "I can see a _____ flower.", options: ["red", "square", "grass"], answer: 0 }
-                      ] },
-                    { id: "en_u2_l2", title: "Lesson 2: Phonics Ss & Aa", type: "Phonics", emoji: "🔤", color: "#8BC34A",
-                      text: "Letter Ss /s/:\n- Sun\n- Star\n- Snake\n\nLetter Aa /æ/:\n- Ant\n- Axe\n- Apple",
-                      textType: "english",
-                      short: "Learning the sounds and words of letters Ss and Aa.",
-                      detailed: "Students learn the sound /s/ for Ss (Sun, Star, Snake) and the short sound /æ/ for Aa (Ant, Axe, Apple).",
-                      questions: [
-                        { q: "Which word starts with S?", options: ["Sun", "Ant", "Apple"], answer: 0 },
-                        { q: "Which word starts with A?", options: ["Star", "Apple", "Snake"], answer: 1 },
-                        { q: "What is the sound of S?", options: ["/s/", "/a/", "/t/"], answer: 0 }
-                      ] }
-                ]
-            },
-            "Unit 3: I Love My Family": {
-                emoji: "👨‍👩‍👧‍👦",
-                gradient: "linear-gradient(135deg, #9C27B0, #E91E63)",
-                description: "Family Members, Numbers 1-5, Phonics Nn, Pp, Hh, Dd.",
-                lessons: [
-                    { id: "en_u3_l1", title: "Lesson 1: My Family & Numbers", type: "Vocabulary", emoji: "👪", color: "#9C27B0",
-                      text: "Vocabulary:\n- father\n- mother\n- sister\n- brother\n- grandmother\n- grandfather\n- parents\n\nNumbers: 1, 2, 3, 4, 5\n\nSentences:\n- Who's this? This is my father.\n- I have 1 brother.\n- I have 2 sisters.\n- How many birds? There are 3 birds.",
-                      textType: "english",
-                      short: "Learning family members and numbers 1 to 5.",
-                      detailed: "Students learn family vocabulary (father, mother, sister, brother, grandmother, grandfather, parents) and numbers from 1 to 5. They practice asking and answering 'Who's this?' and 'How many...?'.",
-                      questions: [
-                        { q: "Who is the father of your father?", options: ["Grandfather", "Brother", "Uncle"], answer: 0 },
-                        { q: "How many brothers do you have if you have one?", options: ["1", "2", "3"], answer: 0 },
-                        { q: "Who is this? (female parent)", options: ["Mother", "Father", "Sister"], answer: 0 },
-                        { q: "What number comes after 3?", options: ["2", "4", "5"], answer: 1 }
-                      ] },
-                    { id: "en_u3_l2", title: "Lesson 2: Phonics Nn, Pp, Hh, Dd", type: "Phonics", emoji: "🔤", color: "#E91E63",
-                      text: "Letter Nn /n/: nose, neck, net\nLetter Pp /p/: pencil, pizza, panda\nLetter Hh /h/: hat, hair, horse\nLetter Dd /d/: door, dog, drum",
-                      textType: "english",
-                      short: "Learning phonics for letters Nn, Pp, Hh, Dd.",
-                      detailed: "Students learn the sounds and vocabulary for letters Nn (/n/), Pp (/p/), Hh (/h/), and Dd (/d/).",
-                      questions: [
-                        { q: "Which word starts with P?", options: ["Panda", "Nose", "Hat"], answer: 0 },
-                        { q: "Which word starts with D?", options: ["Dog", "Pizza", "Horse"], answer: 0 },
-                        { q: "Which word starts with H?", options: ["Hat", "Pencil", "Net"], answer: 0 }
-                      ] }
-                ]
-            },
-            "Unit 4: My Body and My Senses": {
-                emoji: "👁️",
-                gradient: "linear-gradient(135deg, #00BCD4, #03A9F4)",
-                description: "Body Parts, Senses, Phonics Rr, Ee, Cc, Kk.",
-                lessons: [
-                    { id: "en_u4_l1", title: "Lesson 1: My Body & Senses", type: "Vocabulary", emoji: "🧠", color: "#00BCD4",
-                      text: "Vocabulary:\n- head, eyes, ears, nose, mouth, tongue, arm(s), hand(s), leg(s), foot/feet, toe(s)\n- see, hear, smell, taste, touch\n\nSentences:\n- I have 1 nose. I have 2 eyes.\n- I can see with my eyes.\n- I can hear with my ears.\n- I can taste with my tongue.\n- I can smell with my nose.\n- I can touch with my hands.",
-                      textType: "english",
-                      short: "Learning body parts and the five senses.",
-                      detailed: "Students learn body parts (head, eyes, ears, nose, mouth, hands, legs) and the five senses. They practice sentences like 'I can see with my eyes' and 'I have 2 ears'.",
-                      questions: [
-                        { q: "What do we use to see?", options: ["Eyes", "Ears", "Nose"], answer: 0 },
-                        { q: "What do we use to hear?", options: ["Eyes", "Ears", "Mouth"], answer: 1 },
-                        { q: "How many noses do you have?", options: ["1", "2", "3"], answer: 0 },
-                        { q: "I can _____ with my tongue.", options: ["taste", "see", "hear"], answer: 0 }
-                      ] },
-                    { id: "en_u4_l2", title: "Lesson 2: Phonics Rr, Ee, Cc, Kk", type: "Phonics", emoji: "🔤", color: "#03A9F4",
-                      text: "Letter Rr /r/: red, rabbit, rocket\nLetter Ee /e/: egg, elephant, elbow\nLetter Cc /k/: cat, cake, cup\nLetter Kk /k/: kite, king, kitchen",
-                      textType: "english",
-                      short: "Learning phonics for letters Rr, Ee, Cc, Kk.",
-                      detailed: "Students learn the sounds and vocabulary for letters Rr (/r/), Ee (/e/), Cc (/k/), and Kk (/k/).",
-                      questions: [
-                        { q: "Which word starts with E?", options: ["Egg", "Red", "Cat"], answer: 0 },
-                        { q: "Which word starts with K?", options: ["Kite", "Rabbit", "Elephant"], answer: 0 },
-                        { q: "Which word starts with R?", options: ["Rabbit", "Cake", "Kite"], answer: 0 }
-                      ] }
-                ]
-            },
-            "Unit 5: On the Farm": {
-                emoji: "🚜",
-                gradient: "linear-gradient(135deg, #FFC107, #FF9800)",
-                description: "Farm Animals, Numbers 6-10, Phonics Mm, Gg, Oo, Ff.",
-                lessons: [
-                    { id: "en_u5_l1", title: "Lesson 1: Farm Animals & Numbers", type: "Vocabulary", emoji: "🐄", color: "#FFC107",
-                      text: "Vocabulary:\n- farm, cow, horse, duck, chicken\n- milk, cheese, meat, eggs\n- big, small\n- Numbers 6, 7, 8, 9, 10\n\nSentences:\n- The cow gives us milk, cheese and meat.\n- The chicken gives us eggs.\n- The cow is big. The duck is small.\n- How many horses can you see? I can see 6 horses.",
-                      textType: "english",
-                      short: "Learning farm animals, their products, and numbers 6-10.",
-                      detailed: "Students learn farm animal vocabulary (cow, horse, duck, chicken) and the products they give us (milk, cheese, meat, eggs). They also learn numbers 6 to 10 and adjectives 'big' and 'small'.",
-                      questions: [
-                        { q: "What does the cow give us?", options: ["Milk", "Eggs", "Apples"], answer: 0 },
-                        { q: "What does the chicken give us?", options: ["Milk", "Eggs", "Meat"], answer: 1 },
-                        { q: "Which animal is small?", options: ["Duck", "Cow", "Horse"], answer: 0 },
-                        { q: "What number comes after 7?", options: ["6", "8", "9"], answer: 1 }
-                      ] },
-                    { id: "en_u5_l2", title: "Lesson 2: Phonics Mm, Gg, Oo, Ff", type: "Phonics", emoji: "🔤", color: "#FF9800",
-                      text: "Letter Mm /m/: moon, milk, monkey\nLetter Gg /g/: goat, girl, grapes\nLetter Oo /a/: octopus, on, ostrich\nLetter Ff /f/: fish, fan, frog",
-                      textType: "english",
-                      short: "Learning phonics for letters Mm, Gg, Oo, Ff.",
-                      detailed: "Students learn the sounds and vocabulary for letters Mm (/m/), Gg (/g/), Oo (/a/), and Ff (/f/).",
-                      questions: [
-                        { q: "Which word starts with M?", options: ["Monkey", "Fish", "Girl"], answer: 0 },
-                        { q: "Which word starts with F?", options: ["Fish", "Moon", "Goat"], answer: 0 },
-                        { q: "Which word starts with G?", options: ["Goat", "Fish", "Octopus"], answer: 0 }
-                      ] }
-                ]
-            },
-            "Unit 6: Animals Around Me": {
-                emoji: "🐾",
-                gradient: "linear-gradient(135deg, #8BC34A, #4CAF50)",
-                description: "Pets, Jungle Animals, Prepositions (in, on, under), Phonics Bb, Ll, Uu, Jj.",
-                lessons: [
-                    { id: "en_u6_l1", title: "Lesson 1: Pets & Jungle Animals", type: "Vocabulary", emoji: "🦁", color: "#8BC34A",
-                      text: "Vocabulary:\n- pets: cat, dog, turtle, bird\n- jungle: lion, tiger, elephant, monkey, giraffe, snake\n\nPrepositions: in, on, under\n\nSentences:\n- Where is the cat? The cat is under the chair.\n- The dog is on the sofa.\n- The bird is in the cage.\n- The lion has 4 legs.\n- The monkey has 2 legs.",
-                      textType: "english",
-                      short: "Learning pet and jungle animal names, and prepositions.",
-                      detailed: "Students learn pet vocabulary (cat, dog, turtle, bird) and jungle animal vocabulary (lion, tiger, elephant, monkey, giraffe, snake). They also learn prepositions (in, on, under) to describe where things are.",
-                      questions: [
-                        { q: "Which animal is a pet?", options: ["Cat", "Lion", "Tiger"], answer: 0 },
-                        { q: "Where is the bird if it is in the cage?", options: ["in", "on", "under"], answer: 0 },
-                        { q: "Which animal has a long neck?", options: ["Giraffe", "Dog", "Elephant"], answer: 0 },
-                        { q: "The cat is _____ the chair.", options: ["under", "in", "on"], answer: 0 }
-                      ] },
-                    { id: "en_u6_l2", title: "Lesson 2: Phonics Bb, Ll, Uu, Jj", type: "Phonics", emoji: "🔤", color: "#4CAF50",
-                      text: "Letter Bb /b/: boy, ball, banana\nLetter Ll /l/: lamp, leaf, lion\nLetter Uu /ʌ/: under, up, umbrella\nLetter Jj /dʒ/: jar, jam, jacket",
-                      textType: "english",
-                      short: "Learning phonics for letters Bb, Ll, Uu, Jj.",
-                      detailed: "Students learn the sounds and vocabulary for letters Bb (/b/), Ll (/l/), Uu (/ʌ/), and Jj (/dʒ/).",
-                      questions: [
-                        { q: "Which word starts with B?", options: ["Ball", "Lion", "Jam"], answer: 0 },
-                        { q: "Which word starts with J?", options: ["Jam", "Ball", "Lamp"], answer: 0 },
-                        { q: "Which word starts with L?", options: ["Lion", "Umbrella", "Banana"], answer: 0 }
-                      ] }
-                ]
-            }
+// ============================================================
+// 📚 اللغة العربية
+// ============================================================
+"arabic": {
+    name: "اللغة العربية", emoji: "📚", color: "#FF6B9D",
+    gradient: "linear-gradient(135deg, #FF6B9D, #FFD23F)",
+    description: "قراءة، كتابة، حروف، أناشيد، وقصص ممتعة",
+    units: {
+        "الوحدة التمهيدية: التهيئة": {
+            emoji: "⭐", gradient: "linear-gradient(135deg, #FF6B9D, #FFD23F)",
+            description: "وحدة تمهيدية للتعارف والوعي البصري والصوتي.",
+            lessons: [
+                { id: "ar_t1", title: "التعارف وآداب الفصل", type: "درس تهيئة", emoji: "👋", color: "#FF6B9D",
+                  short: "نتعلم كيف نعرّف عن أنفسنا ونحيّي الآخرين ونلتزم بآداب الفصل.",
+                  detailed: "في هذا الدرس يتعلم الطفل مهارات التعارف الأساسية: ذكر اسمه واسم أسرته وسنه. كما يتدرب على إلقاء التحية (صباح الخير، السلام عليكم) والرد عليها. يتم التركيز على آداب التعامل داخل الفصل: الاستئذان قبل الكلام، رفع اليد للمشاركة، الاستماع للمعلم، والحفاظ على نظافة المكان.",
+                  questions: [
+                    { q: "ماذا نقول عندما ندخل الفصل في الصباح؟", options: ["صباح الخير", "تصبح على خير", "مع السلامة"], answer: 0 },
+                    { q: "ماذا نفعل قبل أن نتكلم في الفصل؟", options: ["نتكلم فورًا", "نستأذن ونرفع يدنا", "نقف على الكرسي"], answer: 1 },
+                    { q: "ماذا نقول للمعلم في الصباح؟", options: ["صباح الخير يا معلمي", "مع السلامة", "تصبح على خير"], answer: 0 },
+                    { q: "كيف نحافظ على نظافة الفصل؟", options: ["نرمي الأوراق على الأرض", "نضع المهملات في السلة", "نكسر المقاعد"], answer: 1 }
+                  ] },
+                { id: "ar_t2", title: "الوعي البصري والتمهيد للكتابة", type: "تدريب بصري", emoji: "🎨", color: "#9B5DE5",
+                  short: "أناشيد وألعاب بصرية لتمييز الأشكال والاتجاهات استعدادًا لكتابة الحروف.",
+                  detailed: "يتعرف الطفل على الأشكال الأساسية (دائرة، مربع، مثلث، خطوط مستقيمة ومتعرجة). يتدرب على تمييز الاتجاهات (فوق/تحت، يمين/يسار، أمام/خلف). تُستخدم الأناشيد الحركية والألعاب البصرية لتقوية العضلات الدقيقة لليد.",
+                  questions: [
+                    { q: "أي من هذه الأشكال هو دائرة؟", options: ["مربع", "مثلث", "دائرة"], answer: 2 },
+                    { q: "أين ننظر عندما نرفع رؤوسنا؟", options: ["تحت", "فوق", "يمين فقط"], answer: 1 },
+                    { q: "ما شكل الشمس تقريبًا؟", options: ["دائرة", "مربع", "مثلث"], answer: 0 },
+                    { q: "الشكل الذي له 3 أضلاع هو...", options: ["مربع", "مثلث", "دائرة"], answer: 1 }
+                  ] },
+                { id: "ar_t3", title: "الوعي الصوتي ومهارات الإدراك", type: "تدريب صوتي", emoji: "🎧", color: "#48CAE4",
+                  short: "تمارين على سماع الأصوات، تمييز أول الحروف، والمقارنة بين الكلمات.",
+                  detailed: "هذا الدرس هو حجر الأساس لتعلم القراءة. يتدرب الطفل على مهارات الوعي الصوتي: سماع صوت الحرف في بداية الكلمة وآخره. يتعلم تجزئة الكلمات إلى مقاطع صوتية. هذه المهارات ضرورية قبل البدء في دراسة الحروف الهجائية.",
+                  questions: [
+                    { q: "بأي حرف تبدأ كلمة (ماما)؟", options: ["ب", "م", "س"], answer: 1 },
+                    { q: "كم مقطعًا صوتيًا في كلمة (با-با)؟", options: ["مقطع واحد", "مقطعان", "ثلاثة مقاطع"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (سَمَك)؟", options: ["م", "ب", "س"], answer: 2 }
+                  ] }
+            ]
+        },
+        "الوحدة الأولى: أُسْرَتِي": {
+            emoji: "🏠", gradient: "linear-gradient(135deg, #9B5DE5, #48CAE4)",
+            description: "الأسرة والحروف: الألف، الباء، الميم، الحاء، الجيم، الدال، الخاء، التاء.",
+            lessons: [
+                { id: "ar_u1_l1", title: "قصة الاستماع: أميرة وأسرتها", type: "قصة استماع", emoji: "📖", color: "#FF6B9D",
+                  text: "أَمِيرَة طِفْلَة صَغِيرَة تَعِيشُ فِي بَيْتٍ جَمِيل مَعَ أُسْرَتِهَا السَّعِيدَة.\nأَبُوهَا طَيِّب يُحِبُّهَا، وَأُمُّهَا حَنُونَة تَطْبُخُ لَهَا الطَّعَامَ اللَّذِيذ.\nلَهَا أَخٌ كَبِير يُسَاعِدُهَا فِي وَاجِبَاتِهَا، وَأُخْتٌ صَغِيرَة تَلْعَبُ مَعَهَا.\nفِي الصَّبَاح تَسْتَيْقِظ أَمِيرَة، وَتُسَلِّم عَلَى أُمِّهَا وَأَبِيهَا.\nتَتَنَاوَل الْإِفْطَار مَعَ أُسْرَتِهَا، ثُمَّ تَذْهَب إِلَى الْمَدْرَسَة.\nأَمِيرَة تُحِبُّ أُسْرَتَهَا كَثِيرًا، وَأُسْرَتُهَا تُحِبُّهَا.",
+                  textType: "story",
+                  short: "قصة عن أميرة وأفراد أسرتها، لتنمية مهارات الاستماع والتعبير الشفوي.",
+                  detailed: "تُقرأ القصة على الأطفال بصوت واضح ومعبر. تحكي القصة عن الطفلة أميرة التي تعيش مع أسرتها السعيدة: الأب، الأم، الأخ، والأخت. تصف القصة الأنشطة التي تقوم بها الأسرة معًا. بعد القراءة يُطرح على الأطفال أسئلة لفهم المسموع.",
+                  questions: [
+                    { q: "من هي بطلة القصة؟", options: ["أميرة", "سارة", "منى"], answer: 0 },
+                    { q: "مع من تعيش أميرة؟", options: ["مع أصدقائها", "مع أسرتها", "وحدها"], answer: 1 },
+                    { q: "ماذا تفعل أميرة في الصباح؟", options: ["تنام", "تستيقظ وتُسلّم على والديها", "تلعب"], answer: 1 },
+                    { q: "ماذا تفعل أميرة بعد الإفطار؟", options: ["تذهب إلى المدرسة", "تنام", "تلعب في الشارع"], answer: 0 },
+                    { q: "كم عدد أفراد أسرة أميرة (بما فيها)؟", options: ["3", "5", "7"], answer: 1 }
+                  ] },
+                { id: "ar_u1_l2", title: "نشيد: أُسْرَتِي", type: "نشيد", emoji: "🎵", color: "#F18F01",
+                  text: "أُسْرَتِي أُسْرَتِي أَحْلَى أُسْرَة فِي الدُّنْيَا\nأَبِي وَأُمِّي يُحِبَّانِنِي وَيَحْمِيَانِي\nأَخِي وَأُخْتِي نَلْعَبُ مَعًا وَنَتَعَاوَنُ\nأُحِبُّ أُسْرَتِي وَأُسْرَتِي تُحِبُّنِي",
+                  textType: "story",
+                  short: "نشيد شعري قصير عن حب الأسرة، يُحفظ ويُنشد لتقوية النطق والذاكرة.",
+                  detailed: "نشيد 'أُسْرَتِي' هو نص شعري بسيط وإيقاعي يتغنى بحب الأسرة وأهمية التعاون بين أفرادها. يساعد النشيد على تحسين النطق السليم للكلمات، إثراء الحصيلة اللغوية، وتقوية الذاكرة السمعية.",
+                  questions: [
+                    { q: "عن ماذا يتحدث النشيد؟", options: ["عن المدرسة", "عن الأسرة", "عن الحيوانات"], answer: 1 },
+                    { q: "ماذا نفعل عند إنشاد النشيد؟", options: ["ننشد مع الحركات", "نقف ساكنين", "ننام"], answer: 0 },
+                    { q: "من يحمينا ويحبنا حسب النشيد؟", options: ["الجيران", "أبي وأمي", "الأصدقاء فقط"], answer: 1 },
+                    { q: "ماذا نفعل مع الأخ والأخت؟", options: ["نتشاجر", "نلعب ونتعاون", "نبقى صامتين"], answer: 1 }
+                  ] },
+                { id: "ar_u1_l3", title: "الحروف: الألف، الباء، الميم، الحاء، الجيم، الدال، الخاء، التاء", type: "حروف", emoji: "🔤", color: "#27AE60",
+                  short: "دراسة شكل وصوت وكتابة ثمانية حروف، مع كلمات تبدأ بكل حرف.",
+                  detailed: "يتم تقديم كل حرف: (1) التعرف على شكله. (2) الاستماع إلى صوته. (3) كتابته. (4) ذكر كلمات تبدأ به (أَلِف - أَسَد، بَاء - بَاب، مِيم - مَامَا، حَاء - حَمَامَة، جِيم - جَمَل، دَال - دِيك، خَاء - خُبْز، تَاء - تُفَّاح).",
+                  questions: [
+                    { q: "بأي حرف تبدأ كلمة (بَاب)؟", options: ["الباء", "التاء", "الدال"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (جَمَل)؟", options: ["الحاء", "الجيم", "الخاء"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (تُفَّاح)؟", options: ["التاء", "الباء", "الميم"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (حَمَامَة)؟", options: ["الجيم", "الحاء", "الخاء"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (دِيك)؟", options: ["الدال", "الباء", "التاء"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (خُبْز)؟", options: ["الحاء", "الجيم", "الخاء"], answer: 2 },
+                    { q: "بأي حرف تبدأ كلمة (أَسَد)؟", options: ["الألف", "الباء", "الميم"], answer: 0 }
+                  ] },
+                { id: "ar_u1_l4", title: "قصة القارئ الصغير: أُحِبُّ أُسْرَتِي", type: "قصة قراءة", emoji: "📗", color: "#48CAE4",
+                  text: "أَنَا أُحِبُّ أُسْرَتِي.\nأَبِي وَأُمِّي يُحِبَّانِنِي.\nأَخِي يَلْعَب مَعِي، وَأُخْتِي تُسَاعِدُنِي.\nنَأْكُل مَعًا، وَنَلْعَب مَعًا، وَنَتَعَاوَن مَعًا.\nأُسْرَتِي سَعِيدَة بِسَبَبِي، وَأَنَا سَعِيد بِسَبَبِهَا.",
+                  textType: "story",
+                  short: "قصة قصيرة يقرأها الطفل بنفسه بعد تعلمه الحروف.",
+                  detailed: "هذه القصة مخصصة للقراءة الذاتية للطفل، بعد أن يكون قد تعلم الحروف الثمانية. النص بخط واضح كبير ويستخدم كلمات بسيطة من الحروف المدروسة. يقرأ الطفل القصة بصوت مسموع، ثم يجيب عن أسئلة الفهم.",
+                  questions: [
+                    { q: "ماذا يُطلب من الطفل في هذه القصة؟", options: ["أن يقرأ بنفسه", "أن ينام", "أن يلعب"], answer: 0 },
+                    { q: "من يحب الطفل؟", options: ["أسرته", "جيرانه فقط", "لا أحد"], answer: 0 },
+                    { q: "ماذا يفعل الأخ مع الطفل؟", options: ["يلعب معه", "يتركه", "يصرخ عليه"], answer: 0 },
+                    { q: "ماذا تفعل الأسرة معًا؟", options: ["تأكل وتلعب وتتعاون", "تتشاجر", "تنام فقط"], answer: 0 }
+                  ] },
+                { id: "ar_u1_review", title: "مراجعة الوحدة الأولى", type: "مراجعة", emoji: "🏆", color: "#FFD23F",
+                  short: "مراجعة شاملة على الحروف والقصص والنشيد.",
+                  detailed: "تشمل المراجعة: تمييز الحروف المدروسة، قراءة كلمات وجمل قصيرة، كتابة الحروف، الإجابة عن أسئلة حول قصة 'أميرة وأسرتها' ونشيد 'أسرتي'، وتدريبات على آداب الأسرة.",
+                  questions: [
+                    { q: "أي من هذه الحروف تعلمناه في الوحدة الأولى؟", options: ["السين", "الجيم", "القاف"], answer: 1 },
+                    { q: "أي حرف من هذه الحروف درسناه؟", options: ["الطاء", "الخاء", "الغين"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (حَمَامَة)؟", options: ["الجيم", "الحاء", "الخاء"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (تُفَّاح)؟", options: ["التاء", "الباء", "الميم"], answer: 0 }
+                  ] }
+            ]
+        },
+        "الوحدة الثانية: حَيَوَانَاتِي": {
+            emoji: "🦁", gradient: "linear-gradient(135deg, #27AE60, #48CAE4)",
+            description: "عالم الحيوان والحروف: اللام، السين، النون، الراء، الفاء، الكاف، القاف.",
+            lessons: [
+                { id: "ar_u2_l1", title: "قصة الاستماع: عالم الحيوان", type: "قصة استماع", emoji: "🦁", color: "#F18F01",
+                  text: "فِي يَوْمٍ جَمِيل ذَهَبَ الْأَطْفَال إِلَى حَدِيقَةِ الْحَيَوَان.\nرَأَوْا الْأَسَد الْقَوِيّ يَجْلِس فِي قَفَصِه، وَالْفِيل الْكَبِير يَشْرَب الْمَاء.\nرَأَوْا الْقِرْد الْمَرِح يَقْفِز عَلَى الْأَشْجَار، وَالزَّرَافَة الطَّوِيلَة تَأْكُل أَوْرَاقَ الشَّجَر.\nعَادَ الْأَطْفَال إِلَى الْمَدْرَسَة سُعَدَاء بِمَا رَأَوْه.",
+                  textType: "story",
+                  short: "قصة عن حيوانات مختلفة وصفاتها وأصواتها، لتنمية الاستماع والمفردات.",
+                  detailed: "تُقرأ القصة على الأطفال وتحكي عن رحلة في عالم الحيوان. يتعرف فيها على حيوانات مثل الأسد، الفيل، القرد، والزرافة. بعد الاستماع يُسأل الأطفال عن أسماء الحيوانات وصفاتها.",
+                  questions: [
+                    { q: "أي حيوان يعيش في الغابة ويُسمى ملك الغابة؟", options: ["الأسد", "الأرنب", "الديك"], answer: 0 },
+                    { q: "ما هو أطول حيوان بين هذه الحيوانات؟", options: ["القرد", "الزرافة", "القط"], answer: 1 },
+                    { q: "ماذا كان الفيل يفعل في القصة؟", options: ["يشرب الماء", "ينام", "يطير"], answer: 0 },
+                    { q: "أين ذهب الأطفال في القصة؟", options: ["إلى حديقة الحيوان", "إلى البحر", "إلى الملعب"], answer: 0 }
+                  ] },
+                { id: "ar_u2_l2", title: "نشيد: لَوْحَتِي الجَدِيدَة", type: "نشيد", emoji: "🎨", color: "#FF6B9D",
+                  text: "لَوْحَتِي الْجَدِيدَة لَوْنُهَا جَمِيل\nأَرْسُمُ عَلَيْهَا بِكُلِّ لَوْنٍ جَمِيل\nأَرْسُمُ أَسَدًا أَرْسُمُ فِيلًا\nأَرْسُمُ قِطًّا يَلْعَبُ كَثِيرًا\nأَرْسُمُ زَرَافَة بِرَقَبَةٍ طَوِيلَة",
+                  textType: "story",
+                  short: "نشيد عن الرسم والألوان والحيوانات، يُنشد مع الحركات.",
+                  detailed: "نشيد 'لوحتي الجديدة' يتحدث عن طفل يحب الرسم، ويرسم على لوحته حيوانات مختلفة بألوان جميلة. يساعد على ربط أسماء الحيوانات بالألوان وتقوية النطق.",
+                  questions: [
+                    { q: "ماذا يرسم الطفل في النشيد؟", options: ["بيوتًا", "حيوانات", "سيارات"], answer: 1 },
+                    { q: "أين يرسم الطفل؟", options: ["على لوحته", "على الحائط", "على الأرض"], answer: 0 },
+                    { q: "أي حيوان له رقبة طويلة حسب النشيد؟", options: ["الفيل", "الزرافة", "الأسد"], answer: 1 },
+                    { q: "ماذا يفعل القط حسب النشيد؟", options: ["ينام", "يلعب كثيرًا", "يأكل"], answer: 1 }
+                  ] },
+                { id: "ar_u2_l3", title: "الحروف: اللام، السين، النون، الراء، الفاء، الكاف، القاف", type: "حروف", emoji: "🔠", color: "#9B5DE5",
+                  short: "دراسة شكل وصوت وكتابة سبعة حروف جديدة.",
+                  detailed: "يتم تقديم كل حرف: الشكل، الصوت، الكتابة، والكلمات (لَام - لَيْمُون، سِين - سَمَك، نُون - نَمِر، رَاء - رَجُل، فَاء - فِيل، كَاف - كِتَاب، قَاف - قَمَر).",
+                  questions: [
+                    { q: "بأي حرف تبدأ كلمة (سَمَك)؟", options: ["السين", "النون", "اللام"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (فِيل)؟", options: ["القاف", "الفاء", "الكاف"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (قَمَر)؟", options: ["القاف", "الكاف", "الراء"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (لَيْمُون)؟", options: ["اللام", "النون", "السين"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (نَمِر)؟", options: ["السين", "النون", "اللام"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (كِتَاب)؟", options: ["الكاف", "القاف", "الفاء"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (رَجُل)؟", options: ["الراء", "اللام", "السين"], answer: 0 }
+                  ] },
+                { id: "ar_u2_l4", title: "قصة القارئ الصغير: مَاذَا تَأْكُل؟", type: "قصة قراءة", emoji: "🐰", color: "#27AE60",
+                  text: "مَاذَا تَأْكُل الْحَيَوَانَات؟\nالْأَرْنَب يَأْكُل الْجَزَر.\nالْقِطّ يَأْكُل السَّمَك.\nالْقِرْد يَأْكُل الْمَوْز.\nالْبَقَرَة تَأْكُل الْعُشْب.\nالْأَسَد يَأْكُل اللَّحْم.\nكُلّ حَيَوَان لَهُ طَعَامه الْمُخْتَلِف.",
+                  textType: "story",
+                  short: "قصة قصيرة عن طعام الحيوانات، يقرأها الطفل بنفسه.",
+                  detailed: "قصة 'ماذا تأكل؟' تتناول طعام حيوانات مختلفة. النص بسيط ويستخدم الحروف التي تعلمها الطفل. يقرأ الطفل القصة ويجيب عن أسئلة مثل: ماذا يأكل الأرنب؟",
+                  questions: [
+                    { q: "ماذا يأكل الأرنب عادة؟", options: ["اللحم", "الجزر", "السمك"], answer: 1 },
+                    { q: "ماذا يأكل القط؟", options: ["السمك", "الجزر", "العشب"], answer: 0 },
+                    { q: "ماذا يأكل القرد؟", options: ["الموز", "اللحم", "العشب"], answer: 0 },
+                    { q: "ماذا تأكل البقرة؟", options: ["اللحم", "العشب", "السمك"], answer: 1 },
+                    { q: "ماذا يأكل الأسد؟", options: ["اللحم", "الجزر", "الموز"], answer: 0 }
+                  ] },
+                { id: "ar_u2_review", title: "مراجعة الوحدة الثانية", type: "مراجعة", emoji: "🏅", color: "#FFD23F",
+                  short: "مراجعة على حروف الوحدة الثانية والقصص والنشيد.",
+                  detailed: "تشمل المراجعة تمييز الحروف السبعة الجديدة، قراءة كلمات تحتوي عليها، كتابتها، والإجابة عن أسئلة حول الحيوانات التي وردت في القصة والنشيد.",
+                  questions: [
+                    { q: "أي حرف من هذه الحروف لم ندرسه في الوحدة الثانية؟", options: ["اللام", "السين", "الشين"], answer: 2 },
+                    { q: "بأي حرف تبدأ كلمة (كِتَاب)؟", options: ["الكاف", "القاف", "الفاء"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (قَمَر)؟", options: ["القاف", "الكاف", "الراء"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (سَمَك)؟", options: ["السين", "النون", "اللام"], answer: 0 }
+                  ] }
+            ]
+        },
+        "الوحدة الثالثة: أَجْزَاءُ جِسْمِي": {
+            emoji: "🧠", gradient: "linear-gradient(135deg, #F18F01, #FF6B9D)",
+            description: "أجزاء الجسم والحواس، والحروف: الياء، العين، الشين، الواو، الهاء، الذال، الظاء.",
+            lessons: [
+                { id: "ar_u3_l1", title: "قصة الاستماع: صُنْدُوق جَدَّتِي", type: "قصة استماع", emoji: "🎁", color: "#F18F01",
+                  text: "زَارَ سَامِي جَدَّتَه فِي بَيْتِهَا الْقَدِيم.\nقَالَتْ الْجَدَّة: يَا سَامِي، هَيَّا نَفْتَح صُنْدُوقِي الْقَدِيم!\nفَتَحَت الْجَدَّة الصُّنْدُوق، فَوَجَدَ سَامِي فِيهِ أَشْيَاء عَجِيبَة:\nنَظَّارَة قَدِيمَة، وَمُشْط خَشَبِي، وَقِطْعَة صَابُون.\nفَهِمَ سَامِي أَنَّ لِكُلِّ جُزْء مِنْ جِسْمِه وَظِيفَة:\nالْعَيْن تَرَى، وَالْأُذُن تَسْمَع، وَالْيَد تَلْمِس، وَالْأَنْف يَشُم، وَاللِّسَان يَتَذَوَّق.",
+                  textType: "story",
+                  short: "قصة عن صندوق قديم فيه أشياء تتعلق بالجسم والحواس.",
+                  detailed: "تحكي القصة عن طفل يزور جدته، فتفتح له صندوقًا قديمًا. بداخل الصندوق أشياء مثل: نظارة (للعين)، قطعة صابون (لليد)، مشط (للشعر). تتناول القصة أجزاء الجسم والحواس الخمس. بعد الاستماع يُسأل الأطفال عن وظيفة كل حاسة.",
+                  questions: [
+                    { q: "بأي عضو نرى الأشياء؟", options: ["الأذن", "العين", "الأنف"], answer: 1 },
+                    { q: "بأي عضو نسمع الأصوات؟", options: ["الأذن", "العين", "الفم"], answer: 0 },
+                    { q: "من صاحب الصندوق في القصة؟", options: ["الأم", "الجدة", "الأخت"], answer: 1 },
+                    { q: "ماذا وجد سامي في الصندوق؟", options: ["نظارة ومشط وصابون", "ألعاب", "كتب"], answer: 0 },
+                    { q: "بأي عضو نشم الروائح؟", options: ["الأنف", "الأذن", "العين"], answer: 0 },
+                    { q: "بأي عضو نتذوق الطعام؟", options: ["اللسان", "الأنف", "الأذن"], answer: 0 }
+                  ] },
+                { id: "ar_u3_l2", title: "نشيد: أُحِبُّ جِسْمِي", type: "نشيد", emoji: "🎶", color: "#9B5DE5",
+                  text: "أُحِبُّ جِسْمِي جِسْمِي جَمِيل\nلِي رَأْس فِيهِ شَعْر طَوِيل\nلِي عَيْنَانِ بِهِمَا أَرَى كُلَّ شَيْء\nلِي أُذُنَانِ بِهِمَا أَسْمَعُ كُلَّ صَوْت\nلِي أَنْف يَشُمّ الْعِطْر الْجَمِيل\nلِي فَم يَتَكَلَّم وَيَتَذَوَّق\nلِي يَدَانِ بِهِمَا أَكْتُب وَأَلْعَب\nلِي قَدَمَانِ بِهِمَا أَمْشِي وَأَجْرِي\nالْحَمْدُ لِلَّه عَلَى نِعْمَة الْجِسْم",
+                  textType: "story",
+                  short: "نشيد عن أجزاء الجسم ووظائفها، يُنشد مع الإشارة لكل جزء.",
+                  detailed: "نشيد 'أحب جسمي' يعدد أجزاء الجسم: الرأس، العينان، الأذنان، الأنف، الفم، اليدان، القدمان. لكل جزء وظيفة يذكرها النشيد بطريقة شعرية بسيطة. أثناء الإنشاد يشير الأطفال إلى كل جزء من أجسامهم.",
+                  questions: [
+                    { q: "بأي عضو نتذوق الطعام؟", options: ["اللسان", "الأنف", "الأذن"], answer: 0 },
+                    { q: "بأي عضو نمسك الأشياء؟", options: ["القدم", "اليد", "الرأس"], answer: 1 },
+                    { q: "بأي عضو نمشي ونجري؟", options: ["اليد", "القدم", "الرأس"], answer: 1 },
+                    { q: "بأي عضو نكتب؟", options: ["الرأس", "اليد", "القدم"], answer: 1 },
+                    { q: "بأي عضو نسمع؟", options: ["الأذن", "العين", "اللسان"], answer: 0 }
+                  ] },
+                { id: "ar_u3_l3", title: "الحروف: الياء، العين، الشين، الواو، الهاء، الذال، الظاء", type: "حروف", emoji: "🔡", color: "#27AE60",
+                  short: "دراسة شكل وصوت وكتابة سبعة حروف جديدة.",
+                  detailed: "يتم تقديم الحروف السبعة: الشكل، الصوت، الكتابة، والكلمات (يَاء - يَد، عَيْن - عَيْن، شِين - شَمْس، وَاو - وَرْدَة، هَاء - هِلَال، ذَال - ذِئْب، ظَاء - ظَرْف).",
+                  questions: [
+                    { q: "بأي حرف تبدأ كلمة (شَمْس)؟", options: ["السين", "الشين", "الصاد"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (يَد)؟", options: ["الياء", "الباء", "التاء"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (وَرْدَة)؟", options: ["الواو", "الهاء", "الياء"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (هِلَال)؟", options: ["الهاء", "الواو", "الياء"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (ذِئْب)؟", options: ["الذال", "الظاء", "الشين"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (عَيْن)؟", options: ["العين", "الشين", "الذال"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (ظَرْف)؟", options: ["الظاء", "الذال", "الشين"], answer: 0 }
+                  ] },
+                { id: "ar_u3_l4", title: "قصة القارئ الصغير: هَذَا جِسْمِي", type: "قصة قراءة", emoji: "📘", color: "#48CAE4",
+                  text: "هَذَا جِسْمِي.\nلِي رَأْس، وَعَيْنَان، وَأُذُنَان، وَأَنْف، وَفَم، وَيَدَان، وَقَدَمَان.\nعَيْنَايَ تَرَيَان، وَأُذُنَايَ تَسْمَعَان.\nأَنْفِي يَشُمّ، وَفَمِي يَتَكَلَّم وَيَتَذَوَّق.\nيَدَايَ تَكْتُبَان وَتَلْعَبَان، وَقَدَمَايَ تَمْشِيَان وَتَجْرِيَان.\nالْحَمْدُ لِلَّه عَلَى نِعْمَة الْجِسْم.",
+                  textType: "story",
+                  short: "قصة قصيرة يقرأها الطفل عن جسمه وأجزائه.",
+                  detailed: "قصة 'هذا جسمي' يقرأها الطفل ذاتيًا. النص يستخدم الحروف المدروسة ويصف أجزاء الجسم ووظائفها. بعد القراءة يُطلب من الطفل أن يشير إلى كل جزء من جسمه ويذكر اسمه ووظيفته.",
+                  questions: [
+                    { q: "ماذا يصف النص في هذه القصة؟", options: ["أجزاء الجسم", "الحيوانات", "المدرسة"], answer: 0 },
+                    { q: "كم عدد الحواس عند الإنسان؟", options: ["ثلاث", "خمس", "سبع"], answer: 1 },
+                    { q: "بأي عضو تتكلم؟", options: ["الفم", "الأنف", "الأذن"], answer: 0 },
+                    { q: "بأي جزء تجري؟", options: ["اليد", "القدم", "الرأس"], answer: 1 }
+                  ] },
+                { id: "ar_u3_review", title: "مراجعة الوحدة الثالثة", type: "مراجعة", emoji: "🎖️", color: "#FFD23F",
+                  short: "مراجعة على حروف الوحدة وأجزاء الجسم.",
+                  detailed: "تشمل المراجعة تمييز الحروف السبعة، قراءة وكتابة كلمات تحتوي عليها، الإجابة عن أسئلة حول قصة 'صندوق جدتي' ونشيد 'أحب جسمي'، وتمارين على وظائف أعضاء الجسم.",
+                  questions: [
+                    { q: "بأي عضو نشم الروائح؟", options: ["الأنف", "الأذن", "العين"], answer: 0 },
+                    { q: "أي من هذه الحروف تعلمناه في الوحدة الثالثة؟", options: ["الباء", "الظاء", "الدال"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (يَد)؟", options: ["الياء", "الباء", "التاء"], answer: 0 },
+                    { q: "بأي عضو نرى؟", options: ["العين", "الأذن", "الأنف"], answer: 0 }
+                  ] }
+            ]
+        },
+        "الوحدة الرابعة: مَدْرَسَتِي": {
+            emoji: "🏫", gradient: "linear-gradient(135deg, #2E86AB, #9B5DE5)",
+            description: "المدرسة والحروف: الزاي، الطاء، الصاد، الضاد، الثاء، الغين.",
+            lessons: [
+                { id: "ar_u4_l1", title: "قصة الاستماع: يَوْم فِي المَدْرَسَة", type: "قصة استماع", emoji: "🌞", color: "#F18F01",
+                  text: "اسْتَيْقَظَ عَلِيّ فِي الصَّبَاح مُبَكِّرًا، وَغَسَلَ وَجْهَه، وَلَبِسَ مَلَابِسَه، وَتَنَاوَلَ الْإِفْطَار.\nوَدَّعَ أُمَّه وَأَبَاه، وَذَهَبَ إِلَى الْمَدْرَسَة.\nدَخَلَ الْفَصْل، وَسَلَّمَ عَلَى مُعَلِّمِه وَأَصْدِقَائِه.\nحَضَرَ عَلِيّ الدُّرُوس بِاهْتِمَام، وَأَجَابَ عَنْ أَسْئِلَةِ الْمُعَلِّم.\nفِي الْفُسْحَة لَعِبَ مَعَ أَصْدِقَائِه فِي الْمَلْعَب.\nفِي نِهَايَةِ الْيَوْم رَجَعَ عَلِيّ إِلَى بَيْتِه فَرِحًا.",
+                  textType: "story",
+                  short: "قصة عن يوم دراسي كامل، من الصباح حتى نهاية اليوم.",
+                  detailed: "تحكي القصة عن طفل يذهب إلى المدرسة في الصباح، يلتقي بأصدقائه، يحضر الحصص، يلعب في الفسحة، ثم يعود إلى المنزل. تصف القصة الأنشطة المدرسية المختلفة والمعلمين والأصدقاء.",
+                  questions: [
+                    { q: "متى يذهب الطفل إلى المدرسة؟", options: ["في الصباح", "في الليل", "بعد منتصف الليل"], answer: 0 },
+                    { q: "ماذا يفعل الطفل في الفسحة؟", options: ["ينام", "يلعب", "يدرس"], answer: 1 },
+                    { q: "من بطل القصة؟", options: ["علي", "محمد", "أحمد"], answer: 0 },
+                    { q: "ماذا يفعل علي قبل الذهاب للمدرسة؟", options: ["يغسل وجهه ويتناول الإفطار", "ينام", "يلعب"], answer: 0 },
+                    { q: "أين يلعب علي مع أصدقائه؟", options: ["في الملعب", "في الفصل", "في الشارع"], answer: 0 }
+                  ] },
+                { id: "ar_u4_l2", title: "نشيد: أُحِبُّ مَدْرَسَتِي", type: "نشيد", emoji: "🎼", color: "#FF6B9D",
+                  text: "أُحِبُّ مَدْرَسَتِي مَدْرَسَتِي بَيْتِي الثَّانِي\nفِيهَا مُعَلِّمِي يُعَلِّمُنِي بِحَنَان\nفِيهَا أَصْدِقَائِي نَلْعَبُ وَنَتَعَلَّم\nأُحِبُّ مَدْرَسَتِي وَمَدْرَسَتِي تُحِبُّنِي",
+                  textType: "story",
+                  short: "نشيد عن حب المدرسة والمعلمين والأصدقاء.",
+                  detailed: "نشيد 'أحب مدرستي' يعبر عن مشاعر الطفل الإيجابية تجاه مدرسته. يذكر النشيد المعلم، الأصدقاء، الفصل، واللعب في الفسحة. يساعد على تعزيز الانتماء للمدرسة.",
+                  questions: [
+                    { q: "عن ماذا يتحدث النشيد؟", options: ["عن المدرسة", "عن البيت", "عن السوق"], answer: 0 },
+                    { q: "من الذي نتعلم منه في المدرسة؟", options: ["المعلم", "البائع", "السائق"], answer: 0 },
+                    { q: "مدرسة الطفل هي بيته...", options: ["الأول", "الثاني", "الثالث"], answer: 1 },
+                    { q: "ماذا نفعل مع أصدقائنا في المدرسة؟", options: ["نلعب ونتعلم", "نتشاجر", "ننام"], answer: 0 }
+                  ] },
+                { id: "ar_u4_l3", title: "الحروف: الزاي، الطاء، الصاد، الضاد، الثاء، الغين", type: "حروف", emoji: "🔤", color: "#9B5DE5",
+                  short: "دراسة شكل وصوت وكتابة ستة حروف، وهي ختام حروف المنهج.",
+                  detailed: "تُقدَّم الحروف الستة الأخيرة: زَاي - زَرَافَة، طَاء - طَائِر، صَاد - صَقْر، ضَاد - ضِفْدَع، ثَاء - ثَعْلَب، غَيْن - غَزَال. بعد إتمام هذه الحروف يكون الطفل قد تعلم جميع الحروف الثمانية والعشرين.",
+                  questions: [
+                    { q: "بأي حرف تبدأ كلمة (زَرَافَة)؟", options: ["الزاي", "الراء", "السين"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (ثَعْلَب)؟", options: ["السين", "الثاء", "الصاد"], answer: 1 },
+                    { q: "كم عدد حروف اللغة العربية؟", options: ["20", "28", "30"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (طَائِر)؟", options: ["التاء", "الطاء", "الظاء"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (غَزَال)؟", options: ["الغين", "العين", "الزاي"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (صَقْر)؟", options: ["السين", "الصاد", "الثاء"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (ضِفْدَع)؟", options: ["الدال", "الضاد", "الصاد"], answer: 1 }
+                  ] },
+                { id: "ar_u4_l4", title: "قصة القارئ الصغير: هَذِهِ مَدْرَسَتِي", type: "قصة قراءة", emoji: "📕", color: "#2E86AB",
+                  text: "هَذِهِ مَدْرَسَتِي.\nمَدْرَسَتِي كَبِيرَة وَجَمِيلَة.\nفِيهَا فُصُول كَثِيرَة، وَمَلْعَب وَاسِع، وَمَكْتَبَة جَمِيلَة.\nفِيهَا مُعَلِّمُون طَيِّبُون، وَأَصْدِقَاء كَثِيرُون.\nأَحْضُر إِلَى مَدْرَسَتِي كُلّ يَوْم فِي الصَّبَاح.\nأَتَعَلَّم فِيهَا الْقِرَاءَة وَالْكِتَابَة وَالْحِسَاب.\nأُحِبُّ مَدْرَسَتِي كَثِيرًا.",
+                  textType: "story",
+                  short: "قصة قصيرة يقرأها الطفل عن مدرسته.",
+                  detailed: "قصة 'هذه مدرستي' هي القصة الختامية للقارئ الصغير. يقرأها الطفل ذاتيًا، وهي تستخدم جميع الحروف التي تعلمها. النص يصف المدرسة ومرافقها وأنشطتها.",
+                  questions: [
+                    { q: "كم عدد الحروف التي تعلمها الطفل بنهاية الترم الأول؟", options: ["10", "18", "28"], answer: 2 },
+                    { q: "ماذا يصف النص في القصة؟", options: ["المدرسة", "الحديقة", "المستشفى"], answer: 0 },
+                    { q: "ماذا نتعلم في المدرسة؟", options: ["القراءة والكتابة والحساب", "الطبخ", "القيادة"], answer: 0 },
+                    { q: "متى نحضر إلى المدرسة؟", options: ["في الصباح", "في الليل", "عندما نريد"], answer: 0 }
+                  ] },
+                { id: "ar_u4_review", title: "مراجعة الوحدة الرابعة (والمنهج كله)", type: "مراجعة", emoji: "🥇", color: "#FFD23F",
+                  short: "مراجعة شاملة لحروف المنهج كلها.",
+                  detailed: "مراجعة ختامية للترم الأول تشمل: تمييز جميع الحروف الهجائية، قراءة كلمات وجمل متنوعة، كتابة الحروف، والإجابة عن أسئلة حول قصص الوحدة الرابعة.",
+                  questions: [
+                    { q: "بأي حرف تبدأ كلمة (غَزَال)؟", options: ["الغين", "العين", "الزاي"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (طَائِر)؟", options: ["التاء", "الطاء", "الظاء"], answer: 1 },
+                    { q: "بأي حرف تبدأ كلمة (زَرَافَة)؟", options: ["الزاي", "الراء", "السين"], answer: 0 },
+                    { q: "بأي حرف تبدأ كلمة (ثَعْلَب)؟", options: ["السين", "الثاء", "الصاد"], answer: 1 }
+                  ] }
+            ]
         }
     }
-};
+},
 
 // ============================================================
-// الحالة والتنقل
+// 🕌 التربية الدينية الإسلامية
 // ============================================================
-var appState = {
-    view: 'subjects',
-    subjectKey: null,
-    unitKey: null,
-    lessonId: null
-};
+"islamic": {
+    name: "التربية الدينية الإسلامية", emoji: "🕌", color: "#27AE60",
+    gradient: "linear-gradient(135deg, #27AE60, #FFD23F)",
+    description: "عقيدة، قرآن، عبادات، سيرة، وقيم إسلامية",
+    units: {
+        "الوحدة الأولى: اللَّهُ رَبِّي": {
+            emoji: "🌙", gradient: "linear-gradient(135deg, #27AE60, #FFD23F)",
+            description: "الله الخالق - الفاتحة - أركان الإسلام - مولد النبي - آدم - إلقاء السلام.",
+            lessons: [
+                { id: "is_u1_l1", title: "الله تعالى (الخالق)", type: "عقيدة", emoji: "🌍", color: "#27AE60",
+                  text: "اللَّهُ هُوَ الْخَالِقُ، خَلَقَ كُلَّ شَيْءٍ فِي هَذَا الْكَوْنِ؛ خَلَقَ السَّمَاءَ، وَالْأَرْضَ، وَالشَّمْسَ، وَالْقَمَرَ، وَالنَّبَاتَاتِ، وَالْأَشْجَارَ، وَالْأَزْهَارَ الْجَمِيلَةَ، وَالْحَيَوَانَاتِ، وَالطُّيُورَ، وَخَلَقَنَا نَحْنُ أَيْضًا.\nقَالَ تَعَالَى: ﴿اللَّهُ خَالِقُ كُلِّ شَيْءٍ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ وَكِيلٌ﴾ [الزمر: 62]",
+                  textType: "quran",
+                  short: "نتعلم أن الله هو الخالق الذي خلق كل شيء في الكون.",
+                  detailed: "في هذا الدرس يتعرف الطفل على اسم الله (الخالق)، وأنه سبحانه خلق كل شيء: السماء والأرض والشمس والقمر والنباتات والحيوانات والإنسان. واجبنا أن نتأمل في خلق الله ونشكره على نعمه. الدليل من القرآن: (اللَّهُ خَالِقُ كُلِّ شَيْءٍ).",
+                  questions: [
+                    { q: "من هو خالق كل شيء؟", options: ["الله تعالى", "الإنسان", "الحيوان"], answer: 0 },
+                    { q: "من خلق السماء والأرض؟", options: ["الله تعالى", "الناس", "الطيور"], answer: 0 },
+                    { q: "ماذا نفعل تجاه نعم الله علينا؟", options: ["نشكره", "ننساها", "ننكرها"], answer: 0 },
+                    { q: "معنى اسم الله (الخالق) هو...", options: ["الذي يخلق الأشياء", "الذي ينام", "الذي يأكل"], answer: 0 },
+                    { q: "هل خلق الله الإنسان أيضًا؟", options: ["نعم", "لا", "لا أعرف"], answer: 0 }
+                  ] },
+                { id: "is_u1_l2", title: "سورة الفاتحة", type: "قرآن وتفسير", emoji: "📖", color: "#FF6B9D",
+                  text: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿٣﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾",
+                  textType: "quran",
+                  short: "نتعلم سورة الفاتحة تلاوة وحفظًا وتفسيرًا، وهي أم الكتاب.",
+                  detailed: "سورة الفاتحة هي أول سورة في القرآن الكريم، عدد آياتها سبع. نقرأها في كل صلاة. معانيها: (الْحَمْدُ لِلَّهِ) الشكر لله، (الرَّحْمَٰنِ الرَّحِيمِ) كثير الرحمة، (مَالِكِ يَوْمِ الدِّينِ) مالك يوم الحساب، (إِيَّاكَ نَعْبُدُ) نعبد الله وحده. نتعلم: التوحيد، الشكر، طلب الهداية.",
+                  questions: [
+                    { q: "ما أول سورة في القرآن الكريم؟", options: ["الفاتحة", "البقرة", "الناس"], answer: 0 },
+                    { q: "كم عدد آيات سورة الفاتحة؟", options: ["خمس", "سبع", "عشر"], answer: 1 },
+                    { q: "بماذا تبدأ سورة الفاتحة؟", options: ["بسم الله الرحمن الرحيم", "الحمد لله", "قل هو الله أحد"], answer: 0 },
+                    { q: "ماذا يعني (الْحَمْدُ لِلَّهِ)؟", options: ["الشكر لله", "السلام لله", "الصلاة لله"], answer: 0 },
+                    { q: "هل نقرأ الفاتحة في كل صلاة؟", options: ["نعم", "لا", "أحيانًا"], answer: 0 }
+                  ] },
+                { id: "is_u1_l3", title: "سور الإخلاص والفلق والناس", type: "قرآن وتفسير", emoji: "📿", color: "#9B5DE5",
+                  text: "سُورَةُ الْإِخْلَاصِ:\nقُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ ﴿٤﴾\n\nسُورَةُ الْفَلَقِ:\nقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ﴿١﴾ مِنْ شَرِّ مَا خَلَقَ ﴿٢﴾ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٣﴾ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ﴿٤﴾ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ ﴿٥﴾\n\nسُورَةُ النَّاسِ:\nقُلْ أَعُوذُ بِرَبِّ النَّاسِ ﴿١﴾ مَلِكِ النَّاسِ ﴿٢﴾ إِلَٰهِ النَّاسِ ﴿٣﴾ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ﴿٤﴾ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ﴿٥﴾ مِنَ الْجِنَّةِ وَالنَّاسِ ﴿٦﴾",
+                  textType: "quran",
+                  short: "نتعلم تلاوة وحفظ ثلاث سور قصار: الإخلاص والفلق والناس.",
+                  detailed: "سورة الإخلاص تتحدث عن توحيد الله وأنه واحد لا شريك له. سورة الفلق نستعيذ بالله من كل الشرور. سورة الناس نستعيذ بالله من شر الوسواس. هذه السور الثلاث تسمى (المعوذات) لأننا نتعوذ بها.",
+                  questions: [
+                    { q: "سورة الإخلاص تبدأ بـ...", options: ["قل هو الله أحد", "قل أعوذ برب الفلق", "قل أعوذ برب الناس"], answer: 0 },
+                    { q: "كم عدد آيات سورة الإخلاص؟", options: ["أربع", "خمس", "ست"], answer: 0 },
+                    { q: "سورة الفلق تبدأ بـ...", options: ["قل هو الله أحد", "قل أعوذ برب الفلق", "قل أعوذ برب الناس"], answer: 1 },
+                    { q: "سورة الناس تبدأ بـ...", options: ["قل هو الله أحد", "قل أعوذ برب الفلق", "قل أعوذ برب الناس"], answer: 2 },
+                    { q: "ماذا نطلب من الله في سورة الفلق والناس؟", options: ["الحماية من الشرور", "الطعام", "المال"], answer: 0 },
+                    { q: "ماذا تسمى سور الإخلاص والفلق والناس؟", options: ["المعوذات", "المسبحات", "المثاني"], answer: 0 }
+                  ] },
+                { id: "is_u1_l4", title: "أركان الإسلام", type: "عبادات", emoji: "🕋", color: "#F18F01",
+                  text: "أَرْكَانُ الْإِسْلَامِ خَمْسَة:\n١. شَهَادَةُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ.\n٢. إِقَامُ الصَّلَاةِ.\n٣. إِيتَاءُ الزَّكَاةِ.\n٤. صَوْمُ رَمَضَانَ.\n٥. حَجُّ الْبَيْتِ لِمَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا.",
+                  textType: "story",
+                  short: "نتعرف على أركان الإسلام الخمسة وأهميتها في حياة المسلم.",
+                  detailed: "أركان الإسلام خمسة كما قال النبي ﷺ: (بُني الإسلام على خمس: شهادة أن لا إله إلا الله وأن محمدًا رسول الله، وإقام الصلاة، وإيتاء الزكاة، والحج، وصوم رمضان). أهمية الأركان: تقوي علاقة المسلم بربه، وتعلمه النظام.",
+                  questions: [
+                    { q: "كم عدد أركان الإسلام؟", options: ["ثلاثة", "خمسة", "سبعة"], answer: 1 },
+                    { q: "ما أول أركان الإسلام؟", options: ["الصلاة", "الشهادة", "الصوم"], answer: 1 },
+                    { q: "في أي شهر نصوم؟", options: ["رمضان", "شعبان", "محرم"], answer: 0 },
+                    { q: "ما الركن الذي نفعله بزيارة بيت الله؟", options: ["الحج", "الصلاة", "الزكاة"], answer: 0 },
+                    { q: "ما الركن الذي يطهر المال؟", options: ["الزكاة", "الصلاة", "الصوم"], answer: 0 },
+                    { q: "من قال: (بُني الإسلام على خمس)؟", options: ["النبي ﷺ", "عمر", "أبو بكر"], answer: 0 }
+                  ] },
+                { id: "is_u1_l5", title: "مولد النبي ﷺ", type: "سيرة", emoji: "🌹", color: "#FF6B9D",
+                  text: "وُلِدَ النَّبِيُّ مُحَمَّدٌ ﷺ فِي مَكَّةَ عَامَ الْفِيلِ.\nوُلِدَ يَتِيمًا، فَمَاتَ أَبُوهُ عَبْدُ اللَّهِ قَبْلَ وِلَادَتِهِ، وَمَاتَتْ أُمُّهُ آمِنَةُ وَهُوَ صَغِير.\nكَفَلَهُ جَدُّهُ عَبْدُ الْمُطَّلِبِ ثُمَّ عَمُّهُ أَبُو طَالِب.\nأَرْضَعَتْهُ حَلِيمَةُ السَّعْدِيَّةُ فِي بَادِيَةِ بَنِي سَعْد.\nنَشَأَ النَّبِيُّ ﷺ مَحْبُوبًا بَيْنَ النَّاسِ، صَادِقًا أَمِينًا.",
+                  textType: "story",
+                  short: "نتعرف على مولد النبي محمد ﷺ ونشأته في مكة.",
+                  detailed: "وُلد النبي محمد ﷺ في مكة عام الفيل. وُلد يتيمًا: مات أبوه عبد الله قبل ولادته، وماتت أمه آمنة وهو صغير. كفله جده عبد المطلب، ثم عمه أبو طالب. أرضعته حليمة السعدية. نشأ النبي ﷺ صادقًا أمينًا، وكان الناس يحبونه.",
+                  questions: [
+                    { q: "أين وُلد النبي محمد ﷺ؟", options: ["مكة", "المدينة", "الطائف"], answer: 0 },
+                    { q: "في أي عام وُلد النبي ﷺ؟", options: ["عام الفيل", "عام الهجرة", "عام الفتح"], answer: 0 },
+                    { q: "من جد النبي ﷺ الذي كفله؟", options: ["عبد المطلب", "أبو طالب", "عبد الله"], answer: 0 },
+                    { q: "من عم النبي الذي كفله بعد جده؟", options: ["أبو طالب", "العباس", "حمزة"], answer: 0 },
+                    { q: "من أرضعت النبي ﷺ؟", options: ["حليمة السعدية", "آمنة", "خديجة"], answer: 0 },
+                    { q: "كيف كانت أخلاق النبي ﷺ في صغره؟", options: ["صادق أمين", "كاذب", "غاضب دائمًا"], answer: 0 }
+                  ] },
+                { id: "is_u1_l6", title: "أبو البشر آدم ﷺ", type: "سيرة", emoji: "🌱", color: "#27AE60",
+                  text: "خَلَقَ اللَّهُ آدَمَ ﷺ مِنْ طِين.\nوَجَعَلَهُ أَبَا الْبَشَرِ جَمِيعًا.\nأَسْجَدَ اللَّهُ الْمَلَائِكَةَ لِآدَمَ، فَسَجَدُوا إِلَّا إِبْلِيس.\nعَلَّمَ اللَّهُ آدَمَ الْأَسْمَاءَ كُلَّهَا.\nأَسْكَنَ اللَّهُ آدَمَ وَزَوْجَهُ حَوَّاءَ الْجَنَّةَ، ثُمَّ أَنْزَلَهُمَا إِلَى الْأَرْض.",
+                  textType: "story",
+                  short: "نتعرف على قصة خلق آدم ﷺ أبي البشر.",
+                  detailed: "خلق الله آدم ﷺ من طين، وأسجد له الملائكة إلا إبليس. علّم الله آدم الأسماء كلها، وأسكنه وزوجه حواء الجنة، ثم أنزلهما إلى الأرض. آدم ﷺ هو أبو البشر جميعًا. نتعلم من قصته: طاعة الله، والتوبة عند الخطأ.",
+                  questions: [
+                    { q: "من خلق الله آدم من؟", options: ["من طين", "من نور", "من نار"], answer: 0 },
+                    { q: "من هو أبو البشر؟", options: ["آدم ﷺ", "نوح ﷺ", "إبراهيم ﷺ"], answer: 0 },
+                    { q: "من رفض السجود لآدم؟", options: ["إبليس", "جبريل", "ميكائيل"], answer: 0 },
+                    { q: "ماذا علّم الله آدم؟", options: ["الأسماء كلها", "الطبخ", "القيادة"], answer: 0 },
+                    { q: "من زوجة آدم؟", options: ["حواء", "مريم", "خديجة"], answer: 0 },
+                    { q: "أين سكن آدم وزوجه أولاً؟", options: ["الجنة", "الأرض", "السماء"], answer: 0 }
+                  ] },
+                { id: "is_u1_l7", title: "إلقاء السلام", type: "قيم وأخلاق", emoji: "🤝", color: "#FFD23F",
+                  text: "السَّلَامُ سُنَّةٌ جَمِيلَةٌ بَيْنَ الْمُسْلِمِينَ.\nنَقُولُ: (السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ).\nوَيُرَدُّ عَلَيْنَا: (وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ).\nالسَّلَامُ يُزَرِعُ الْمَحَبَّةَ بَيْنَ النَّاسِ.",
+                  textType: "story",
+                  short: "نتعلم أهمية إلقاء السلام بين الناس وكيفية إلقائه والرد عليه.",
+                  detailed: "إلقاء السلام من أجمل العادات الإسلامية. نقول (السلام عليكم ورحمة الله وبركاته) عند اللقاء، ويرد الآخر (وعليكم السلام ورحمة الله). السلام يزرع المحبة والألفة بين الناس. قال النبي ﷺ: (أفشوا السلام بينكم).",
+                  questions: [
+                    { q: "ماذا نقول عند لقاء الآخرين؟", options: ["السلام عليكم", "مرحبًا فقط", "لا شيء"], answer: 0 },
+                    { q: "كيف نرد على من يقول لنا السلام عليكم؟", options: ["وعليكم السلام", "شكرًا", "لا نرد"], answer: 0 },
+                    { q: "ماذا يزرع السلام بين الناس؟", options: ["المحبة", "الكراهية", "الحزن"], answer: 0 },
+                    { q: "ماذا قال النبي ﷺ عن السلام؟", options: ["أفشوا السلام بينكم", "لا تسلموا", "سلموا على من تعرفون فقط"], answer: 0 },
+                    { q: "على من نلقي السلام؟", options: ["على من نعرف ومن لا نعرف", "على من نعرف فقط", "لا أحد"], answer: 0 }
+                  ] },
+                { id: "is_u1_review", title: "مراجعة الوحدة الأولى", type: "مراجعة", emoji: "🏆", color: "#FFD23F",
+                  short: "مراجعة شاملة على دروس الوحدة الأولى.",
+                  detailed: "تشمل المراجعة: الله الخالق، سورة الفاتحة، سور الإخلاص والفلق والناس، أركان الإسلام، مولد النبي، قصة آدم، وإلقاء السلام.",
+                  questions: [
+                    { q: "كم عدد أركان الإسلام؟", options: ["3", "5", "7"], answer: 1 },
+                    { q: "ما أول سورة في القرآن؟", options: ["الفاتحة", "البقرة", "الناس"], answer: 0 },
+                    { q: "من هو أبو البشر؟", options: ["آدم", "نوح", "إبراهيم"], answer: 0 },
+                    { q: "من خالق كل شيء؟", options: ["الله", "الإنسان", "الحيوان"], answer: 0 }
+                  ] }
+            ]
+        },
+        "الوحدة الثانية: لِمَاذَا خَلَقَنَا اللَّهُ؟": {
+            emoji: "🤔", gradient: "linear-gradient(135deg, #9B5DE5, #48CAE4)",
+            description: "لماذا خلقنا الله - المسد - الطهارة - طفولة النبي - إدريس - إتقان العمل.",
+            lessons: [
+                { id: "is_u2_l1", title: "لماذا خلقنا الله تعالى؟", type: "عقيدة", emoji: "💡", color: "#9B5DE5",
+                  short: "نتعلم أن الله خلقنا لعبادته وحده لا شريك له.",
+                  detailed: "خلق الله الجن والإنس لعبادته وحده. قال تعالى: (وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ). العبادة هي: الطاعة والانقياد لأوامر الله. من العبادة: الصلاة، الصوم، الدعاء، بر الوالدين، الصدق، مساعدة الآخرين.",
+                  questions: [
+                    { q: "لماذا خلقنا الله؟", options: ["لنعبده", "لنلعب", "لننام"], answer: 0 },
+                    { q: "ما معنى العبادة؟", options: ["طاعة الله واتباع أوامره", "اللعب", "النوم"], answer: 0 },
+                    { q: "أي من هذه عبادة؟", options: ["الصلاة", "اللعب", "النوم فقط"], answer: 0 },
+                    { q: "هل الصدق يعتبر عبادة؟", options: ["نعم", "لا", "لا أعرف"], answer: 0 },
+                    { q: "هل مساعدة الآخرين عبادة؟", options: ["نعم", "لا", "أحيانًا"], answer: 0 }
+                  ] },
+                { id: "is_u2_l2", title: "سورة المسد", type: "قرآن وتفسير", emoji: "📖", color: "#FF6B9D",
+                  text: "تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ ﴿١﴾ مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ ﴿٢﴾ سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ ﴿٣﴾ وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ ﴿٤﴾ فِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ ﴿٥﴾",
+                  textType: "quran",
+                  short: "نتعلم سورة المسد تلاوة وحفظًا، وفيها قصة أبي لهب.",
+                  detailed: "سورة المسد عدد آياتها خمس. نزلت في أبي لهب عم النبي ﷺ وزوجته الذين كانا يؤذيان النبي. السورة تبين أن المال لا يغني صاحبه أمام عذاب الله. الدرس: إيذاء النبي عاقبته وخيمة.",
+                  questions: [
+                    { q: "ما أول كلمة في سورة المسد؟", options: ["تبت", "قل", "سبح"], answer: 0 },
+                    { q: "كم عدد آيات سورة المسد؟", options: ["ثلاث", "خمس", "سبع"], answer: 1 },
+                    { q: "في من نزلت سورة المسد؟", options: ["في أبي لهب", "في أبي بكر", "في عمر"], answer: 0 },
+                    { q: "هل ينفع المال صاحبه عند عذاب الله؟", options: ["لا ينفع", "ينفع", "أحيانًا"], answer: 0 }
+                  ] },
+                { id: "is_u2_l3", title: "سور النصر والكافرون", type: "قرآن وتفسير", emoji: "📿", color: "#27AE60",
+                  text: "سُورَةُ النَّصْرِ:\nإِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ ﴿١﴾ وَرَأَيْتَ النَّاسَ يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا ﴿٢﴾ فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ ۚ إِنَّهُ كَانَ تَوَّابًا ﴿٣﴾\n\nسُورَةُ الْكَافِرُونَ:\nقُلْ يَا أَيُّهَا الْكَافِرُونَ ﴿١﴾ لَا أَعْبُدُ مَا تَعْبُدُونَ ﴿٢﴾ وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ ﴿٣﴾ لَكُمْ دِينُكُمْ وَلِيَ دِينِ ﴿٦﴾",
+                  textType: "quran",
+                  short: "نتعلم سورتي النصر والكافرون.",
+                  detailed: "سورة النصر تتحدث عن فتح مكة ودخول الناس في الإسلام أفواجًا. سورة الكافرون تعلن البراءة من الشرك، وتقرر أن المسلم لا يعبد إلا الله وحده. نتعلم: الشكر عند النصر، والثبات على التوحيد.",
+                  questions: [
+                    { q: "سورة النصر تبدأ بـ...", options: ["إذا جاء نصر الله والفتح", "قل يا أيها الكافرون", "تبت يدا"], answer: 0 },
+                    { q: "سورة الكافرون تبدأ بـ...", options: ["قل يا أيها الكافرون", "إذا جاء نصر الله", "قل هو الله أحد"], answer: 0 },
+                    { q: "بماذا أمر الله نبيه بعد النصر؟", options: ["بالتسبيح والاستغفار", "بالنوم", "بالسفر"], answer: 0 },
+                    { q: "ما موضوع سورة الكافرون؟", options: ["البراءة من الشرك", "قصص الأنبياء", "العبادات"], answer: 0 },
+                    { q: "كم عدد آيات سورة النصر؟", options: ["ثلاث", "خمس", "ست"], answer: 0 }
+                  ] },
+                { id: "is_u2_l4", title: "الطهارة والوضوء", type: "عبادات", emoji: "💧", color: "#48CAE4",
+                  text: "الطَّهَارَةُ نِصْفُ الْإِيمَانِ.\nالْوُضُوءُ شَرْطٌ لِلصَّلَاةِ.\nخُطُوَاتُ الْوُضُوءِ:\n١. النِّيَّةُ.\n٢. غَسْلُ الْكَفَّيْنِ ثَلَاثًا.\n٣. الْمَضْمَضَةُ.\n٤. الِاسْتِنْشَاقُ.\n٥. غَسْلُ الْوَجْهِ ثَلَاثًا.\n٦. غَسْلُ الْيَدَيْنِ إِلَى الْمِرْفَقَيْنِ.\n٧. مَسْحُ الرَّأْسِ.\n٨. غَسْلُ الْقَدَمَيْنِ إِلَى الْكَعْبَيْنِ.",
+                  textType: "story",
+                  short: "نتعلم الطهارة وخطوات الوضوء.",
+                  detailed: "الطهارة نصف الإيمان، وهي شرط لصحة الصلاة. الوضوء هو غسل أعضاء معينة قبل الصلاة. خطواته: النية، غسل الكفين ثلاثًا، المضمضة، الاستنشاق، غسل الوجه، غسل اليدين إلى المرفقين، مسح الرأس، غسل القدمين.",
+                  questions: [
+                    { q: "ما هو الوضوء؟", options: ["غسل أعضاء معينة قبل الصلاة", "النوم", "اللعب"], answer: 0 },
+                    { q: "كم مرة نغسل الوجه في الوضوء؟", options: ["مرة", "ثلاث مرات", "خمس مرات"], answer: 1 },
+                    { q: "الطهارة نصف...", options: ["الإيمان", "الصلاة", "الصوم"], answer: 0 },
+                    { q: "بماذا نمسح في الوضوء؟", options: ["الرأس", "البطن", "الظهر"], answer: 0 },
+                    { q: "الوضوء شرط لصحة...", options: ["الصلاة", "الأكل", "النوم"], answer: 0 }
+                  ] },
+                { id: "is_u2_l5", title: "طفولة النبي ﷺ", type: "سيرة", emoji: "👶", color: "#FF6B9D",
+                  short: "نتعلم عن طفولة النبي محمد ﷺ ونشأته الكريمة.",
+                  detailed: "نشأ النبي ﷺ يتيمًا في مكة. بعد وفاة جده عبد المطلب كفله عمه أبو طالب. اشتغل برعي الغنم في صغره، ثم بالتجارة مع عمه. كان معروفًا بين الناس بالصادق الأمين. لم يسجد لصنم قط.",
+                  questions: [
+                    { q: "من كفل النبي ﷺ بعد جده؟", options: ["أبو طالب", "أبو لهب", "العباس"], answer: 0 },
+                    { q: "بماذا اشتغل النبي ﷺ في صغره؟", options: ["برعي الغنم", "بالحدادة", "بالطبخ"], answer: 0 },
+                    { q: "كيف كان يعرف النبي ﷺ بين الناس؟", options: ["بالصادق الأمين", "بالغني", "بالقوي"], answer: 0 },
+                    { q: "هل سجد النبي ﷺ لصنم قط؟", options: ["لا", "نعم", "أحيانًا"], answer: 0 }
+                  ] },
+                { id: "is_u2_l6", title: "نبي الله إدريس ﷺ", type: "سيرة", emoji: "📜", color: "#27AE60",
+                  short: "نتعرف على نبي الله إدريس ﷺ.",
+                  detailed: "نبي الله إدريس ﷺ من أنبياء الله الصالحين. ذكره الله في القرآن بأنه كان صديقًا نبيًا. كان من أول من كتب بالقلم، وكان يعلم الناس الخير. رفعه الله مكانًا عليًا.",
+                  questions: [
+                    { q: "من هو إدريس؟", options: ["نبي من أنبياء الله", "ملك", "صحابي"], answer: 0 },
+                    { q: "ماذا ذكر الله عن إدريس في القرآن؟", options: ["كان صديقًا نبيًا", "كان غنيًا", "كان ملكًا"], answer: 0 },
+                    { q: "ماذا كان إدريس أول من فعل؟", options: ["كتب بالقلم", "ركب الخيل", "بنى السفينة"], answer: 0 },
+                    { q: "ماذا نتعلم من قصة إدريس؟", options: ["الصدق والاجتهاد", "الكسل", "الغش"], answer: 0 }
+                  ] },
+                { id: "is_u2_l7", title: "قصة إتقان العمل", type: "قيم وأخلاق", emoji: "🛠️", color: "#F18F01",
+                  short: "نتعلم من قصة إتقان العمل أهمية إتقان المسلم لعمله.",
+                  detailed: "قصة (إتقان العمل) تحكي عن رجل كان يتقن عمله ويحسنه. قال النبي ﷺ: (إن الله يحب إذا عمل أحدكم عملًا أن يتقنه). إتقان العمل: أن تؤدي عملك بأحسن صورة. نتعلم: إتقان المذاكرة، إتقان المساعدة، إتقان الطاعة.",
+                  questions: [
+                    { q: "ماذا يحب الله إذا عملنا عملًا؟", options: ["الإتقان", "الغش", "الكسل"], answer: 0 },
+                    { q: "ما معنى إتقان العمل؟", options: ["أداء العمل بأحسن صورة", "العمل بسرعة فقط", "ترك العمل"], answer: 0 },
+                    { q: "هل إتقان المذاكرة من إتقان العمل؟", options: ["نعم", "لا", "أحيانًا"], answer: 0 },
+                    { q: "من يحب الله من العاملين؟", options: ["المتقنين", "المهملين", "الكاسلين"], answer: 0 }
+                  ] },
+                { id: "is_u2_review", title: "مراجعة الوحدة الثانية", type: "مراجعة", emoji: "🏅", color: "#FFD23F",
+                  short: "مراجعة شاملة على دروس الوحدة الثانية.",
+                  detailed: "تشمل المراجعة: لماذا خلقنا الله، سورة المسد، سور النصر والكافرون، الطهارة والوضوء، طفولة النبي، نبي الله إدريس، وإتقان العمل.",
+                  questions: [
+                    { q: "لماذا خلقنا الله؟", options: ["لنعبده", "لنلعب", "لننام"], answer: 0 },
+                    { q: "كم عدد آيات سورة المسد؟", options: ["3", "5", "7"], answer: 1 },
+                    { q: "الطهارة نصف...", options: ["الإيمان", "الصلاة", "الصوم"], answer: 0 },
+                    { q: "من أول من كتب بالقلم؟", options: ["إدريس", "نوح", "آدم"], answer: 0 }
+                  ] }
+            ]
+        },
+        "الوحدة الثالثة: اللَّهُ مَعَنَا": {
+            emoji: "☪️", gradient: "linear-gradient(135deg, #2E86AB, #27AE60)",
+            description: "الله الواحد - قريش - الصلاة - طفولة النبي (تابع) - نوح - الصدق والأمانة.",
+            lessons: [
+                { id: "is_u3_l1", title: "الله تعالى (الواحد)", type: "عقيدة", emoji: "☝️", color: "#2E86AB",
+                  short: "نتعلم أن الله واحد أحد لا شريك له.",
+                  detailed: "الله تعالى واحد أحد، لا شريك له، ولا مثيل له. هو الخالق لكل شيء، وهو الذي بيده الأمر. قال تعالى: (قُلْ هُوَ اللَّهُ أَحَدٌ). التوحيد هو: إفراد الله بالعبادة.",
+                  questions: [
+                    { q: "هل لله شريك؟", options: ["لا شريك له", "نعم", "لا أعرف"], answer: 0 },
+                    { q: "ما معنى التوحيد؟", options: ["إفراد الله بالعبادة", "الشرك", "الكفر"], answer: 0 },
+                    { q: "ماذا نعبد؟", options: ["الله وحده", "الأصنام", "الشمس"], answer: 0 },
+                    { q: "أي سورة تقول (قل هو الله أحد)؟", options: ["الإخلاص", "الفلق", "الناس"], answer: 0 },
+                    { q: "هل لله مثيل؟", options: ["لا مثيل له", "نعم", "أحيانًا"], answer: 0 }
+                  ] },
+                { id: "is_u3_l2", title: "سورة قريش", type: "قرآن وتفسير", emoji: "📖", color: "#FF6B9D",
+                  text: "لِإِيلَافِ قُرَيْشٍ ﴿١﴾ إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ ﴿٢﴾ فَلْيَعْبُدُوا رَبَّ هَٰذَا الْبَيْتِ ﴿٣﴾ الَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ ﴿٤﴾",
+                  textType: "quran",
+                  short: "نتعلم سورة قريش تلاوة وحفظًا وتفسيرًا.",
+                  detailed: "سورة قريش عدد آياتها أربع. نزلت في قبيلة قريش التي كانت في مكة. تذكر السورة نعمة الله على قريش بالأمن والرزق. تأمرهم بعبادة رب البيت الحرام (الكعبة).",
+                  questions: [
+                    { q: "كم عدد آيات سورة قريش؟", options: ["أربع", "خمس", "ست"], answer: 0 },
+                    { q: "ما أول كلمة في سورة قريش؟", options: ["لإيلاف", "قل", "سبح"], answer: 0 },
+                    { q: "من الذي أطعم قريش من جوع؟", options: ["الله", "الناس", "التجار"], answer: 0 },
+                    { q: "ما البيت الذي ذُكر في سورة قريش؟", options: ["الكعبة", "المسجد الأقصى", "المسجد النبوي"], answer: 0 }
+                  ] },
+                { id: "is_u3_l3", title: "سور الماعون والكوثر", type: "قرآن وتفسير", emoji: "📿", color: "#9B5DE5",
+                  text: "سُورَةُ الْمَاعُونِ:\nأَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ ﴿١﴾ فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ ﴿٢﴾ وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ ﴿٣﴾ فَوَيْلٌ لِّلْمُصَلِّينَ ﴿٤﴾ الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ ﴿٥﴾ الَّذِينَ هُمْ يُرَاءُونَ ﴿٦﴾ وَيَمْنَعُونَ الْمَاعُونَ ﴿٧﴾\n\nسُورَةُ الْكَوْثَرِ:\nإِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ ﴿١﴾ فَصَلِّ لِرَبِّكَ وَانْحَرْ ﴿٢﴾ إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ ﴿٣﴾",
+                  textType: "quran",
+                  short: "نتعلم سورتي الماعون والكوثر.",
+                  detailed: "سورة الماعون تتحدث عن صفات من يكذب بالدين (يدع اليتيم ولا يطعم المسكين). سورة الكوثر بشرى للنبي ﷺ بالخير الكثير، وتأمره بالصلاة والنحر شكرًا لله.",
+                  questions: [
+                    { q: "سورة الكوثر تبدأ بـ...", options: ["إنا أعطيناك الكوثر", "أرأيت الذي", "قل هو الله أحد"], answer: 0 },
+                    { q: "كم عدد آيات سورة الكوثر؟", options: ["ثلاث", "خمس", "سبع"], answer: 0 },
+                    { q: "ماذا نتعلم من سورة الماعون؟", options: ["رحمة اليتيم وإطعام المسكين", "اللعب", "النوم"], answer: 0 },
+                    { q: "من الذي يكذب بالدين حسب سورة الماعون؟", options: ["الذي يدع اليتيم", "الذي يصلي", "الذي يتصدق"], answer: 0 }
+                  ] },
+                { id: "is_u3_l4", title: "الصلاة", type: "عبادات", emoji: "🕌", color: "#27AE60",
+                  short: "نتعلم الصلاة وأهميتها وعدد الصلوات المفروضة.",
+                  detailed: "الصلاة هي الركن الثاني من أركان الإسلام، وهي عمود الدين. عدد الصلوات المفروضة خمس: الفجر، الظهر، العصر، المغرب، العشاء. الصلاة تقوي علاقة المسلم بربه، وتنهاه عن الفحشاء والمنكر.",
+                  questions: [
+                    { q: "كم عدد الصلوات المفروضة في اليوم؟", options: ["ثلاث", "خمس", "سبع"], answer: 1 },
+                    { q: "ما أول صلاة في اليوم؟", options: ["الفجر", "الظهر", "العشاء"], answer: 0 },
+                    { q: "ما آخر صلاة في اليوم؟", options: ["العشاء", "المغرب", "العصر"], answer: 0 },
+                    { q: "الصلاة هي الركن... من أركان الإسلام.", options: ["الثاني", "الأول", "الثالث"], answer: 0 },
+                    { q: "ماذا نحتاج قبل الصلاة؟", options: ["الوضوء", "الطعام", "النوم"], answer: 0 }
+                  ] },
+                { id: "is_u3_l5", title: "(تابع) طفولة النبي ﷺ", type: "سيرة", emoji: "🌱", color: "#FF6B9D",
+                  short: "نتابع التعرف على طفولة النبي ﷺ.",
+                  detailed: "بعد رعي الغنم، سافر النبي ﷺ مع عمه أبو طالب في رحلة تجارية إلى الشام. كان يتصف بالصدق والأمانة. تزوج خديجة بنت خويلد رضي الله عنها عندما كان عمره 25 سنة.",
+                  questions: [
+                    { q: "إلى أين سافر النبي ﷺ مع عمه؟", options: ["الشام", "مصر", "اليمن"], answer: 0 },
+                    { q: "بماذا كان يتصف النبي ﷺ؟", options: ["بالصدق والأمانة", "بالكذب", "بالغش"], answer: 0 },
+                    { q: "من هي زوجة النبي ﷺ الأولى؟", options: ["خديجة", "عائشة", "حفصة"], answer: 0 },
+                    { q: "كم كان عمر النبي ﷺ عندما تزوج خديجة؟", options: ["25", "40", "30"], answer: 0 }
+                  ] },
+                { id: "is_u3_l6", title: "نبي الله نوح ﷺ", type: "سيرة", emoji: "🚢", color: "#48CAE4",
+                  short: "نتعرف على قصة نبي الله نوح ﷺ والسفينة.",
+                  detailed: "نبي الله نوح ﷺ أول رسول أرسله الله إلى قومه. دعاهم إلى عبادة الله وحده ليلًا ونهارًا، لكنهم كذبوه. أمره الله ببناء سفينة عظيمة. ركب فيها المؤمنون ومعهم من كل الحيوانات زوجان. أرسل الله الطوفان فغرق الكافرون.",
+                  questions: [
+                    { q: "من هو أول رسول أرسله الله؟", options: ["نوح ﷺ", "إبراهيم ﷺ", "موسى ﷺ"], answer: 0 },
+                    { q: "ماذا بنى نوح ﷺ بأمر الله؟", options: ["سفينة", "بيتًا", "مسجدًا"], answer: 0 },
+                    { q: "ماذا حدث للكافرين في قصة نوح؟", options: ["غرقوا بالطوفان", "نجوا", "سافروا"], answer: 0 },
+                    { q: "من نجا مع نوح في السفينة؟", options: ["المؤمنون", "الكافرون", "الملوك"], answer: 0 },
+                    { q: "ماذا نتعلم من قصة نوح؟", options: ["الصبر على الدعوة", "الكسل", "الكذب"], answer: 0 }
+                  ] },
+                { id: "is_u3_l7", title: "قصة الصدق والأمانة", type: "قيم وأخلاق", emoji: "💎", color: "#FFD23F",
+                  short: "نتعلم من قصة الصدق والأمانة أهميتهما في حياة المسلم.",
+                  detailed: "الصدق والأمانة من صفات الأنبياء. قال النبي ﷺ: (عليكم بالصدق، فإن الصدق يهدي إلى البر). الصدق: مطابقة الكلام للواقع. الأمانة: حفظ ما اؤتمن الإنسان عليه. نتعلم: أن نصدق في الكلام، ونحفظ الأمانة، ولا نغش في الامتحانات.",
+                  questions: [
+                    { q: "ما معنى الصدق؟", options: ["مطابقة الكلام للواقع", "الكذب", "الغش"], answer: 0 },
+                    { q: "ما معنى الأمانة؟", options: ["حفظ ما اؤتمنّا عليه", "إهمال الأشياء", "أخذ ما ليس لنا"], answer: 0 },
+                    { q: "إلى ماذا يهدي الصدق؟", options: ["إلى البر", "إلى الشر", "إلى الخوف"], answer: 0 },
+                    { q: "هل الصدق من صفات الأنبياء؟", options: ["نعم", "لا", "لا أعرف"], answer: 0 },
+                    { q: "هل الغش في الامتحان من الأمانة؟", options: ["لا، هو خيانة", "نعم", "أحيانًا"], answer: 0 }
+                  ] },
+                { id: "is_u3_review", title: "مراجعة الوحدة الثالثة", type: "مراجعة", emoji: "🎖️", color: "#FFD23F",
+                  short: "مراجعة شاملة على دروس الوحدة الثالثة.",
+                  detailed: "تشمل المراجعة: الله الواحد، سورة قريش، سور الماعون والكوثر، الصلاة، طفولة النبي (تابع)، نبي الله نوح، والصدق والأمانة.",
+                  questions: [
+                    { q: "كم عدد الصلوات المفروضة؟", options: ["3", "5", "7"], answer: 1 },
+                    { q: "من أول رسول أرسله الله؟", options: ["نوح", "إبراهيم", "موسى"], answer: 0 },
+                    { q: "هل لله شريك؟", options: ["لا", "نعم", "لا أعرف"], answer: 0 },
+                    { q: "إلى ماذا يهدي الصدق؟", options: ["البر", "الشر", "الخوف"], answer: 0 }
+                  ] }
+            ]
+        }
+    }
+},
 
-function updateProgress(pct) {
-    document.getElementById('progressBar').style.width = pct + '%';
+// ============================================================
+// 🔢 الرياضيات
+// ============================================================
+"math": {
+    name: "الرياضيات", emoji: "🔢", color: "#2E86AB",
+    gradient: "linear-gradient(135deg, #2E86AB, #48CAE4)",
+    description: "أعداد، عد، مقارنة، جمع، طرح، أشكال، وأنماط",
+    units: {
+        "الوحدة الأولى: الأعداد من 1 إلى 5": {
+            emoji: "1️⃣", gradient: "linear-gradient(135deg, #2E86AB, #48CAE4)",
+            description: "الأعداد 1، 2، 3، 4، 5 والعد والمقارنة بينها.",
+            lessons: [
+                { id: "m_u1_l1", title: "الأعداد 1، 2، 3", type: "أعداد", emoji: "1️⃣", color: "#FF6B9D",
+                  short: "نتعلم الأعداد من 1 إلى 3، ونعد الأشياء من حولنا.",
+                  detailed: "الأعداد من 1 إلى 3 هي الأعداد الأولى. العدد 1 يعني شيئًا واحدًا. العدد 2 يعني شيئين. العدد 3 يعني ثلاثة أشياء. نتعلم: العد بالترتيب، قراءة الأرقام، كتابتها، وربط كل رقم بعدد الأشياء.",
+                  questions: [
+                    { q: "كم عدد التفاحات إذا كان لدينا تفاحتان؟", options: ["1", "2", "3"], answer: 1 },
+                    { q: "ما الرقم الذي يأتي بعد 1؟", options: ["2", "3", "4"], answer: 0 },
+                    { q: "كم عدد أصابع اليد الواحدة التي نرفعها للعدد 3؟", options: ["1", "2", "3"], answer: 2 },
+                    { q: "العدد الذي يدل على لا شيء هو...", options: ["0", "1", "2"], answer: 0 },
+                    { q: "كم عدد العيون عند الإنسان؟", options: ["1", "2", "3"], answer: 1 }
+                  ] },
+                { id: "m_u1_l2", title: "الأعداد 4، 5", type: "أعداد", emoji: "4️⃣", color: "#9B5DE5",
+                  short: "نتعلم الأعداد 4 و 5 والعد حتى 5.",
+                  detailed: "نتابع تعلم الأعداد: 4 (أربعة أشياء)، 5 (خمسة أشياء). عدد أصابع اليد الواحدة خمسة. عدد أركان الإسلام خمسة. عدد الحواس خمسة. نتعلم العد من 1 إلى 5 بالترتيب.",
+                  questions: [
+                    { q: "كم عدد أصابع اليد الواحدة؟", options: ["3", "4", "5"], answer: 2 },
+                    { q: "ما الرقم الذي يأتي بعد 4؟", options: ["3", "5", "6"], answer: 1 },
+                    { q: "كم عدد أرجل القطة؟", options: ["2", "3", "4"], answer: 2 },
+                    { q: "كم عدد الحواس عند الإنسان؟", options: ["3", "5", "7"], answer: 1 },
+                    { q: "إذا كان لدينا 4 مكعبات وأضفنا واحدًا، كم يصبح؟", options: ["4", "5", "6"], answer: 1 }
+                  ] },
+                { id: "m_u1_l3", title: "المقارنة بين الأعداد", type: "مقارنة", emoji: "⚖️", color: "#F18F01",
+                  short: "نتعلم كيف نقارن بين الأعداد (أكبر - أصغر - يساوي).",
+                  detailed: "المقارنة بين الأعداد: نقول (أكبر من) عندما يكون العدد أكبر، (أصغر من) عندما يكون أصغر، (يساوي) عندما يكونان متساويين. مثال: 5 أكبر من 3، 2 أصغر من 4، 3 يساوي 3.",
+                  questions: [
+                    { q: "أي العددين أكبر: 3 أم 5؟", options: ["3", "5", "متساويان"], answer: 1 },
+                    { q: "أي العددين أصغر: 2 أم 4؟", options: ["2", "4", "متساويان"], answer: 0 },
+                    { q: "ماذا نقول عندما يكون العددان متساويين؟", options: ["أكبر", "أصغر", "يساوي"], answer: 2 },
+                    { q: "أي العددين أكبر: 1 أم 4؟", options: ["1", "4", "متساويان"], answer: 1 },
+                    { q: "أي العددين أصغر: 5 أم 3؟", options: ["5", "3", "متساويان"], answer: 1 }
+                  ] },
+                { id: "m_u1_review", title: "مراجعة الوحدة الأولى", type: "مراجعة", emoji: "🏆", color: "#FFD23F",
+                  short: "مراجعة على الأعداد من 1 إلى 5 والمقارنة بينها.",
+                  detailed: "تشمل المراجعة: العد من 1 إلى 5، قراءة الأعداد وكتابتها، المقارنة بينها باستخدام (أكبر - أصغر - يساوي)، وحل مسائل بسيطة على الأعداد.",
+                  questions: [
+                    { q: "ما أكبر عدد في هذه المجموعة: 1، 3، 5؟", options: ["1", "3", "5"], answer: 2 },
+                    { q: "ما أصغر عدد في هذه المجموعة: 2، 4، 5؟", options: ["2", "4", "5"], answer: 0 },
+                    { q: "أي العددين يساوي نفسه؟", options: ["3=3", "3=4", "3=5"], answer: 0 },
+                    { q: "ما الرقم الذي يأتي قبل 4؟", options: ["3", "5", "6"], answer: 0 }
+                  ] }
+            ]
+        },
+        "الوحدة الثانية: الأعداد من 6 إلى 10": {
+            emoji: "🔟", gradient: "linear-gradient(135deg, #27AE60, #48CAE4)",
+            description: "الأعداد 6، 7، 8، 9، 10 والترتيب والعد.",
+            lessons: [
+                { id: "m_u2_l1", title: "الأعداد 6، 7", type: "أعداد", emoji: "6️⃣", color: "#FF6B9D",
+                  short: "نتعلم الأعداد 6 و 7 والعد حتى 7.",
+                  detailed: "العدد 6 يعني ستة أشياء. العدد 7 يعني سبعة أشياء. عدد أيام الأسبوع سبعة. نتعلم: العد من 1 إلى 7، قراءة الأعداد 6 و 7، ربط كل عدد بالأشياء.",
+                  questions: [
+                    { q: "كم عدد أيام الأسبوع؟", options: ["5", "6", "7"], answer: 2 },
+                    { q: "ما الرقم الذي يأتي بعد 6؟", options: ["5", "7", "8"], answer: 1 },
+                    { q: "كم عدد ألوان قوس الرحمة (تقريبًا)؟", options: ["5", "6", "7"], answer: 2 },
+                    { q: "إذا كان لدينا 5 مكعبات وأضفنا 1، كم يصبح؟", options: ["5", "6", "7"], answer: 1 }
+                  ] },
+                { id: "m_u2_l2", title: "الأعداد 8، 9، 10", type: "أعداد", emoji: "🔟", color: "#9B5DE5",
+                  short: "نتعلم الأعداد 8 و 9 و 10 والعد حتى 10.",
+                  detailed: "العدد 8 يعني ثمانية أشياء. العدد 9 يعني تسعة. العدد 10 يعني عشرة. عدد أصابع اليدين عشرة. نتعلم: العد من 1 إلى 10، ربط كل عدد بالأشياء.",
+                  questions: [
+                    { q: "كم عدد أصابع اليدين؟", options: ["5", "10", "8"], answer: 1 },
+                    { q: "ما الرقم الذي يأتي بعد 9؟", options: ["8", "10", "11"], answer: 1 },
+                    { q: "كم عدد أرجل الأخطبوط؟", options: ["8", "9", "10"], answer: 0 },
+                    { q: "ما الرقم الذي يأتي قبل 10؟", options: ["8", "9", "7"], answer: 1 },
+                    { q: "إذا كان لدينا 7 مكعبات وأضفنا 1، كم يصبح؟", options: ["7", "8", "9"], answer: 1 }
+                  ] },
+                { id: "m_u2_l3", title: "الترتيب التصاعدي والتنازلي", type: "ترتيب", emoji: "⬆️", color: "#F18F01",
+                  short: "نتعلم ترتيب الأعداد تصاعديًا وتنازليًا.",
+                  detailed: "الترتيب التصاعدي: من الأصغر إلى الأكبر (1، 2، 3، ...، 10). الترتيب التنازلي: من الأكبر إلى الأصغر (10، 9، 8، ...، 1). نتعلم ترتيب الأعداد وتمييز التصاعدي من التنازلي.",
+                  questions: [
+                    { q: "ما هو الترتيب التصاعدي؟", options: ["من الأصغر للأكبر", "من الأكبر للأصغر", "عشوائي"], answer: 0 },
+                    { q: "ما هو الترتيب التنازلي؟", options: ["من الأصغر للأكبر", "من الأكبر للأصغر", "عشوائي"], answer: 1 },
+                    { q: "أكمل: 1، 2، 3، ...، 5", options: ["4", "6", "7"], answer: 0 },
+                    { q: "أكمل: 10، 9، 8، ...، 6", options: ["7", "5", "4"], answer: 0 },
+                    { q: "أي الأعداد مرتبة تصاعديًا؟", options: ["1، 2، 3", "3، 2، 1", "2، 3، 1"], answer: 0 }
+                  ] },
+                { id: "m_u2_review", title: "مراجعة الوحدة الثانية", type: "مراجعة", emoji: "🎖️", color: "#FFD23F",
+                  short: "مراجعة على الأعداد من 6 إلى 10 والترتيب.",
+                  detailed: "تشمل المراجعة: العد من 1 إلى 10، قراءة الأعداد من 6 إلى 10، الترتيب التصاعدي والتنازلي، والمقارنة بين الأعداد.",
+                  questions: [
+                    { q: "ما أكبر عدد في هذه المجموعة: 6، 8، 10؟", options: ["6", "8", "10"], answer: 2 },
+                    { q: "ما أصغر عدد في هذه المجموعة: 7، 9، 10؟", options: ["7", "9", "10"], answer: 0 },
+                    { q: "أكمل: 7، 8، ...، 10", options: ["9", "11", "6"], answer: 0 },
+                    { q: "أكمل: 10، 9، 8، 7، ...", options: ["6", "11", "5"], answer: 0 }
+                  ] }
+            ]
+        },
+        "الوحدة الثالثة: الجمع والطرح": {
+            emoji: "➕", gradient: "linear-gradient(135deg, #F18F01, #FF6B9D)",
+            description: "الجمع والطرح حتى 10 والمسائل الكلامية.",
+            lessons: [
+                { id: "m_u3_l1", title: "الجمع حتى 10", type: "جمع", emoji: "➕", color: "#27AE60",
+                  short: "نتعلم الجمع حتى العدد 10.",
+                  detailed: "الجمع يعني إضافة شيء إلى شيء آخر. نستخدم علامة (+) التي تعني (زائد). مثال: 2 + 3 = 5. الجمع يعطينا مجموع الأشياء. نتعلم: الجمع بالعد على الأصابع، والجمع البسيط حتى 10.",
+                  questions: [
+                    { q: "كم يساوي 2 + 3؟", options: ["4", "5", "6"], answer: 1 },
+                    { q: "كم يساوي 1 + 1؟", options: ["1", "2", "3"], answer: 1 },
+                    { q: "كم يساوي 4 + 2؟", options: ["5", "6", "7"], answer: 1 },
+                    { q: "كم يساوي 3 + 3؟", options: ["5", "6", "7"], answer: 1 },
+                    { q: "كم يساوي 5 + 5؟", options: ["9", "10", "11"], answer: 1 },
+                    { q: "كم يساوي 2 + 2؟", options: ["3", "4", "5"], answer: 1 }
+                  ] },
+                { id: "m_u3_l2", title: "الطرح حتى 10", type: "طرح", emoji: "➖", color: "#E74C3C",
+                  short: "نتعلم الطرح حتى العدد 10.",
+                  detailed: "الطرح يعني إزالة شيء من شيء آخر. نستخدم علامة (-) التي تعني (ناقص). مثال: 5 - 2 = 3. نتعلم الطرح بالعد على الأصابع، والطرح البسيط حتى 10.",
+                  questions: [
+                    { q: "كم يساوي 5 - 2؟", options: ["2", "3", "4"], answer: 1 },
+                    { q: "كم يساوي 4 - 1؟", options: ["2", "3", "4"], answer: 1 },
+                    { q: "كم يساوي 7 - 3؟", options: ["3", "4", "5"], answer: 1 },
+                    { q: "كم يساوي 10 - 5؟", options: ["4", "5", "6"], answer: 1 },
+                    { q: "كم يساوي 6 - 6؟", options: ["0", "1", "6"], answer: 0 },
+                    { q: "كم يساوي 8 - 3؟", options: ["4", "5", "6"], answer: 1 }
+                  ] },
+                { id: "m_u3_l3", title: "المسائل الكلامية", type: "مسائل", emoji: "📝", color: "#9B5DE5",
+                  short: "نتعلم حل المسائل الكلامية البسيطة بالجمع والطرح.",
+                  detailed: "المسائل الكلامية هي مسائل مكتوبة بالكلمات. مثال: (عند سارة 3 تفاحات، أخذت منها 1، كم يتبقى؟) الحل: 3 - 1 = 2. المسائل الكلامية تنمي التفكير وتساعدنا على ربط الرياضيات بالحياة.",
+                  questions: [
+                    { q: "عند أحمد 3 بالونات، أعطاه والده 2، كم يصبح لديه؟", options: ["4", "5", "6"], answer: 1 },
+                    { q: "عند مريم 5 أقلام، فقدت 2، كم يتبقى معها؟", options: ["2", "3", "4"], answer: 1 },
+                    { q: "في السلة 4 تفاحات، أضفنا 3، كم يصبح؟", options: ["6", "7", "8"], answer: 1 },
+                    { q: "كان مع علي 6 أقلام، أعطى صديقه 3، كم يتبقى؟", options: ["2", "3", "4"], answer: 1 }
+                  ] },
+                { id: "m_u3_review", title: "مراجعة الوحدة الثالثة", type: "مراجعة", emoji: "🏅", color: "#FFD23F",
+                  short: "مراجعة على الجمع والطرح.",
+                  detailed: "تشمل المراجعة: الجمع حتى 10، الطرح حتى 10، حل مسائل كلامية بسيطة، والمقارنة بين نتائج الجمع والطرح.",
+                  questions: [
+                    { q: "كم يساوي 3 + 4؟", options: ["6", "7", "8"], answer: 1 },
+                    { q: "كم يساوي 9 - 4؟", options: ["4", "5", "6"], answer: 1 },
+                    { q: "كم يساوي 2 + 5؟", options: ["6", "7", "8"], answer: 1 },
+                    { q: "كم يساوي 10 - 6؟", options: ["3", "4", "5"], answer: 1 },
+                    { q: "كم يساوي 1 + 7؟", options: ["6", "7", "8"], answer: 2 }
+                  ] }
+            ]
+        },
+        "الوحدة الرابعة: الأشكال والمواقع والأنماط": {
+            emoji: "🔷", gradient: "linear-gradient(135deg, #9B5DE5, #2E86AB)",
+            description: "الأشكال الهندسية، والمواقع، والأنماط.",
+            lessons: [
+                { id: "m_u4_l1", title: "الأشكال الهندسية", type: "أشكال", emoji: "🔷", color: "#2E86AB",
+                  short: "نتعلم الأشكال الهندسية: الدائرة، المربع، المثلث، المستطيل.",
+                  detailed: "الأشكال الهندسية من حولنا: الدائرة (مثل الشمس)، المربع له 4 أضلاع متساوية، المثلث له 3 أضلاع، المستطيل له 4 أضلاع. نشاط: ابحث حولك عن أشياء تأخذ هذه الأشكال.",
+                  questions: [
+                    { q: "ما شكل الشمس؟", options: ["مربع", "دائرة", "مثلث"], answer: 1 },
+                    { q: "كم عدد أضلاع المثلث؟", options: ["3", "4", "5"], answer: 0 },
+                    { q: "كم عدد أضلاع المربع؟", options: ["3", "4", "5"], answer: 1 },
+                    { q: "ما شكل الباب عادة؟", options: ["دائرة", "مستطيل", "مثلث"], answer: 1 },
+                    { q: "أي شكل من هذه له 4 أضلاع متساوية؟", options: ["مثلث", "مربع", "دائرة"], answer: 1 },
+                    { q: "ما شكل ساعة الحائط عادة؟", options: ["مثلث", "مستطيل", "دائرة"], answer: 2 }
+                  ] },
+                { id: "m_u4_l2", title: "المواقع (فوق، تحت، بجانب، بين)", type: "مواقع", emoji: "📍", color: "#FF6B9D",
+                  short: "نتعلم تحديد المواقع: فوق، تحت، بجانب، بين، أمام، خلف.",
+                  detailed: "المواقع تحدد مكان الأشياء: (فوق) عندما يكون الشيء أعلى، (تحت) عندما يكون الشيء أسفل، (بجانب) عندما يكون ملاصقًا، (بين) عندما يكون في الوسط، (أمام) عندما يكون في المواجهة، (خلف) عندما يكون وراء.",
+                  questions: [
+                    { q: "أين تكون الشمس في السماء؟", options: ["فوق", "تحت", "بجانب"], answer: 0 },
+                    { q: "أين تكون الأرض بالنسبة لنا؟", options: ["فوق", "تحت", "بجانب"], answer: 1 },
+                    { q: "إذا كان الكتاب بين القلم والمسطرة، فهو...", options: ["فوق", "بين", "خلف"], answer: 1 },
+                    { q: "عندما نقف أمام الباب، نحن...", options: ["أمامه", "خلفه", "فوقه"], answer: 0 },
+                    { q: "أين نضع الحقيبة عادة عند الجلوس؟", options: ["فوق الرأس", "بجانب المقعد", "على السقف"], answer: 1 }
+                  ] },
+                { id: "m_u4_l3", title: "الأنماط", type: "أنماط", emoji: "🔁", color: "#27AE60",
+                  short: "نتعلم الأنماط وكيفية إكمالها.",
+                  detailed: "النمط هو تكرار منتظم. مثال: 🔴🔵🔴🔵🔴🔵 (نمط من لونين). مثال آخر: ⬛🔺⬛🔺⬛🔺. الأنماط تنمي التفكير وتساعد على التنبؤ.",
+                  questions: [
+                    { q: "أكمل النمط: 🔴🔵🔴🔵🔴...", options: ["🔵", "🔴", "⚫"], answer: 0 },
+                    { q: "أكمل النمط: 1، 2، 1، 2، 1، ...", options: ["1", "2", "3"], answer: 1 },
+                    { q: "أكمل النمط: ⭐🌙⭐🌙⭐...", options: ["⭐", "🌙", "☀️"], answer: 1 },
+                    { q: "أكمل النمط: أ، ب، أ، ب، أ، ...", options: ["أ", "ب", "ت"], answer: 1 },
+                    { q: "أكمل النمط: 🟥🟩🟥🟩🟥...", options: ["🟥", "🟩", "🟦"], answer: 1 }
+                  ] },
+                { id: "m_u4_review", title: "مراجعة الوحدة الرابعة", type: "مراجعة", emoji: "🥇", color: "#FFD23F",
+                  short: "مراجعة على الأشكال والمواقع والأنماط.",
+                  detailed: "تشمل المراجعة: الأشكال الهندسية وخصائصها، المواقع (فوق، تحت، بجانب، بين)، والأنماط البسيطة وكيفية إكمالها.",
+                  questions: [
+                    { q: "أي شكل له 3 أضلاع؟", options: ["مربع", "مثلث", "دائرة"], answer: 1 },
+                    { q: "أين نجد السمك عادة؟", options: ["فوق الماء", "في الماء", "على الشجرة"], answer: 1 },
+                    { q: "أكمل النمط: 🔺🔺⬛🔺🔺⬛...", options: ["🔺", "⬛", "⚫"], answer: 0 },
+                    { q: "ما شكل البيضة تقريبًا؟", options: ["دائرة", "مربع", "مثلث"], answer: 0 }
+                  ] }
+            ]
+        }
+    }
+},
+
+// ============================================================
+// 🇬🇧 اللغة الإنجليزية
+// ============================================================
+"english": {
+    name: "اللغة الإنجليزية", emoji: "🇬🇧", color: "#FF5722",
+    gradient: "linear-gradient(135deg, #FF5722, #FFD23F)",
+    description: "English Vocabulary, Phonics, Dialogues & Fun",
+    units: {
+        "Unit 1: Welcome to My School": {
+            emoji: "🏫", gradient: "linear-gradient(135deg, #FF5722, #FF9800)",
+            description: "Greetings, Classroom Instructions, Phonics Tt & Ii.",
+            lessons: [
+                { id: "en_u1_l1", title: "Lesson 1: Greetings & School", type: "Dialogue & Vocab", emoji: "👋", color: "#FF5722",
+                  text: "Maya: Hello!\nHana: Hello! What's your name?\nMaya: My name is Maya.\nHana: I'm Hana! Nice to meet you, Maya!\nMaya: Nice to meet you, too, Hana!\n\nVocabulary:\n- Hello!\n- Goodbye!\n- shake hands\n- play\n- friends\n- teacher\n- board\n- desk\n- chair\n- book\n- pencil",
+                  textType: "english",
+                  short: "Learning greetings (Hello, Goodbye) and school vocabulary.",
+                  detailed: "In this lesson, students learn how to greet each other in English. They practice 'Hello! What's your name? My name is...'. They also learn classroom vocabulary like teacher, board, desk, chair, book, and pencil.",
+                  questions: [
+                    { q: "What do we say when we meet someone?", options: ["Hello!", "Goodbye!", "Sit down"], answer: 0 },
+                    { q: "What do we say when we leave?", options: ["Hello!", "Goodbye!", "Stand up"], answer: 1 },
+                    { q: "Who teaches us in the classroom?", options: ["Teacher", "Pencil", "Desk"], answer: 0 },
+                    { q: "What do we write with?", options: ["Book", "Pencil", "Chair"], answer: 1 },
+                    { q: "Complete: What's your _____?", options: ["name", "bag", "desk"], answer: 0 }
+                  ] },
+                { id: "en_u1_l2", title: "Lesson 2: Phonics Tt & Ii", type: "Phonics", emoji: "🔤", color: "#FF9800",
+                  text: "Letter Tt /t/:\n- Tomato\n- Table\n- Tree\n\nLetter Ii /i/:\n- Ink\n- Insect\n- Ill",
+                  textType: "english",
+                  short: "Learning the sounds and words of letters Tt and Ii.",
+                  detailed: "In this phonics lesson, students learn the sound of the letter T (/t/) and words starting with T: Tomato, Table, Tree. They also learn the short sound of the letter I (/i/) and words starting with I: Ink, Insect, Ill.",
+                  questions: [
+                    { q: "Which word starts with T?", options: ["Tomato", "Ink", "Apple"], answer: 0 },
+                    { q: "Which word starts with I?", options: ["Tree", "Insect", "Table"], answer: 1 },
+                    { q: "What is the sound of T?", options: ["/t/", "/i/", "/s/"], answer: 0 },
+                    { q: "Which of these is a tree?", options: ["Table", "Tree", "Ink"], answer: 1 }
+                  ] }
+            ]
+        },
+        "Unit 2: The Garden of Colors and Shapes": {
+            emoji: "🎨", gradient: "linear-gradient(135deg, #4CAF50, #8BC34A)",
+            description: "Colors, Shapes, Phonics Ss & Aa.",
+            lessons: [
+                { id: "en_u2_l1", title: "Lesson 1: Colors & Shapes", type: "Vocabulary", emoji: "🔴", color: "#4CAF50",
+                  text: "Vocabulary:\n- grass (green)\n- flower (red)\n- tree (green)\n- sky (blue)\n- bird\n- butterfly\n- circle\n- square\n- triangle\n- rectangle\n- green, blue, red, yellow\n\nSentences:\n- I can see a red flower.\n- The grass is green.\n- The sky is blue.\n- What's this? This is a circle.",
+                  textType: "english",
+                  short: "Learning colors, shapes, and nature vocabulary.",
+                  detailed: "Students learn the names of colors (green, blue, red, yellow) and shapes (circle, square, triangle, rectangle). They also learn nature words like grass, flower, tree, sky, bird, and butterfly. They practice sentences like 'The grass is green'.",
+                  questions: [
+                    { q: "What color is the sky?", options: ["Blue", "Green", "Red"], answer: 0 },
+                    { q: "What color is the grass?", options: ["Red", "Green", "Yellow"], answer: 1 },
+                    { q: "Which shape is round?", options: ["Square", "Triangle", "Circle"], answer: 2 },
+                    { q: "Which shape has 3 sides?", options: ["Square", "Triangle", "Circle"], answer: 1 },
+                    { q: "I can see a _____ flower.", options: ["red", "square", "grass"], answer: 0 }
+                  ] },
+                { id: "en_u2_l2", title: "Lesson 2: Phonics Ss & Aa", type: "Phonics", emoji: "🔤", color: "#8BC34A",
+                  text: "Letter Ss /s/:\n- Sun\n- Star\n- Snake\n\nLetter Aa /æ/:\n- Ant\n- Axe\n- Apple",
+                  textType: "english",
+                  short: "Learning the sounds and words of letters Ss and Aa.",
+                  detailed: "Students learn the sound /s/ for Ss (Sun, Star, Snake) and the short sound /æ/ for Aa (Ant, Axe, Apple).",
+                  questions: [
+                    { q: "Which word starts with S?", options: ["Sun", "Ant", "Apple"], answer: 0 },
+                    { q: "Which word starts with A?", options: ["Star", "Apple", "Snake"], answer: 1 },
+                    { q: "What is the sound of S?", options: ["/s/", "/a/", "/t/"], answer: 0 }
+                  ] }
+            ]
+        },
+        "Unit 3: I Love My Family": {
+            emoji: "👨‍👩‍👧‍👦", gradient: "linear-gradient(135deg, #9C27B0, #E91E63)",
+            description: "Family Members, Numbers 1-5, Phonics Nn, Pp, Hh, Dd.",
+            lessons: [
+                { id: "en_u3_l1", title: "Lesson 1: My Family & Numbers", type: "Vocabulary", emoji: "👪", color: "#9C27B0",
+                  text: "Vocabulary:\n- father\n- mother\n- sister\n- brother\n- grandmother\n- grandfather\n- parents\n\nNumbers: 1, 2, 3, 4, 5\n\nSentences:\n- Who's this? This is my father.\n- I have 1 brother.\n- I have 2 sisters.\n- How many birds? There are 3 birds.",
+                  textType: "english",
+                  short: "Learning family members and numbers 1 to 5.",
+                  detailed: "Students learn family vocabulary (father, mother, sister, brother, grandmother, grandfather, parents) and numbers from 1 to 5. They practice asking and answering 'Who's this?' and 'How many...?'.",
+                  questions: [
+                    { q: "Who is the father of your father?", options: ["Grandfather", "Brother", "Uncle"], answer: 0 },
+                    { q: "How many brothers do you have if you have one?", options: ["1", "2", "3"], answer: 0 },
+                    { q: "Who is this? (female parent)", options: ["Mother", "Father", "Sister"], answer: 0 },
+                    { q: "What number comes after 3?", options: ["2", "4", "5"], answer: 1 }
+                  ] },
+                { id: "en_u3_l2", title: "Lesson 2: Phonics Nn, Pp, Hh, Dd", type: "Phonics", emoji: "🔤", color: "#E91E63",
+                  text: "Letter Nn /n/: nose, neck, net\nLetter Pp /p/: pencil, pizza, panda\nLetter Hh /h/: hat, hair, horse\nLetter Dd /d/: door, dog, drum",
+                  textType: "english",
+                  short: "Learning phonics for letters Nn, Pp, Hh, Dd.",
+                  detailed: "Students learn the sounds and vocabulary for letters Nn (/n/), Pp (/p/), Hh (/h/), and Dd (/d/).",
+                  questions: [
+                    { q: "Which word starts with P?", options: ["Panda", "Nose", "Hat"], answer: 0 },
+                    { q: "Which word starts with D?", options: ["Dog", "Pizza", "Horse"], answer: 0 },
+                    { q: "Which word starts with H?", options: ["Hat", "Pencil", "Net"], answer: 0 }
+                  ] }
+            ]
+        },
+        "Unit 4: My Body and My Senses": {
+            emoji: "👁️", gradient: "linear-gradient(135deg, #00BCD4, #03A9F4)",
+            description: "Body Parts, Senses, Phonics Rr, Ee, Cc, Kk.",
+            lessons: [
+                { id: "en_u4_l1", title: "Lesson 1: My Body & Senses", type: "Vocabulary", emoji: "🧠", color: "#00BCD4",
+                  text: "Vocabulary:\n- head, eyes, ears, nose, mouth, tongue, arm(s), hand(s), leg(s), foot/feet, toe(s)\n- see, hear, smell, taste, touch\n\nSentences:\n- I have 1 nose. I have 2 eyes.\n- I can see with my eyes.\n- I can hear with my ears.\n- I can taste with my tongue.\n- I can smell with my nose.\n- I can touch with my hands.",
+                  textType: "english",
+                  short: "Learning body parts and the five senses.",
+                  detailed: "Students learn body parts (head, eyes, ears, nose, mouth, hands, legs) and the five senses. They practice sentences like 'I can see with my eyes'.",
+                  questions: [
+                    { q: "What do we use to see?", options: ["Eyes", "Ears", "Nose"], answer: 0 },
+                    { q: "What do we use to hear?", options: ["Eyes", "Ears", "Mouth"], answer: 1 },
+                    { q: "How many noses do you have?", options: ["1", "2", "3"], answer: 0 },
+                    { q: "I can _____ with my tongue.", options: ["taste", "see", "hear"], answer: 0 }
+                  ] },
+                { id: "en_u4_l2", title: "Lesson 2: Phonics Rr, Ee, Cc, Kk", type: "Phonics", emoji: "🔤", color: "#03A9F4",
+                  text: "Letter Rr /r/: red, rabbit, rocket\nLetter Ee /e/: egg, elephant, elbow\nLetter Cc /k/: cat, cake, cup\nLetter Kk /k/: kite, king, kitchen",
+                  textType: "english",
+                  short: "Learning phonics for letters Rr, Ee, Cc, Kk.",
+                  detailed: "Students learn the sounds and vocabulary for letters Rr (/r/), Ee (/e/), Cc (/k/), and Kk (/k/).",
+                  questions: [
+                    { q: "Which word starts with E?", options: ["Egg", "Red", "Cat"], answer: 0 },
+                    { q: "Which word starts with K?", options: ["Kite", "Rabbit", "Elephant"], answer: 0 },
+                    { q: "Which word starts with R?", options: ["Rabbit", "Cake", "Kite"], answer: 0 }
+                  ] }
+            ]
+        },
+        "Unit 5: On the Farm": {
+            emoji: "🚜", gradient: "linear-gradient(135deg, #FFC107, #FF9800)",
+            description: "Farm Animals, Numbers 6-10, Phonics Mm, Gg, Oo, Ff.",
+            lessons: [
+                { id: "en_u5_l1", title: "Lesson 1: Farm Animals & Numbers", type: "Vocabulary", emoji: "🐄", color: "#FFC107",
+                  text: "Vocabulary:\n- farm, cow, horse, duck, chicken\n- milk, cheese, meat, eggs\n- big, small\n- Numbers 6, 7, 8, 9, 10\n\nSentences:\n- The cow gives us milk, cheese and meat.\n- The chicken gives us eggs.\n- The cow is big. The duck is small.\n- How many horses can you see? I can see 6 horses.",
+                  textType: "english",
+                  short: "Learning farm animals, their products, and numbers 6-10.",
+                  detailed: "Students learn farm animal vocabulary (cow, horse, duck, chicken) and the products they give us (milk, cheese, meat, eggs). They also learn numbers 6 to 10 and adjectives 'big' and 'small'.",
+                  questions: [
+                    { q: "What does the cow give us?", options: ["Milk", "Eggs", "Apples"], answer: 0 },
+                    { q: "What does the chicken give us?", options: ["Milk", "Eggs", "Meat"], answer: 1 },
+                    { q: "Which animal is small?", options: ["Duck", "Cow", "Horse"], answer: 0 },
+                    { q: "What number comes after 7?", options: ["6", "8", "9"], answer: 1 }
+                  ] },
+                { id: "en_u5_l2", title: "Lesson 2: Phonics Mm, Gg, Oo, Ff", type: "Phonics", emoji: "🔤", color: "#FF9800",
+                  text: "Letter Mm /m/: moon, milk, monkey\nLetter Gg /g/: goat, girl, grapes\nLetter Oo /a/: octopus, on, ostrich\nLetter Ff /f/: fish, fan, frog",
+                  textType: "english",
+                  short: "Learning phonics for letters Mm, Gg, Oo, Ff.",
+                  detailed: "Students learn the sounds and vocabulary for letters Mm (/m/), Gg (/g/), Oo (/a/), and Ff (/f/).",
+                  questions: [
+                    { q: "Which word starts with M?", options: ["Monkey", "Fish", "Girl"], answer: 0 },
+                    { q: "Which word starts with F?", options: ["Fish", "Moon", "Goat"], answer: 0 },
+                    { q: "Which word starts with G?", options: ["Goat", "Fish", "Octopus"], answer: 0 }
+                  ] }
+            ]
+        },
+        "Unit 6: Animals Around Me": {
+            emoji: "🐾", gradient: "linear-gradient(135deg, #8BC34A, #4CAF50)",
+            description: "Pets, Jungle Animals, Prepositions, Phonics Bb, Ll, Uu, Jj.",
+            lessons: [
+                { id: "en_u6_l1", title: "Lesson 1: Pets & Jungle Animals", type: "Vocabulary", emoji: "🦁", color: "#8BC34A",
+                  text: "Vocabulary:\n- pets: cat, dog, turtle, bird\n- jungle: lion, tiger, elephant, monkey, giraffe, snake\n\nPrepositions: in, on, under\n\nSentences:\n- Where is the cat? The cat is under the chair.\n- The dog is on the sofa.\n- The bird is in the cage.\n- The lion has 4 legs.\n- The monkey has 2 legs.",
+                  textType: "english",
+                  short: "Learning pet and jungle animal names, and prepositions.",
+                  detailed: "Students learn pet vocabulary (cat, dog, turtle, bird) and jungle animal vocabulary (lion, tiger, elephant, monkey, giraffe, snake). They also learn prepositions (in, on, under) to describe where things are.",
+                  questions: [
+                    { q: "Which animal is a pet?", options: ["Cat", "Lion", "Tiger"], answer: 0 },
+                    { q: "Where is the bird if it is in the cage?", options: ["in", "on", "under"], answer: 0 },
+                    { q: "Which animal has a long neck?", options: ["Giraffe", "Dog", "Elephant"], answer: 0 },
+                    { q: "The cat is _____ the chair.", options: ["under", "in", "on"], answer: 0 }
+                  ] },
+                { id: "en_u6_l2", title: "Lesson 2: Phonics Bb, Ll, Uu, Jj", type: "Phonics", emoji: "🔤", color: "#4CAF50",
+                  text: "Letter Bb /b/: boy, ball, banana\nLetter Ll /l/: lamp, leaf, lion\nLetter Uu /ʌ/: under, up, umbrella\nLetter Jj /dʒ/: jar, jam, jacket",
+                  textType: "english",
+                  short: "Learning phonics for letters Bb, Ll, Uu, Jj.",
+                  detailed: "Students learn the sounds and vocabulary for letters Bb (/b/), Ll (/l/), Uu (/ʌ/), and Jj (/dʒ/).",
+                  questions: [
+                    { q: "Which word starts with B?", options: ["Ball", "Lion", "Jam"], answer: 0 },
+                    { q: "Which word starts with J?", options: ["Jam", "Ball", "Lamp"], answer: 0 },
+                    { q: "Which word starts with L?", options: ["Lion", "Umbrella", "Banana"], answer: 0 }
+                  ] }
+            ]
+        }
+    }
 }
+};
+
+// ============================================================
+// التنقل بين الصفحات
+// ============================================================
+var appState = { view: 'subjects', subjectKey: null, unitKey: null, lessonId: null };
+
+function updateProgress(pct) { document.getElementById('progressBar').style.width = pct + '%'; }
 
 function hideAllViews() {
     document.getElementById('subjects-view').classList.add('hidden');
@@ -827,9 +1092,6 @@ function hideAllViews() {
     document.getElementById('detail-view').classList.add('hidden');
 }
 
-// ============================================================
-// عرض المواد
-// ============================================================
 function showSubjects() {
     appState = { view: 'subjects', subjectKey: null, unitKey: null, lessonId: null };
     hideAllViews();
@@ -845,21 +1107,17 @@ function renderSubjects() {
     grid.innerHTML = '';
     var keys = Object.keys(subjectsData);
     for (var i = 0; i < keys.length; i++) {
-        var key = keys[i];
         (function(k) {
             var subj = subjectsData[k];
             var unitCount = Object.keys(subj.units).length;
             var lessonCount = 0;
             var uKeys = Object.keys(subj.units);
-            for (var j = 0; j < uKeys.length; j++) {
-                lessonCount += subj.units[uKeys[j]].lessons.length;
-            }
+            for (var j = 0; j < uKeys.length; j++) { lessonCount += subj.units[uKeys[j]].lessons.length; }
             var card = document.createElement('div');
             card.className = 'subject-card';
             card.style.background = subj.gradient;
             card.innerHTML = '<div class="emoji">' + subj.emoji + '</div>' +
-                '<div><h2>' + subj.name + '</h2>' +
-                '<p>' + subj.description + '</p>' +
+                '<div><h2>' + subj.name + '</h2><p>' + subj.description + '</p>' +
                 '<span class="count-badge">' + unitCount + ' وحدات • ' + lessonCount + ' دروس</span></div>';
             card.onclick = function() { showUnits(k); };
             grid.appendChild(card);
@@ -867,28 +1125,14 @@ function renderSubjects() {
     }
 }
 
-// ============================================================
-// عرض الوحدات
-// ============================================================
 function showUnits(subjectKey) {
-    appState.view = 'units';
-    appState.subjectKey = subjectKey;
-    appState.unitKey = null;
-    appState.lessonId = null;
+    appState.view = 'units'; appState.subjectKey = subjectKey; appState.unitKey = null; appState.lessonId = null;
     var subj = subjectsData[subjectKey];
     hideAllViews();
     document.getElementById('units-view').classList.remove('hidden');
     document.getElementById('page-subtitle').textContent = subj.name + ' - اختر الوحدة';
-    var header = document.getElementById('subject-header');
-    header.innerHTML = '<h2 style="color:' + subj.color + ';">' + subj.emoji + ' ' + subj.name + '</h2>' +
-                       '<p>' + subj.description + '</p>';
+    document.getElementById('subject-header').innerHTML = '<h2 style="color:' + subj.color + ';">' + subj.emoji + ' ' + subj.name + '</h2><p>' + subj.description + '</p>';
     updateProgress(25);
-    renderUnits(subjectKey);
-    window.scrollTo(0, 0);
-}
-
-function renderUnits(subjectKey) {
-    var subj = subjectsData[subjectKey];
     var grid = document.getElementById('units-grid');
     grid.innerHTML = '';
     var keys = Object.keys(subj.units);
@@ -898,38 +1142,26 @@ function renderUnits(subjectKey) {
             var card = document.createElement('div');
             card.className = 'unit-card';
             card.style.background = unit.gradient;
-            card.innerHTML = '<div class="emoji">' + unit.emoji + '</div>' +
-                '<div><h3>' + uKey + '</h3><p>' + unit.description + '</p></div>';
+            card.innerHTML = '<div class="emoji">' + unit.emoji + '</div><div><h3>' + uKey + '</h3><p>' + unit.description + '</p></div>';
             card.onclick = function() { showLessons(uKey); };
             grid.appendChild(card);
         })(keys[i]);
     }
+    window.scrollTo(0, 0);
 }
 
-// ============================================================
-// عرض الدروس
-// ============================================================
 function backToUnits() { showUnits(appState.subjectKey); }
 function backToLessons() { showLessons(appState.unitKey); }
 
 function showLessons(unitKey) {
-    appState.view = 'lessons';
-    appState.unitKey = unitKey;
-    appState.lessonId = null;
+    appState.view = 'lessons'; appState.unitKey = unitKey; appState.lessonId = null;
     var subj = subjectsData[appState.subjectKey];
     var unit = subj.units[unitKey];
     hideAllViews();
     document.getElementById('lessons-view').classList.remove('hidden');
     document.getElementById('page-subtitle').textContent = unitKey + ' - اختر الدرس';
-    var header = document.getElementById('unit-header');
-    header.innerHTML = '<h2 style="color:' + subj.color + ';">' + unit.emoji + ' ' + unitKey + '</h2>' +
-                       '<p>' + unit.description + '</p>';
+    document.getElementById('unit-header').innerHTML = '<h2 style="color:' + subj.color + ';">' + unit.emoji + ' ' + unitKey + '</h2><p>' + unit.description + '</p>';
     updateProgress(45);
-    renderLessons(unit);
-    window.scrollTo(0, 0);
-}
-
-function renderLessons(unit) {
     var list = document.getElementById('lessons-list');
     list.innerHTML = '';
     for (var i = 0; i < unit.lessons.length; i++) {
@@ -940,47 +1172,33 @@ function renderLessons(unit) {
             item.innerHTML = '<div class="lesson-info">' +
                 '<div class="lesson-icon" style="background:' + lesson.color + '22; color:' + lesson.color + ';">' + lesson.emoji + '</div>' +
                 '<div><strong>' + lesson.title + '</strong><br><small>' + lesson.type + '</small></div>' +
-                '</div>' +
-                '<span class="type-badge" style="background:' + lesson.color + ';">' + lesson.type + '</span>';
+                '</div><span class="type-badge" style="background:' + lesson.color + ';">' + lesson.type + '</span>';
             item.onclick = function() { showLessonDetail(lesson.id); };
             list.appendChild(item);
         })(unit.lessons[i]);
     }
+    window.scrollTo(0, 0);
 }
 
-// ============================================================
-// عرض الدرس (مع الأسئلة العشوائية)
-// ============================================================
 function showLessonDetail(lessonId) {
-    appState.view = 'lesson';
-    appState.lessonId = lessonId;
+    appState.view = 'lesson'; appState.lessonId = lessonId;
     var subj = subjectsData[appState.subjectKey];
     var unit = subj.units[appState.unitKey];
     var lesson = null;
-    for (var i = 0; i < unit.lessons.length; i++) {
-        if (unit.lessons[i].id === lessonId) { lesson = unit.lessons[i]; break; }
-    }
+    for (var i = 0; i < unit.lessons.length; i++) { if (unit.lessons[i].id === lessonId) { lesson = unit.lessons[i]; break; } }
     if (!lesson) return;
-
     hideAllViews();
     document.getElementById('detail-view').classList.remove('hidden');
     document.getElementById('page-subtitle').textContent = lesson.title;
     updateProgress(70);
-
     var container = document.getElementById('lesson-detail-content');
-    var html = '<div class="lesson-title-wrap">' +
-        '<span class="big-emoji">' + lesson.emoji + '</span>' +
-        '<h3>' + lesson.title + '</h3>' +
-        '</div>' +
+    var html = '<div class="lesson-title-wrap"><span class="big-emoji">' + lesson.emoji + '</span><h3>' + lesson.title + '</h3></div>' +
         '<div class="toggle-buttons">' +
         '<button class="toggle-btn active" id="btn-short" onclick="showExplanation(\'short\')">📝 شرح مختصر</button>' +
         '<button class="toggle-btn" id="btn-detailed" onclick="showExplanation(\'detailed\')">📖 شرح مفصل</button>' +
-        '</div>' +
-        '<div id="explanation-box" class="explanation-box"></div>';
-
+        '</div><div id="explanation-box" class="explanation-box"></div>';
     if (lesson.text) html += renderTextSection(lesson);
     html += '<div id="quiz-container" class="quiz-section"></div>';
-
     container.innerHTML = html;
     showExplanation('short');
     renderQuiz(lesson);
@@ -993,92 +1211,52 @@ function renderTextSection(lesson) {
     var isEnglish = lesson.textType === 'english';
     var lines = lesson.text.split('\n');
     var linesHtml = '';
-    for (var i = 0; i < lines.length; i++) {
-        if (lines[i].trim()) {
-            linesHtml += '<div class="text-line">' + lines[i] + '</div>';
-        }
-    }
+    for (var i = 0; i < lines.length; i++) { if (lines[i].trim()) { linesHtml += '<div class="text-line">' + lines[i] + '</div>'; } }
     var cls = isQuran ? 'quran' : (isEnglish ? 'english' : 'story');
     var title = isQuran ? '📖 النص القرآني' : (isEnglish ? '📖 English Text' : '📖 النص');
-    return '<div class="text-section ' + cls + '">' +
-        '<h4>' + title + '</h4>' +
-        '<div>' + linesHtml + '</div>' +
-        '</div>';
+    return '<div class="text-section ' + cls + '"><h4>' + title + '</h4><div>' + linesHtml + '</div></div>';
 }
 
 function showExplanation(type) {
     var subj = subjectsData[appState.subjectKey];
     var unit = subj.units[appState.unitKey];
     var lesson = null;
-    for (var i = 0; i < unit.lessons.length; i++) {
-        if (unit.lessons[i].id === appState.lessonId) { lesson = unit.lessons[i]; break; }
-    }
+    for (var i = 0; i < unit.lessons.length; i++) { if (unit.lessons[i].id === appState.lessonId) { lesson = unit.lessons[i]; break; } }
     if (!lesson) return;
-
     document.getElementById('btn-short').classList.toggle('active', type === 'short');
     document.getElementById('btn-detailed').classList.toggle('active', type === 'detailed');
-
     var box = document.getElementById('explanation-box');
     var txt = type === 'short' ? lesson.short : lesson.detailed;
     var extra = '';
     if (lesson.text) {
-        extra = '<div style="margin-top:12px; padding-top:12px; border-top:2px dashed #F18F01; color:#666; font-size:0.95rem; font-weight:600;">' +
-            '👇 تجد <strong>' + (lesson.textType === 'quran' ? 'النص القرآني' : 'النص') + '</strong> كاملًا في القسم التالي.' +
-            '</div>';
+        extra = '<div style="margin-top:12px; padding-top:12px; border-top:2px dashed #F18F01; color:#666; font-size:0.95rem; font-weight:600;">👇 تجد <strong>' + (lesson.textType === 'quran' ? 'النص القرآني' : 'النص') + '</strong> كاملًا في القسم التالي.</div>';
     }
     box.innerHTML = txt + extra;
 }
 
-// ============================================================
-// الأسئلة (عشوائية في كل مرة)
-// ============================================================
-var QUIZ_COUNT = 4; // عدد الأسئلة المعروضة في كل مرة
-
-function shuffleArray(arr) {
-    var copy = arr.slice();
-    for (var i = copy.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = copy[i];
-        copy[i] = copy[j];
-        copy[j] = temp;
-    }
-    return copy;
-}
-
+var QUIZ_COUNT = 4;
+function shuffleArray(arr) { var copy = arr.slice(); for (var i = copy.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var temp = copy[i]; copy[i] = copy[j]; copy[j] = temp; } return copy; }
 function prepareQuestion(q) {
     var options = q.options.slice();
     var correctText = options[q.answer];
     var shuffled = shuffleArray(options);
     var newAnswerIndex = 0;
-    for (var i = 0; i < shuffled.length; i++) {
-        if (shuffled[i] === correctText) { newAnswerIndex = i; break; }
-    }
+    for (var i = 0; i < shuffled.length; i++) { if (shuffled[i] === correctText) { newAnswerIndex = i; break; } }
     return { q: q.q, options: shuffled, answer: newAnswerIndex };
 }
-
 function getRandomQuestions(pool) {
     var count = Math.min(QUIZ_COUNT, pool.length);
     var shuffled = shuffleArray(pool);
     var selected = shuffled.slice(0, count);
     var prepared = [];
-    for (var i = 0; i < selected.length; i++) {
-        prepared.push(prepareQuestion(selected[i]));
-    }
+    for (var i = 0; i < selected.length; i++) { prepared.push(prepareQuestion(selected[i])); }
     return prepared;
 }
 
 function renderQuiz(lesson) {
     var quizContainer = document.getElementById('quiz-container');
-    if (!lesson.questions || lesson.questions.length === 0) {
-        quizContainer.innerHTML = '';
-        return;
-    }
-    quizContainer.innerHTML = '<div class="quiz-header">' +
-        '<h4>✏️ حان وقت الأسئلة!</h4>' +
-        '<button class="reload-btn" onclick="reloadQuiz()">🔄 أسئلة جديدة</button>' +
-        '</div>' +
-        '<p class="hint">💡 الأسئلة تتغير في كل مرة تفتح فيها الدرس!</p>' +
-        '<div id="questions-list"></div>';
+    if (!lesson.questions || lesson.questions.length === 0) { quizContainer.innerHTML = ''; return; }
+    quizContainer.innerHTML = '<div class="quiz-header"><h4>✏️ حان وقت الأسئلة!</h4><button class="reload-btn" onclick="reloadQuiz()">🔄 أسئلة جديدة</button></div><p class="hint">💡 الأسئلة تتغير في كل مرة تفتح فيها الدرس!</p><div id="questions-list"></div>';
     displayQuestions(lesson);
 }
 
@@ -1100,9 +1278,7 @@ function displayQuestions(lesson) {
                     var btn = document.createElement('button');
                     btn.className = 'option-btn';
                     btn.textContent = opt;
-                    btn.onclick = function(e) {
-                        checkAnswer(btn, optIndex, q.answer, optsDiv, qIndex, e);
-                    };
+                    btn.onclick = function(e) { checkAnswer(btn, optIndex, q.answer, optsDiv, qIndex, e); };
                     optsDiv.appendChild(btn);
                 })(q.options[j], j);
             }
@@ -1120,9 +1296,7 @@ function reloadQuiz() {
     var subj = subjectsData[appState.subjectKey];
     var unit = subj.units[appState.unitKey];
     var lesson = null;
-    for (var i = 0; i < unit.lessons.length; i++) {
-        if (unit.lessons[i].id === appState.lessonId) { lesson = unit.lessons[i]; break; }
-    }
+    for (var i = 0; i < unit.lessons.length; i++) { if (unit.lessons[i].id === appState.lessonId) { lesson = unit.lessons[i]; break; } }
     if (!lesson) return;
     displayQuestions(lesson);
 }
@@ -1132,14 +1306,12 @@ function checkAnswer(btn, chosen, correct, optsDiv, qIndex, event) {
     for (var i = 0; i < buttons.length; i++) buttons[i].disabled = true;
     if (chosen === correct) {
         btn.classList.add('correct');
-        document.getElementById('feedback-' + qIndex).innerHTML =
-            '<span style="color:#27AE60;">✅ إجابة صحيحة! أحسنت يا بطل 🌟</span>';
+        document.getElementById('feedback-' + qIndex).innerHTML = '<span style="color:#27AE60;">✅ إجابة صحيحة! أحسنت يا بطل 🌟</span>';
         spawnConfetti(event);
     } else {
         btn.classList.add('wrong');
         buttons[correct].classList.add('correct');
-        document.getElementById('feedback-' + qIndex).innerHTML =
-            '<span style="color:#E74C3C;">❌ حاول مرة أخرى. الإجابة الصحيحة بالأخضر.</span>';
+        document.getElementById('feedback-' + qIndex).innerHTML = '<span style="color:#E74C3C;">❌ حاول مرة أخرى. الإجابة الصحيحة بالأخضر.</span>';
     }
 }
 
@@ -1155,21 +1327,12 @@ function spawnConfetti(event) {
         el.style.top = y + 'px';
         el.style.animationDelay = (Math.random() * 0.3) + 's';
         document.body.appendChild(el);
-        (function(node) {
-            setTimeout(function() { if (node.parentNode) node.parentNode.removeChild(node); }, 1800);
-        })(el);
+        (function(node) { setTimeout(function() { if (node.parentNode) node.parentNode.removeChild(node); }, 1800); })(el);
     }
 }
 
-// ============================================================
-// التهيئة
-// ============================================================
 function initApp() { showSubjects(); }
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initApp);
-} else {
-    initApp();
-}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initApp); } else { initApp(); }
 </script>
 </body>
 </html>
