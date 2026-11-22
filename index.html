@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <title>منصة الصف الأول الابتدائي - الترم الأول</title>
 <style>
     :root {
@@ -104,6 +107,180 @@
         .text-line { font-size: 1.05rem; }
         .text-section.english .text-line { font-size: 1.1rem; }
     }
+/* ============================================================
+   ✨ ترقية التصميم v2 — خطوط عربية جميلة + ألعاب التقييمات
+   ============================================================ */
+:root {
+    --font-stack: 'Tajawal', 'Segoe UI', 'Tahoma', 'Arial', 'Helvetica Neue', sans-serif;
+    --display-font: 'Baloo Bhaijaan 2', 'Tajawal', 'Segoe UI', 'Tahoma', sans-serif;
+}
+body {
+    background: linear-gradient(160deg, #FFF6E9 0%, #EAF4FF 45%, #FDEFF6 100%);
+    background-attachment: fixed;
+}
+.top-bar {
+    position: sticky; top: 10px; z-index: 50;
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow: 0 8px 24px rgba(60,60,120,0.10);
+}
+.top-bar h1, .section-header h2, .subject-card h2, .unit-card h3,
+.lesson-title-wrap h3, .quiz-header h4, .text-section h4,
+.game-header h3, .hub-title {
+    font-family: var(--display-font);
+}
+.section-header, .lesson-detail, .question, .game-panel {
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: 0 10px 28px rgba(60,60,120,0.10);
+}
+.subject-card, .unit-card {
+    position: relative; overflow: hidden;
+    box-shadow: 0 12px 28px rgba(60,60,120,0.18);
+}
+.subject-card::after, .unit-card::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 85% 15%, rgba(255,255,255,0.35), transparent 55%);
+    pointer-events: none;
+}
+.lesson-item { border-right-width: 8px; }
+.option-btn { font-size: 1.05rem; }
+
+/* ---------- بطاقة الألعاب في الصفحة الرئيسية ---------- */
+.games-hero-card {
+    grid-column: 1 / -1;
+    border-radius: 28px; padding: 34px 26px; color: white; cursor: pointer;
+    background: linear-gradient(120deg, #6A5AE0 0%, #9B5DE5 45%, #FF6B9D 100%);
+    box-shadow: 0 16px 36px rgba(106,90,224,0.35);
+    display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+    transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;
+}
+.games-hero-card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 22px 44px rgba(106,90,224,0.45); }
+.games-hero-card::before {
+    content: "🎈"; position: absolute; left: 18px; bottom: -14px; font-size: 4.4rem; opacity: 0.25;
+    transform: rotate(-12deg); pointer-events: none;
+}
+.games-hero-card .emoji { font-size: 4.2rem; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25)); animation: float 3s ease-in-out infinite; }
+.games-hero-card h2 { margin: 0 0 6px; font-size: 1.5rem; font-weight: 900; text-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+.games-hero-card p { margin: 0; font-size: 1rem; opacity: 0.96; line-height: 1.7; }
+.games-hero-card .count-badge { display: inline-block; padding: 5px 16px; border-radius: 20px; background: rgba(255,255,255,0.28); font-size: 0.85rem; margin-top: 12px; font-weight: 800; }
+
+/* ---------- صف ألعاب التقييمات ---------- */
+.games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.game-card {
+    border-radius: 22px; padding: 22px 20px; color: white; cursor: pointer;
+    box-shadow: 0 10px 24px rgba(60,60,120,0.18); min-height: 150px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: transform 0.25s, box-shadow 0.25s; position: relative; overflow: hidden;
+}
+.game-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 16px 32px rgba(60,60,120,0.28); }
+.game-card .emoji { font-size: 2.8rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)); }
+.game-card h3 { margin: 8px 0 4px; font-size: 1.15rem; font-weight: 900; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+.game-card p { margin: 0; font-size: 0.88rem; opacity: 0.95; line-height: 1.6; }
+.game-card .game-badge { position: absolute; top: 14px; left: 14px; background: rgba(255,255,255,0.28); padding: 4px 12px; border-radius: 16px; font-size: 0.72rem; font-weight: 800; }
+
+/* ---------- شاشة اللعب ---------- */
+.game-panel { background: white; border-radius: 24px; padding: 24px; }
+.score-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+.score-chip { background: linear-gradient(135deg, #FFF3D6, #FFE9F3); border: 2px solid #FFD23F; border-radius: 20px; padding: 8px 18px; font-weight: 900; color: #8a6d00; font-size: 0.95rem; }
+.round-chip { background: #EEF3FF; border: 2px solid #B7C8FF; border-radius: 20px; padding: 8px 18px; font-weight: 800; color: #3D5AFE; font-size: 0.9rem; }
+.game-stage { min-height: 280px; }
+.game-q-title { font-family: var(--display-font); font-size: 1.2rem; font-weight: 800; color: var(--dark); margin: 0 0 18px; text-align: center; line-height: 1.8; }
+.game-q-title .hl { color: var(--pink); }
+.game-emoji-hint { font-size: 3.4rem; text-align: center; display: block; margin-bottom: 10px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); }
+
+/* أزرار اختيار كبيرة */
+.big-options { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.big-opt {
+    min-width: 88px; padding: 18px 22px; border-radius: 20px; border: 3px solid #E3E6F0;
+    background: linear-gradient(180deg, #FFFFFF, #F6F8FF); cursor: pointer;
+    font-size: 1.7rem; font-weight: 900; color: var(--dark); font-family: var(--display-font);
+    transition: all 0.2s; box-shadow: 0 5px 14px rgba(60,60,120,0.08);
+}
+.big-opt:hover:not(:disabled) { border-color: var(--purple); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(155,93,229,0.25); }
+.big-opt.correct { background: #D9F8E4; border-color: var(--green); animation: correctPop 0.5s ease; }
+.big-opt.wrong { background: #FBD9D5; border-color: var(--danger); animation: shake 0.4s ease; }
+.big-opt:disabled { cursor: default; opacity: 0.85; }
+.big-opt.text-opt { font-size: 1.15rem; font-family: var(--font-stack); min-width: 140px; }
+
+/* لعبة التركيب والترتيب */
+.slots-row { display: flex; gap: 10px; justify-content: center; margin: 18px 0 22px; flex-wrap: wrap; }
+.slot {
+    width: 62px; height: 68px; border-radius: 16px; border: 3px dashed #B7C8FF;
+    background: #F6F8FF; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; font-weight: 900; font-family: var(--display-font); color: var(--dark);
+    transition: all 0.2s;
+}
+.slot.filled { border-style: solid; border-color: var(--purple); background: #F0E9FF; }
+.slot.ok { border-color: var(--green); background: #D9F8E4; }
+.slot.bad { border-color: var(--danger); background: #FBD9D5; animation: shake 0.4s ease; }
+.bank-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
+.tile {
+    min-width: 62px; height: 68px; padding: 0 14px; border-radius: 16px; border: none; cursor: pointer;
+    background: linear-gradient(135deg, var(--sky), var(--primary)); color: white;
+    font-size: 1.7rem; font-weight: 900; font-family: var(--display-font);
+    box-shadow: 0 6px 14px rgba(46,134,171,0.35); transition: all 0.2s;
+}
+.tile:hover:not(:disabled) { transform: translateY(-5px) scale(1.05); }
+.tile:disabled { opacity: 0.25; transform: scale(0.92); cursor: default; }
+.game-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+.action-btn {
+    border: none; border-radius: 24px; padding: 12px 26px; cursor: pointer;
+    font-size: 1rem; font-weight: 800; font-family: var(--font-stack);
+    transition: transform 0.2s; box-shadow: 0 5px 14px rgba(60,60,120,0.15);
+}
+.action-btn:hover { transform: translateY(-3px); }
+.action-btn.check { background: linear-gradient(135deg, var(--green), #1E8449); color: white; }
+.action-btn.undo { background: #EEF1F8; color: #556; }
+.action-btn.next { background: linear-gradient(135deg, var(--secondary), var(--pink)); color: white; }
+
+/* لعبة التوصيل */
+.match-wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.match-col { display: flex; flex-direction: column; gap: 12px; flex: 1; min-width: 130px; }
+.match-word, .match-pic {
+    border: 3px solid #E3E6F0; background: white; border-radius: 16px; cursor: pointer;
+    padding: 12px; font-size: 1.25rem; font-weight: 800; text-align: center; color: var(--dark);
+    transition: all 0.2s; font-family: var(--display-font);
+}
+.match-pic { font-size: 2rem; padding: 8px; }
+.match-word.selected, .match-pic.selected { border-color: var(--purple); background: #F0E9FF; transform: scale(1.05); }
+.match-word.done, .match-pic.done { border-color: var(--green); background: #D9F8E4; cursor: default; }
+.match-word.bad, .match-pic.bad { border-color: var(--danger); background: #FBD9D5; animation: shake 0.4s ease; }
+
+/* صواب أم خطأ */
+.tf-row { display: flex; gap: 16px; justify-content: center; margin-top: 10px; }
+.tf-btn {
+    border: none; border-radius: 22px; padding: 18px 34px; cursor: pointer;
+    font-size: 1.35rem; font-weight: 900; font-family: var(--display-font); color: white;
+    transition: all 0.2s; box-shadow: 0 8px 18px rgba(60,60,120,0.18);
+}
+.tf-btn.true { background: linear-gradient(135deg, #2ECC71, #1E8449); }
+.tf-btn.false { background: linear-gradient(135deg, #FF7B7B, #E74C3C); }
+.tf-btn:hover:not(:disabled) { transform: translateY(-4px) scale(1.04); }
+.tf-btn:disabled { opacity: 0.55; cursor: default; }
+.tf-sentence { background: linear-gradient(135deg, #FFF9E6, #FFE5F1); border-radius: 18px; border-right: 6px solid var(--secondary); padding: 20px; font-size: 1.3rem; font-weight: 800; text-align: center; line-height: 2; color: #333; }
+
+/* شاشة النتيجة */
+.result-box { text-align: center; padding: 26px 12px; }
+.result-box .big-stars { font-size: 3.2rem; margin-bottom: 10px; }
+.result-box h3 { font-family: var(--display-font); font-size: 1.5rem; margin: 0 0 8px; color: var(--dark); }
+.result-box p { color: #777; font-weight: 700; margin: 0 0 18px; }
+
+@media (max-width: 600px) {
+    .games-hero-card { padding: 24px 18px; gap: 14px; }
+    .games-hero-card .emoji { font-size: 3rem; }
+    .games-hero-card h2 { font-size: 1.2rem; }
+    .big-opt { min-width: 72px; padding: 14px 16px; font-size: 1.45rem; }
+    .slot { width: 52px; height: 58px; font-size: 1.5rem; }
+    .tile { min-width: 52px; height: 58px; font-size: 1.45rem; }
+    .tf-sentence { font-size: 1.1rem; }
+    .tf-btn { padding: 14px 24px; font-size: 1.15rem; }
+}
+
+/* صور SVG داخل الألعاب */
+.game-emoji-hint svg { display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12)); }
+.match-pic svg { display: block; margin: 0 auto; }
+
 </style>
 </head>
 <body>
@@ -129,6 +306,22 @@
     <div id="detail-view" class="hidden">
         <button class="back-btn" onclick="backToLessons()">← العودة للدروس</button>
         <div class="lesson-detail" id="lesson-detail-content"></div>
+    </div>
+    <div id="games-view" class="hidden">
+        <button class="back-btn" onclick="showSubjects()">← العودة للمواد</button>
+        <div class="section-header" id="games-header"></div>
+        <div class="games-grid" id="games-grid"></div>
+    </div>
+    <div id="game-play-view" class="hidden">
+        <button class="back-btn" onclick="showGames()">← العودة للألعاب</button>
+        <div class="section-header" id="game-header"></div>
+        <div class="game-panel">
+            <div class="score-bar">
+                <span class="score-chip" id="score-chip"></span>
+                <span class="round-chip" id="round-chip"></span>
+            </div>
+            <div class="game-stage" id="game-stage"></div>
+        </div>
     </div>
 </div>
 
@@ -1184,6 +1377,8 @@ function hideAllViews() {
     document.getElementById('units-view').classList.add('hidden');
     document.getElementById('lessons-view').classList.add('hidden');
     document.getElementById('detail-view').classList.add('hidden');
+    document.getElementById('games-view').classList.add('hidden');
+    document.getElementById('game-play-view').classList.add('hidden');
 }
 
 function showSubjects() {
@@ -1217,6 +1412,14 @@ function renderSubjects() {
             grid.appendChild(card);
         })(keys[i]);
     }
+    var gamesCard = document.createElement('div');
+    gamesCard.className = 'games-hero-card';
+    gamesCard.innerHTML = '<div class="emoji">🎮</div>' +
+        '<div><h2>الألعاب والتقييمات</h2>' +
+        '<p>ألعاب جديدة ومتنوعة من نماذج التقييمات: حروف ناقصة، تركيب كلمات، توصيل بالصور، صواب وخطأ، وأكثر!</p>' +
+        '<span class="count-badge">' + gamesData.length + ' ألعاب • أسئلة تتجدد كل مرة</span></div>';
+    gamesCard.onclick = function() { showGames(); };
+    grid.appendChild(gamesCard);
 }
 
 function showUnits(subjectKey) {
@@ -1424,6 +1627,540 @@ function spawnConfetti(event) {
         (function(node) { setTimeout(function() { if (node.parentNode) node.parentNode.removeChild(node); }, 1800); })(el);
     }
 }
+
+/* ============================================================
+   🎨 مكتبة صور SVG مدمجة — لا تعتمد على خطوط الإيموجي
+   ============================================================ */
+var ICONS = {
+home: '<rect x="24" y="46" width="48" height="34" rx="4" fill="#F4A261"/><path d="M12 48 L48 18 L84 48 Z" fill="#E76F51"/><rect x="42" y="58" width="12" height="22" rx="2" fill="#8B5E34"/><rect x="28" y="54" width="10" height="10" rx="2" fill="#BEE3F8"/><rect x="58" y="54" width="10" height="10" rx="2" fill="#BEE3F8"/>',
+peach: '<circle cx="48" cy="54" r="24" fill="#FFB26B"/><path d="M48 30 Q60 14 72 20 Q62 30 48 30" fill="#40916C"/><path d="M48 30 Q48 22 44 18" stroke="#8B5E34" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M34 62 Q40 68 48 68" stroke="#F4845F" stroke-width="4" fill="none" stroke-linecap="round"/>',
+stadium: '<ellipse cx="48" cy="52" rx="36" ry="24" fill="#8B5E34"/><ellipse cx="48" cy="52" rx="28" ry="17" fill="#2FA36B"/><line x1="48" y1="35" x2="48" y2="69" stroke="#fff" stroke-width="2.5"/><circle cx="48" cy="52" r="6" fill="none" stroke="#fff" stroke-width="2.5"/><rect x="21" y="46" width="5" height="12" fill="none" stroke="#fff" stroke-width="2"/><rect x="70" y="46" width="5" height="12" fill="none" stroke="#fff" stroke-width="2"/>',
+hyena: '<ellipse cx="46" cy="56" rx="26" ry="15" fill="#B08968"/><circle cx="70" cy="44" r="11" fill="#B08968"/><path d="M63 36 L61 28 L69 33 Z" fill="#8D6B4F"/><path d="M74 35 L76 27 L81 34 Z" fill="#8D6B4F"/><circle cx="73" cy="43" r="2" fill="#222"/><circle cx="79" cy="47" r="2.5" fill="#3E2F23"/><path d="M20 52 Q12 48 12 42" stroke="#8D6B4F" stroke-width="4" fill="none" stroke-linecap="round"/><rect x="30" y="66" width="6" height="14" rx="3" fill="#8D6B4F"/><rect x="56" y="66" width="6" height="14" rx="3" fill="#8D6B4F"/><circle cx="36" cy="52" r="2.5" fill="#7A5C3E"/><circle cx="46" cy="58" r="2.5" fill="#7A5C3E"/><circle cx="54" cy="50" r="2.5" fill="#7A5C3E"/><circle cx="42" cy="48" r="2" fill="#7A5C3E"/>',
+fish: '<ellipse cx="44" cy="50" rx="24" ry="14" fill="#48CAE4"/><path d="M66 50 L84 38 L84 62 Z" fill="#2E86AB"/><circle cx="34" cy="46" r="3" fill="#123"/><path d="M44 44 Q50 50 44 56" stroke="#2E86AB" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M36 36 Q44 28 54 34" stroke="#2E86AB" stroke-width="4" fill="none" stroke-linecap="round"/>',
+grapes: '<circle cx="48" cy="42" r="9" fill="#9B5DE5"/><circle cx="36" cy="50" r="9" fill="#8B4DD8"/><circle cx="60" cy="50" r="9" fill="#8B4DD8"/><circle cx="42" cy="62" r="9" fill="#7B3FCC"/><circle cx="56" cy="62" r="9" fill="#9B5DE5"/><circle cx="49" cy="73" r="8" fill="#8B4DD8"/><path d="M48 34 Q50 24 56 20" stroke="#8B5E34" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M56 20 Q68 14 72 22 Q62 26 56 20" fill="#40916C"/>',
+rabbit: '<ellipse cx="36" cy="26" rx="7" ry="16" fill="#FDE8E9"/><ellipse cx="36" cy="28" rx="3.5" ry="10" fill="#F8AD9D"/><ellipse cx="60" cy="26" rx="7" ry="16" fill="#FDE8E9"/><ellipse cx="60" cy="28" rx="3.5" ry="10" fill="#F8AD9D"/><circle cx="48" cy="56" r="22" fill="#FDE8E9"/><circle cx="40" cy="52" r="3" fill="#333"/><circle cx="56" cy="52" r="3" fill="#333"/><ellipse cx="48" cy="61" rx="4" ry="3" fill="#F8AD9D"/><path d="M48 64 Q48 68 44 69 M48 64 Q48 68 52 69" stroke="#D00000" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="32" cy="60" r="4" fill="#F8AD9D" opacity="0.6"/><circle cx="64" cy="60" r="4" fill="#F8AD9D" opacity="0.6"/>',
+carrot: '<path d="M40 34 Q48 30 56 34 L52 74 Q48 82 44 74 Z" fill="#F77F00"/><path d="M44 44 L52 44 M45 54 L51 54 M46 64 L50 64" stroke="#D62828" stroke-width="2.5" stroke-linecap="round"/><path d="M48 32 Q40 20 32 18 Q40 26 44 32 Z" fill="#2D6A4F"/><path d="M48 32 Q50 16 58 12 Q54 24 52 32 Z" fill="#40916C"/><path d="M48 32 Q60 22 68 22 Q58 28 52 33 Z" fill="#52B788"/>',
+banana: '<path d="M20 40 Q30 72 62 68 Q76 65 80 54 Q84 48 78 48 Q72 58 56 60 Q34 62 26 38 Q25 32 20 40 Z" fill="#FFD23F"/><path d="M20 40 Q19 34 24 34 L26 38 Z" fill="#8B5E34"/><path d="M78 48 Q82 46 82 52 L80 54 Z" fill="#8B5E34"/>',
+wheat: '<line x1="48" y1="36" x2="48" y2="82" stroke="#B08954" stroke-width="4" stroke-linecap="round"/><ellipse cx="48" cy="26" rx="5" ry="10" fill="#E9C46A"/><ellipse cx="38" cy="36" rx="5" ry="9" fill="#E9C46A" transform="rotate(-30 38 36)"/><ellipse cx="58" cy="36" rx="5" ry="9" fill="#E9C46A" transform="rotate(30 58 36)"/><ellipse cx="38" cy="52" rx="5" ry="9" fill="#D4A017" transform="rotate(-30 38 52)"/><ellipse cx="58" cy="52" rx="5" ry="9" fill="#D4A017" transform="rotate(30 58 52)"/><ellipse cx="38" cy="68" rx="5" ry="9" fill="#E9C46A" transform="rotate(-30 38 68)"/><ellipse cx="58" cy="68" rx="5" ry="9" fill="#E9C46A" transform="rotate(30 58 68)"/>',
+cheese: '<path d="M14 62 L82 40 L82 62 Q82 70 74 70 L22 70 Q14 70 14 62 Z" fill="#FFD23F"/><path d="M14 62 L82 40 L82 48 L14 68 Z" fill="#F4A261" opacity="0.35"/><circle cx="40" cy="60" r="5" fill="#E0A800"/><circle cx="60" cy="55" r="4" fill="#E0A800"/><circle cx="72" cy="62" r="3" fill="#E0A800"/>',
+mouse: '<path d="M72 60 Q86 62 86 50 Q86 44 82 44" stroke="#ADB5BD" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="42" cy="58" rx="24" ry="15" fill="#ADB5BD"/><circle cx="62" cy="50" r="10" fill="#ADB5BD"/><circle cx="60" cy="38" r="7" fill="#ADB5BD"/><circle cx="60" cy="38" r="3.5" fill="#F8AD9D"/><circle cx="65" cy="48" r="2" fill="#222"/><circle cx="70" cy="53" r="2.5" fill="#F8AD9D"/><path d="M68 55 L76 57 M68 58 L76 61" stroke="#666" stroke-width="1.5" stroke-linecap="round"/>',
+lion: '<circle cx="48" cy="50" r="30" fill="#E76F51"/><circle cx="48" cy="50" r="20" fill="#F4A261"/><circle cx="41" cy="46" r="2.5" fill="#222"/><circle cx="55" cy="46" r="2.5" fill="#222"/><ellipse cx="48" cy="54" rx="4" ry="3" fill="#8B5E34"/><path d="M48 57 Q48 61 43 62 M48 57 Q48 61 53 62" stroke="#8B5E34" stroke-width="2" fill="none" stroke-linecap="round"/>',
+sun: '<circle cx="48" cy="48" r="16" fill="#FFD23F"/><g stroke="#F18F01" stroke-width="5" stroke-linecap="round"><line x1="48" y1="18" x2="48" y2="26"/><line x1="48" y1="70" x2="48" y2="78"/><line x1="18" y1="48" x2="26" y2="48"/><line x1="70" y1="48" x2="78" y2="48"/><line x1="27" y1="27" x2="33" y2="33"/><line x1="63" y1="63" x2="69" y2="69"/><line x1="69" y1="27" x2="63" y2="33"/><line x1="33" y1="63" x2="27" y2="69"/></g>',
+moon: '<path d="M58 14 A34 34 0 1 0 58 82 A27 27 0 1 1 58 14 Z" fill="#F4D35E"/><circle cx="40" cy="40" r="4" fill="#E9C46A"/><circle cx="34" cy="58" r="3" fill="#E9C46A"/>',
+bee: '<ellipse cx="48" cy="54" rx="20" ry="14" fill="#FFD23F"/><rect x="42" y="41" width="6" height="26" fill="#403D39"/><rect x="54" y="42" width="6" height="24" fill="#403D39"/><ellipse cx="40" cy="36" rx="10" ry="7" fill="#BEE3F8" opacity="0.85"/><ellipse cx="56" cy="36" rx="10" ry="7" fill="#BEE3F8" opacity="0.85"/><circle cx="30" cy="50" r="3" fill="#403D39"/><path d="M68 54 L76 54" stroke="#403D39" stroke-width="3" stroke-linecap="round"/>',
+snow: '<g stroke="#48CAE4" stroke-width="5" stroke-linecap="round"><line x1="48" y1="18" x2="48" y2="78"/><line x1="22" y1="33" x2="74" y2="63"/><line x1="74" y1="33" x2="22" y2="63"/></g><g stroke="#48CAE4" stroke-width="3.5" stroke-linecap="round"><line x1="48" y1="18" x2="41" y2="25"/><line x1="48" y1="18" x2="55" y2="25"/><line x1="48" y1="78" x2="41" y2="71"/><line x1="48" y1="78" x2="55" y2="71"/><line x1="22" y1="33" x2="32" y2="34"/><line x1="22" y1="33" x2="27" y2="42"/><line x1="74" y1="63" x2="64" y2="62"/><line x1="74" y1="63" x2="69" y2="54"/><line x1="74" y1="33" x2="64" y2="34"/><line x1="74" y1="33" x2="69" y2="42"/><line x1="22" y1="63" x2="32" y2="62"/><line x1="22" y1="63" x2="27" y2="54"/></g>',
+bell: '<path d="M48 22 Q30 22 30 44 L30 58 L22 68 L74 68 L66 58 L66 44 Q66 22 48 22 Z" fill="#F18F01"/><circle cx="48" cy="74" r="6" fill="#8B5E34"/><rect x="44" y="14" width="8" height="10" rx="4" fill="#E76F51"/>',
+rose: '<path d="M48 52 L48 82" stroke="#2D6A4F" stroke-width="4" stroke-linecap="round"/><path d="M48 66 Q36 62 34 54 Q44 56 48 62 Z" fill="#40916C"/><circle cx="48" cy="36" r="14" fill="#E63946"/><circle cx="38" cy="40" r="9" fill="#D00000"/><circle cx="58" cy="40" r="9" fill="#D00000"/><circle cx="48" cy="30" r="8" fill="#EF476F"/><circle cx="48" cy="38" r="5" fill="#B2022F"/>',
+eggs: '<ellipse cx="38" cy="52" rx="14" ry="18" fill="#FFF8EC" stroke="#E8DCC8" stroke-width="2"/><ellipse cx="60" cy="54" rx="14" ry="18" fill="#FFF3E0" stroke="#E8DCC8" stroke-width="2"/>',
+dog: '<circle cx="48" cy="52" r="22" fill="#C89F73"/><path d="M28 40 Q18 32 20 44 Q22 54 30 52 Z" fill="#8D6B4F"/><path d="M68 40 Q78 32 76 44 Q74 54 66 52 Z" fill="#8D6B4F"/><circle cx="41" cy="48" r="3" fill="#222"/><circle cx="55" cy="48" r="3" fill="#222"/><ellipse cx="48" cy="58" rx="7" ry="5" fill="#F5E6D3"/><circle cx="48" cy="56" r="3" fill="#3E2F23"/><path d="M48 59 Q48 63 44 64 M48 59 Q48 63 52 64" stroke="#3E2F23" stroke-width="2" fill="none" stroke-linecap="round"/>',
+cat: '<path d="M30 40 L26 22 L42 32 Z" fill="#ADB5BD"/><path d="M66 40 L70 22 L54 32 Z" fill="#ADB5BD"/><path d="M31 34 L29 26 L37 31 Z" fill="#F8AD9D"/><path d="M65 34 L67 26 L59 31 Z" fill="#F8AD9D"/><circle cx="48" cy="52" r="21" fill="#ADB5BD"/><circle cx="41" cy="49" r="3" fill="#222"/><circle cx="55" cy="49" r="3" fill="#222"/><path d="M45 58 L51 58 L48 62 Z" fill="#F8AD9D"/><path d="M28 54 L38 56 M28 60 L38 60 M68 54 L58 56 M68 60 L58 60" stroke="#DEE2E6" stroke-width="1.5" stroke-linecap="round"/>',
+bird: '<ellipse cx="46" cy="54" rx="20" ry="15" fill="#48CAE4"/><circle cx="62" cy="42" r="11" fill="#48CAE4"/><path d="M71 42 L82 45 L71 48 Z" fill="#F18F01"/><circle cx="65" cy="40" r="2.5" fill="#123"/><path d="M34 50 Q24 46 22 38 Q32 42 38 48 Z" fill="#2E86AB"/><path d="M42 68 L42 76 M52 68 L52 76" stroke="#F18F01" stroke-width="3" stroke-linecap="round"/><ellipse cx="44" cy="56" rx="10" ry="7" fill="#BEE3F8"/>',
+tree: '<rect x="43" y="54" width="10" height="28" rx="3" fill="#8B5E34"/><circle cx="48" cy="34" r="18" fill="#2D6A4F"/><circle cx="32" cy="46" r="13" fill="#40916C"/><circle cx="64" cy="46" r="13" fill="#40916C"/><circle cx="48" cy="48" r="13" fill="#52B788"/>',
+cup: '<path d="M30 24 L66 24 L62 52 Q60 62 48 62 Q36 62 34 52 Z" fill="#FFD23F"/><path d="M30 28 Q18 28 20 38 Q22 46 33 46" fill="none" stroke="#F18F01" stroke-width="4"/><path d="M66 28 Q78 28 76 38 Q74 46 63 46" fill="none" stroke="#F18F01" stroke-width="4"/><rect x="44" y="62" width="8" height="10" fill="#F18F01"/><rect x="34" y="72" width="28" height="8" rx="3" fill="#E76F51"/><path d="M42 30 L40 46" stroke="#FFF3D6" stroke-width="4" stroke-linecap="round"/>',
+arrow: '<line x1="24" y1="72" x2="66" y2="30" stroke="#8B5E34" stroke-width="5" stroke-linecap="round"/><path d="M66 30 L56 30 M66 30 L66 40" stroke="#E76F51" stroke-width="6" stroke-linecap="round"/><path d="M24 72 L30 58 L36 64 Z" fill="#48CAE4"/><path d="M24 72 L38 66 L32 60 Z" fill="#9B5DE5"/>',
+hedgehog: '<path d="M20 62 Q16 40 40 32 Q66 24 74 46 Q80 62 66 66 L34 68 Q22 68 20 62 Z" fill="#8D6B4F"/><g stroke="#5C4033" stroke-width="3" stroke-linecap="round"><line x1="30" y1="52" x2="26" y2="44"/><line x1="38" y1="46" x2="35" y2="37"/><line x1="47" y1="43" x2="46" y2="33"/><line x1="56" y1="44" x2="57" y2="34"/><line x1="64" y1="49" x2="68" y2="41"/></g><ellipse cx="28" cy="58" rx="9" ry="8" fill="#DDBEA9"/><circle cx="25" cy="56" r="1.8" fill="#222"/><circle cx="20" cy="59" r="2.2" fill="#3E2F23"/>',
+racket: '<ellipse cx="44" cy="38" rx="20" ry="24" fill="#FFE5EC" stroke="#E76F51" stroke-width="6"/><g stroke="#F8AD9D" stroke-width="1.5"><line x1="32" y1="22" x2="32" y2="54"/><line x1="44" y1="16" x2="44" y2="60"/><line x1="56" y1="22" x2="56" y2="54"/><line x1="26" y1="30" x2="62" y2="30"/><line x1="26" y1="40" x2="62" y2="40"/><line x1="28" y1="50" x2="60" y2="50"/></g><rect x="40" y="60" width="9" height="22" rx="4" fill="#8B5E34" transform="rotate(-8 44 70)"/>',
+shirt: '<path d="M34 22 L20 30 L14 46 L26 50 L30 42 L30 76 Q30 80 34 80 L62 80 Q66 80 66 76 L66 42 L70 50 L82 46 L76 30 L62 22 Q56 30 48 30 Q40 30 34 22 Z" fill="#48CAE4"/><path d="M62 22 Q56 30 48 30 Q40 30 34 22" fill="none" stroke="#2E86AB" stroke-width="3"/>',
+milk: '<rect x="32" y="34" width="32" height="46" rx="3" fill="#F8F9FA" stroke="#BEE3F8" stroke-width="2"/><path d="M32 34 L40 22 L56 22 L64 34 Z" fill="#87CEEB"/><rect x="32" y="50" width="32" height="14" fill="#BEE3F8"/><path d="M38 57 q3 -5 6 0 q3 5 6 0" stroke="#2E86AB" stroke-width="2.5" fill="none" stroke-linecap="round"/>',
+rock: '<path d="M16 66 L24 48 L44 44 L56 54 L52 70 L24 72 Z" fill="#8D99AE"/><path d="M46 70 L52 52 L70 48 L80 58 L76 70 Z" fill="#6C757D"/><path d="M28 54 L38 52 M58 58 L68 56" stroke="#5A6270" stroke-width="3" stroke-linecap="round"/>',
+sock: '<path d="M34 18 L58 18 L58 48 Q58 54 64 58 Q74 64 70 74 Q66 82 54 80 L38 76 Q30 74 30 64 Z" fill="#E63946"/><rect x="32" y="14" width="28" height="12" rx="4" fill="#F8F9FA"/><path d="M62 64 Q68 68 66 74" stroke="#F4A4A4" stroke-width="3" fill="none" stroke-linecap="round"/>',
+tiger: '<path d="M30 38 L26 22 L40 30 Z" fill="#F4A261"/><path d="M66 38 L70 22 L56 30 Z" fill="#F4A261"/><circle cx="48" cy="52" r="22" fill="#F4A261"/><g stroke="#3E2F23" stroke-width="3" stroke-linecap="round"><line x1="44" y1="32" x2="44" y2="38"/><line x1="52" y1="32" x2="52" y2="38"/><line x1="32" y1="44" x2="37" y2="46"/><line x1="64" y1="44" x2="59" y2="46"/></g><circle cx="41" cy="48" r="2.5" fill="#222"/><circle cx="55" cy="48" r="2.5" fill="#222"/><ellipse cx="48" cy="58" rx="8" ry="6" fill="#FFF3E0"/><circle cx="48" cy="55" r="2.5" fill="#3E2F23"/><path d="M48 57 Q48 61 44 62 M48 57 Q48 61 52 62" stroke="#3E2F23" stroke-width="2" fill="none" stroke-linecap="round"/>',
+boat: '<path d="M20 62 L76 62 L68 76 L28 76 Z" fill="#E76F51"/><line x1="48" y1="20" x2="48" y2="62" stroke="#8B5E34" stroke-width="3.5"/><path d="M48 22 L24 58 L48 58 Z" fill="#F8F9FA" stroke="#DEE2E6" stroke-width="1.5"/><path d="M52 28 L52 58 L72 58 Z" fill="#48CAE4"/>',
+scorpion: '<ellipse cx="46" cy="60" rx="18" ry="10" fill="#B08968"/><path d="M60 56 Q76 50 74 34 Q73 26 66 26" fill="none" stroke="#8D6B4F" stroke-width="6" stroke-linecap="round"/><path d="M66 26 L72 20 L70 30 Z" fill="#8D6B4F"/><path d="M30 58 Q20 52 18 44 Q26 46 30 52 Z" fill="#8D6B4F"/><path d="M30 62 Q20 66 18 74 Q26 72 30 66 Z" fill="#8D6B4F"/><g stroke="#8D6B4F" stroke-width="3" stroke-linecap="round"><line x1="40" y1="68" x2="38" y2="76"/><line x1="50" y1="68" x2="52" y2="76"/></g><circle cx="34" cy="57" r="2" fill="#222"/>',
+frog: '<circle cx="34" cy="34" r="9" fill="#52B788"/><circle cx="62" cy="34" r="9" fill="#52B788"/><circle cx="34" cy="34" r="5" fill="#fff"/><circle cx="62" cy="34" r="5" fill="#fff"/><circle cx="34" cy="34" r="2.5" fill="#222"/><circle cx="62" cy="34" r="2.5" fill="#222"/><ellipse cx="48" cy="56" rx="24" ry="18" fill="#52B788"/><path d="M34 58 Q48 68 62 58" stroke="#1B4332" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="36" cy="52" r="3" fill="#F8AD9D" opacity="0.55"/><circle cx="60" cy="52" r="3" fill="#F8AD9D" opacity="0.55"/>'
+};
+
+function iconSVG(key, size) {
+    var body = ICONS[key] || '';
+    return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' + body + '</svg>';
+}
+
+
+/* ============================================================
+   🎮 الألعاب والتقييمات — محتوى مستخلص من ملف نماذج الاختبارات
+   ============================================================ */
+var gamesData = [
+    {
+        id: 'missing', emoji: '🔍', title: 'الحرف الناقص', badge: 'حروف',
+        desc: 'اكتشف الحرف الناقص واضبطه بالشكل',
+        gradient: 'linear-gradient(135deg, #FF6B9D, #FF9A8B)',
+        type: 'choice', qtext: 'ما الحرف الناقص الذي يُكمل الكلمة؟',
+        items: [
+            { display: 'ـلْب', options: ['ق', 'ك', 'ب'], answer: 0, full: 'قَلْب' },
+            { display: 'ـفْدَع', options: ['ض', 'د', 'ظ'], answer: 0, full: 'ضَفْدَع' },
+            { display: 'ـعْلَب', options: ['ث', 'س', 'ش'], answer: 0, full: 'ثَعْلَب' },
+            { display: 'ـيْل', options: ['ذ', 'ز', 'د'], answer: 0, full: 'ذِيْل' },
+            { display: 'سَلْـ▢ـفَاة', options: ['ح', 'هـ', 'خ'], answer: 0, full: 'سُلَحْفَاة' },
+            { display: 'ـمْك', options: ['س', 'ش', 'ص'], answer: 0, full: 'سَمَك' },
+            { display: 'ـحْل', options: ['ن', 'م', 'ل'], answer: 0, full: 'نَحْل' },
+            { display: 'ـلْج', options: ['ث', 'ت', 'ب'], answer: 0, full: 'ثَلْج' },
+            { display: 'ـمْر', options: ['ن', 'ب', 'م'], answer: 0, full: 'نَمِر' },
+            { display: 'ـرْد', options: ['و', 'ل', 'ر'], answer: 0, full: 'وَرْد' },
+            { display: 'ـشْب', options: ['ع', 'غ', 'خ'], answer: 0, full: 'عُشْب' },
+            { display: 'ـخْل', options: ['ن', 'م', 'س'], answer: 0, full: 'نَخْل' }
+        ]
+    },
+    {
+        id: 'sounds', emoji: '🗣️', title: 'فرّق بين الأصوات', badge: 'أصوات',
+        desc: 'حروف متشابهة الصوت.. اختر الصحيح',
+        gradient: 'linear-gradient(135deg, #48CAE4, #2E86AB)',
+        type: 'choice', qtext: 'اختر الحرف صاحب الصوت الصحيح لإكمال الكلمة',
+        items: [
+            { display: 'ـَمَك', options: ['س', 'ش'], answer: 0, full: 'سَمَك' },
+            { display: 'ـَمْس', options: ['ش', 'س'], answer: 0, full: 'شَمْس' },
+            { display: 'ـَفْدَع', options: ['ض', 'د'], answer: 0, full: 'ضَفْدَع' },
+            { display: 'ـَار', options: ['د', 'ض'], answer: 0, full: 'دَار' },
+            { display: 'ـَرْس', options: ['غ', 'ع'], answer: 0, full: 'غَرْس' },
+            { display: 'ـَصْفُور', options: ['ع', 'غ'], answer: 0, full: 'عُصْفُور' },
+            { display: 'ـَلْب', options: ['ق', 'ك'], answer: 0, full: 'قَلْب' },
+            { display: 'ـِتَاب', options: ['ك', 'ق'], answer: 0, full: 'كِتَاب' },
+            { display: 'ـَعْلَب', options: ['ث', 'س'], answer: 0, full: 'ثَعْلَب' },
+            { display: 'ـَيْل', options: ['ذ', 'ز'], answer: 0, full: 'ذَيْل' }
+        ]
+    },
+    {
+        id: 'compose', emoji: '🧩', title: 'ركّب الكلمة', badge: 'تركيب',
+        desc: 'ركّب الحروف لتكوين الكلمة التي في الصورة',
+        gradient: 'linear-gradient(135deg, #27AE60, #A8E063)',
+        type: 'seq', qtext: 'اضغط الحروف بالترتيب لتركيب الكلمة',
+        showIcon: true, showWord: false,
+        items: [
+            { pieces: ['ج', 'ر', 'س'], icon: 'bell', word: 'جَرَس' },
+            { pieces: ['كـ', 'أ', 'س'], icon: 'cup', word: 'كَأْس' },
+            { pieces: ['س', 'هْ', 'م'], icon: 'arrow', word: 'سَهْم' },
+            { pieces: ['قـ', 'مْ', 'ح'], icon: 'wheat', word: 'قَمْح' },
+            { pieces: ['قـ', 'نْ', 'فـ', 'ذ'], icon: 'hedgehog', word: 'قُنْفُذ' },
+            { pieces: ['كـ', 'لْ', 'ب'], icon: 'dog', word: 'كَلْب' },
+            { pieces: ['م', 'ضْ', 'ر', 'ب'], icon: 'racket', word: 'مِضْرَب' },
+            { pieces: ['م', 'ز', 'و'], icon: 'banana', word: 'مَوْز' },
+            { pieces: ['ق', 'م', 'ص'], icon: 'shirt', word: 'قَمِيص' },
+            { pieces: ['و', 'ر', 'د'], icon: 'rose', word: 'وَرْد' },
+            { pieces: ['ل', 'ب', 'ن'], icon: 'milk', word: 'لَبَن' },
+            { pieces: ['ص', 'خ', 'ر'], icon: 'rock', word: 'صَخْر' }
+        ]
+    },
+    {
+        id: 'segment', emoji: '👂', title: 'فكّ الكلمة لأصوات', badge: 'تقطيع',
+        desc: 'اقرأ الكلمة ثم فكّكها إلى أصواتها بالترتيب',
+        gradient: 'linear-gradient(135deg, #9B5DE5, #6A5AE0)',
+        type: 'seq', qtext: 'اقرأ الكلمة ثم اضغط أصواتها (حروفها) بالترتيب',
+        showIcon: true, showWord: true,
+        items: [
+            { pieces: ['ج', 'و', 'ر', 'ب'], icon: 'sock', word: 'جُوْرَب' },
+            { pieces: ['ن', 'م', 'ر'], icon: 'tiger', word: 'نَمِر' },
+            { pieces: ['م', 'ر', 'ك', 'ب'], icon: 'boat', word: 'مَرْكَب' },
+            { pieces: ['و', 'ر', 'د'], icon: 'rose', word: 'وَرْد' },
+            { pieces: ['ع', 'ق', 'ر', 'ب'], icon: 'scorpion', word: 'عَقْرَب' },
+            { pieces: ['ض', 'ف', 'د', 'ع'], icon: 'frog', word: 'ضِفْدَع' },
+            { pieces: ['خ', 'و', 'خ'], icon: 'peach', word: 'خَوْخ' },
+            { pieces: ['ع', 'ن', 'ب'], icon: 'grapes', word: 'عِنَب' },
+            { pieces: ['ج', 'ز', 'ر'], icon: 'carrot', word: 'جَزَر' },
+            { pieces: ['أ', 'ر', 'ن', 'ب'], icon: 'rabbit', word: 'أَرْنَب' }
+        ]
+    },
+    {
+        id: 'order', emoji: '🔀', title: 'رتّب الحروف', badge: 'ترتيب',
+        desc: 'حروف مبعثرة.. رتّبها لتكوين كلمة صحيحة',
+        gradient: 'linear-gradient(135deg, #F18F01, #FFD23F)',
+        type: 'seq', qtext: 'رتّب الحروف المبعثرة لتكوين كلمة صحيحة',
+        showEmoji: false, showWord: false,
+        items: [
+            { pieces: ['ن', 'هْ', 'ر'], word: 'نَهْر' },
+            { pieces: ['ر', 'مْ', 'ل'], word: 'رَمْل' },
+            { pieces: ['ج', 'ز', 'ر'], word: 'جَزَر' },
+            { pieces: ['هْ', 'د', 'ف'], word: 'هَدَف' },
+            { pieces: ['أ', 'رْ', 'ن', 'ب'], word: 'أَرْنَب' },
+            { pieces: ['ع', 'ش', 'ب'], word: 'عُشْب' },
+            { pieces: ['ن', 'خ', 'ل'], word: 'نَخْل' },
+            { pieces: ['ب', 'د', 'ر'], word: 'بَدْر' },
+            { pieces: ['ف', 'ج', 'ل'], word: 'فِجْل' },
+            { pieces: ['ظ', 'ف', 'ر'], word: 'ظُفْر' }
+        ]
+    },
+    {
+        id: 'match', emoji: '🖼️', title: 'صِل الكلمة بالصورة', badge: 'توصيل',
+        desc: 'صِل كل كلمة بالصورة المناسبة لها',
+        gradient: 'linear-gradient(135deg, #FF6B9D, #C44569)',
+        type: 'match', qtext: 'اضغط الكلمة ثم اضغط صورتها المناسبة',
+        sets: [
+            [{ w: 'مَنْزِل', icon: 'home' }, { w: 'خَوْخ', icon: 'peach' }, { w: 'مَلْعَب', icon: 'stadium' }, { w: 'ضَبْع', icon: 'hyena' }],
+            [{ w: 'سَمَك', icon: 'fish' }, { w: 'عِنَب', icon: 'grapes' }, { w: 'أَرْنَب', icon: 'rabbit' }, { w: 'جَزَر', icon: 'carrot' }],
+            [{ w: 'مَوْز', icon: 'banana' }, { w: 'قَمْح', icon: 'wheat' }, { w: 'جُبْن', icon: 'cheese' }, { w: 'فَأْر', icon: 'mouse' }],
+            [{ w: 'أَسَد', icon: 'lion' }, { w: 'شَمْس', icon: 'sun' }, { w: 'قَمَر', icon: 'moon' }, { w: 'نَحْل', icon: 'bee' }],
+            [{ w: 'ثَلْج', icon: 'snow' }, { w: 'جَرَس', icon: 'bell' }, { w: 'وَرْد', icon: 'rose' }, { w: 'بَيْض', icon: 'eggs' }],
+            [{ w: 'كَلْب', icon: 'dog' }, { w: 'قِطَّة', icon: 'cat' }, { w: 'عُصْفُور', icon: 'bird' }, { w: 'شَجَرَة', icon: 'tree' }]
+        ]
+    },
+    {
+        id: 'truefalse', emoji: '✅', title: 'صواب أم خطأ', badge: 'فهم',
+        desc: 'اقرأ الجملة جيدًا.. هل هي صواب أم خطأ؟',
+        gradient: 'linear-gradient(135deg, #12CBC4, #1289A7)',
+        type: 'tf', qtext: 'هل هذه الجملة صواب أم خطأ؟',
+        items: [
+            { s: 'لَوْنُ المَوْزِ أَصْفَرُ.', a: true },
+            { s: 'الفَأْرُ يَأْكُلُ القِطَّ.', a: false },
+            { s: 'السَّمَكُ يَسْبَحُ فِي البَحْرِ.', a: true },
+            { s: 'نَسْمَعُ بِالأُذُنِ وَنَكْتُبُ بِاليَدِ.', a: true },
+            { s: 'الشَّمْسُ تَظْهَرُ فِي اللَّيْلِ.', a: false },
+            { s: 'الأَسَدُ يَأْكُلُ اللَّحْمَ.', a: true },
+            { s: 'الأَرْنَبُ يُحِبُّ الجَزَرَ.', a: true },
+            { s: 'الثَّلْجُ سَاخِنٌ.', a: false },
+            { s: 'الوَرْدَةُ رَائِحَتُهَا جَمِيلَةٌ.', a: true },
+            { s: 'العُصْفُورُ يَعِيشُ فِي المَاءِ.', a: false },
+            { s: 'نَصْنَعُ الثَّوْبَ مِنَ القُطْنِ.', a: true },
+            { s: 'الضِّفْدَعُ يَطِيرُ فِي السَّمَاءِ.', a: false }
+        ]
+    },
+    {
+        id: 'complete', emoji: '📝', title: 'أكمل الجملة', badge: 'جُمَل',
+        desc: 'اختر الكلمة المناسبة لإكمال الجملة',
+        gradient: 'linear-gradient(135deg, #F7797D, #F18F01)',
+        type: 'choice', qtext: 'اختر الكلمة المناسبة لإكمال الجملة', sentence: true,
+        items: [
+            { display: '____ أُمِّي: المَوْزُ فِي الطَّبَقِ.', options: ['قَالَتْ', 'قَالَ', 'قُلْنَا'], answer: 0 },
+            { display: '____ الفَأْرُ مِنَ القِطِّ.', options: ['هَرَبَ', 'سَمِعَ', 'زَرَعَ'], answer: 0 },
+            { display: '____ وَلَدٌ، وهذِهِ بِنْتٌ.', options: ['هذَا', 'هذِهِ', 'نَحْنُ'], answer: 0 },
+            { display: 'يَأْكُلُ الأَرْنَبُ ____', options: ['الجَزَرَ', 'اللَّحْمَ', 'الرَّمْلَ'], answer: 0 },
+            { display: 'زَرَعْتُ ____ فِي الحَقْلِ.', options: ['الوَرْدَ', 'المَكْتَبَ', 'الكِتَابَ'], answer: 0 },
+            { display: 'أُحِبُّ ____ والمَوْزَ.', options: ['العِنَبَ', 'الحِبْرَ', 'القَلَمَ'], answer: 0 },
+            { display: 'يَسْبَحُ السَّمَكُ فِي ____', options: ['البَحْرِ', 'الشَّجَرَةِ', 'السَّمَاءِ'], answer: 0 },
+            { display: 'صُنِعَ الثَّوْبُ مِنَ ____', options: ['القُطْنِ', 'الحَدِيدِ', 'الخَشَبِ'], answer: 0 },
+            { display: '____ بِنْتٌ.', options: ['هذِهِ', 'هذَا', 'هؤُلاءِ'], answer: 0 },
+            { display: '____ بَدْرٌ جَمِيلٌ.', options: ['هذَا', 'هذِهِ', 'تِلْكَ'], answer: 0 }
+        ]
+    }
+];
+
+var GAME_ROUNDS = 5;
+var gameState = null;
+
+function playTone(ok) {
+    try {
+        var AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return;
+        var ctx = window.__actx || (window.__actx = new AC());
+        if (ctx.state === 'suspended') ctx.resume();
+        var notes = ok ? [523.25, 659.25, 783.99] : [196, 146.83];
+        for (var i = 0; i < notes.length; i++) {
+            (function(freq, idx) {
+                var o = ctx.createOscillator(), g = ctx.createGain();
+                o.type = 'sine'; o.frequency.value = freq;
+                o.connect(g); g.connect(ctx.destination);
+                var t = ctx.currentTime + idx * 0.13;
+                g.gain.setValueAtTime(0.0001, t);
+                g.gain.exponentialRampToValueAtTime(0.22, t + 0.03);
+                g.gain.exponentialRampToValueAtTime(0.0001, t + 0.3);
+                o.start(t); o.stop(t + 0.32);
+            })(notes[i], i);
+        }
+    } catch (e) {}
+}
+
+function showGames() {
+    appState.view = 'games';
+    hideAllViews();
+    document.getElementById('games-view').classList.remove('hidden');
+    document.getElementById('page-subtitle').textContent = 'الألعاب والتقييمات - اختر لعبة وابدأ التحدي';
+    document.getElementById('games-header').innerHTML = '<h2 style="color:#6A5AE0;">🎮 الألعاب والتقييمات</h2><p>' + gamesData.length + ' ألعاب متنوعة من نماذج التقييمات: حروف، تركيب، توصيل، وجُمَل. الأسئلة تتجدد في كل مرة!</p>';
+    updateProgress(35);
+    var grid = document.getElementById('games-grid');
+    grid.innerHTML = '';
+    for (var i = 0; i < gamesData.length; i++) {
+        (function(g) {
+            var card = document.createElement('div');
+            card.className = 'game-card';
+            card.style.background = g.gradient;
+            var count = g.type === 'match' ? g.sets.length : g.items.length;
+            card.innerHTML = '<span class="game-badge">' + g.badge + '</span>' +
+                '<div class="emoji">' + g.emoji + '</div>' +
+                '<div><h3>' + g.title + '</h3><p>' + g.desc + '</p></div>' +
+                '<span class="count-badge">' + count + ' سؤال</span>';
+            card.onclick = function() { openGame(g.id); };
+            grid.appendChild(card);
+        })(gamesData[i]);
+    }
+    window.scrollTo(0, 0);
+}
+
+function openGame(gameId) {
+    var game = null;
+    for (var i = 0; i < gamesData.length; i++) { if (gamesData[i].id === gameId) { game = gamesData[i]; break; } }
+    if (!game) return;
+    var pool = game.type === 'match' ? shuffleArray(game.sets) : shuffleArray(game.items);
+    gameState = { game: game, round: 0, score: 0, order: pool, total: Math.min(GAME_ROUNDS, pool.length) };
+    appState.view = 'game';
+    hideAllViews();
+    document.getElementById('game-play-view').classList.remove('hidden');
+    document.getElementById('game-header').innerHTML = '<h2 style="color:#6A5AE0;">' + game.emoji + ' ' + game.title + '</h2><p>' + game.desc + '</p>';
+    document.getElementById('page-subtitle').textContent = game.title;
+    updateProgress(60);
+    renderGameRound();
+    window.scrollTo(0, 0);
+}
+
+function updateScoreBar() {
+    document.getElementById('score-chip').innerHTML = '⭐ النجوم: ' + gameState.score + ' من ' + gameState.total;
+    document.getElementById('round-chip').innerHTML = 'سؤال ' + (gameState.round + 1) + ' من ' + gameState.total;
+}
+
+function renderGameRound() {
+    var st = gameState;
+    if (st.round >= st.total) { renderGameResult(); return; }
+    updateScoreBar();
+    var item = st.order[st.round];
+    var stage = document.getElementById('game-stage');
+    stage.innerHTML = '';
+    if (st.game.type === 'choice') renderChoiceRound(stage, st.game, item);
+    else if (st.game.type === 'seq') renderSeqRound(stage, st.game, item);
+    else if (st.game.type === 'match') renderMatchRound(stage, st.game, item);
+    else if (st.game.type === 'tf') renderTfRound(stage, st.game, item);
+}
+
+function finishRound(correct) {
+    if (correct) { gameState.score++; playTone(true); }
+    else { playTone(false); }
+    updateScoreBar();
+    setTimeout(function() {
+        if (!gameState) return;
+        gameState.round++;
+        renderGameRound();
+    }, correct ? 1400 : 2100);
+}
+
+function renderGameResult() {
+    var st = gameState;
+    document.getElementById('score-chip').innerHTML = '⭐ النجوم: ' + st.score + ' من ' + st.total;
+    document.getElementById('round-chip').innerHTML = 'انتهت اللعبة';
+    updateProgress(100);
+    var stars, msg;
+    if (st.score === st.total) { stars = '🏆🌟⭐'; msg = 'مذهل! نتيجة كاملة، أنت بطل حقيقي!'; }
+    else if (st.score >= st.total - 1) { stars = '🌟🌟'; msg = 'رائع جدًا! خطوة واحدة وتصل للقمة!'; }
+    else if (st.score >= Math.ceil(st.total / 2)) { stars = '⭐⭐'; msg = 'أحسنت! تدرّب أكثر وستصبح بطلًا!'; }
+    else { stars = '💪'; msg = 'محاولة جيدة! جرّب مرة أخرى وستتحسن!'; }
+    var stage = document.getElementById('game-stage');
+    stage.innerHTML = '<div class="result-box"><div class="big-stars">' + stars + '</div>' +
+        '<h3>' + msg + '</h3><p>نتيجتك: ' + st.score + ' من ' + st.total + ' في لعبة ' + st.game.title + '</p>' +
+        '<div class="game-actions">' +
+        '<button class="action-btn next" onclick="openGame(\'' + st.game.id + '\')">🔁 العب مرة أخرى</button>' +
+        '<button class="action-btn undo" onclick="showGames()">🎮 كل الألعاب</button>' +
+        '</div></div>';
+    spawnConfetti(null);
+    window.scrollTo(0, 0);
+}
+
+/* ---------- لعبة الاختيارات (حرف ناقص / أصوات / أكمل الجملة) ---------- */
+function renderChoiceRound(stage, game, item) {
+    var isSentence = !!game.sentence;
+    var html = '<p class="game-q-title">' + game.qtext + '</p>';
+    if (isSentence) {
+        html += '<div class="tf-sentence">' + item.display + '</div>';
+    } else {
+        html += '<div class="tf-sentence" style="font-family:var(--display-font); font-size:2rem;">' + item.display + '</div>';
+    }
+    html += '<div class="big-options" style="margin-top:18px;"></div><div class="feedback" style="text-align:center;"></div>';
+    stage.innerHTML = html;
+    var optsDiv = stage.querySelector('.big-options');
+    var feedback = stage.querySelector('.feedback');
+    var prepared = prepareQuestion(item);
+    for (var j = 0; j < prepared.options.length; j++) {
+        (function(opt, idx) {
+            var btn = document.createElement('button');
+            btn.className = 'big-opt' + (isSentence ? ' text-opt' : '');
+            btn.textContent = opt;
+            btn.onclick = function(e) {
+                var buttons = optsDiv.querySelectorAll('.big-opt');
+                for (var b = 0; b < buttons.length; b++) buttons[b].disabled = true;
+                var correct = (idx === prepared.answer);
+                if (correct) {
+                    btn.classList.add('correct');
+                    feedback.innerHTML = '<span style="color:#27AE60;">✅ إجابة صحيحة! أحسنت يا بطل 🌟' + (item.full ? ' الكلمة: <strong>' + item.full + '</strong>' : '') + '</span>';
+                    spawnConfetti(e);
+                } else {
+                    btn.classList.add('wrong');
+                    buttons[prepared.answer].classList.add('correct');
+                    feedback.innerHTML = '<span style="color:#E74C3C;">❌ الإجابة الصحيحة باللون الأخضر.' + (item.full ? ' الكلمة: <strong>' + item.full + '</strong>' : '') + '</span>';
+                }
+                finishRound(correct);
+            };
+            optsDiv.appendChild(btn);
+        })(prepared.options[j], j);
+    }
+}
+
+/* ---------- ألعاب التركيب والترتيب والتقطيع ---------- */
+function renderSeqRound(stage, game, item) {
+    var html = '<p class="game-q-title">' + game.qtext + '</p>';
+    if (game.showIcon && item.icon) html += '<span class="game-emoji-hint">' + iconSVG(item.icon, 84) + '</span>';
+    if (game.showWord) html += '<div class="tf-sentence" style="font-family:var(--display-font); font-size:1.9rem;">' + item.word + '</div>';
+    html += '<div class="slots-row"></div><div class="bank-row"></div>' +
+        '<div class="game-actions">' +
+        '<button class="action-btn undo" id="seq-undo">↩️ تراجع</button>' +
+        '<button class="action-btn check" id="seq-check">✔️ تحقق</button>' +
+        '</div><div class="feedback" style="text-align:center;"></div>';
+    stage.innerHTML = html;
+    var slotsRow = stage.querySelector('.slots-row');
+    var bankRow = stage.querySelector('.bank-row');
+    var feedback = stage.querySelector('.feedback');
+    var checkBtn = stage.querySelector('#seq-check');
+    var undoBtn = stage.querySelector('#seq-undo');
+    var picked = [];
+    var tiles = [];
+    var slots = [];
+    for (var s = 0; s < item.pieces.length; s++) {
+        var slot = document.createElement('div');
+        slot.className = 'slot';
+        slotsRow.appendChild(slot);
+        slots.push(slot);
+    }
+    var bankOrder = shuffleArray(item.pieces.map(function(p, i) { return i; }));
+    for (var b = 0; b < bankOrder.length; b++) {
+        (function(pieceIdx) {
+            var tile = document.createElement('button');
+            tile.className = 'tile';
+            tile.textContent = item.pieces[pieceIdx];
+            tile.onclick = function() {
+                if (picked.length >= item.pieces.length) return;
+                tile.disabled = true;
+                picked.push(pieceIdx);
+                var slot = slots[picked.length - 1];
+                slot.textContent = item.pieces[pieceIdx];
+                slot.classList.add('filled');
+                syncSeqButtons();
+            };
+            bankRow.appendChild(tile);
+            tiles.push({ tile: tile, pieceIdx: pieceIdx });
+        })(bankOrder[b]);
+    }
+    function syncSeqButtons() {
+        checkBtn.disabled = picked.length !== item.pieces.length;
+        checkBtn.style.opacity = checkBtn.disabled ? '0.5' : '1';
+        undoBtn.disabled = picked.length === 0;
+        undoBtn.style.opacity = undoBtn.disabled ? '0.5' : '1';
+    }
+    syncSeqButtons();
+    undoBtn.onclick = function() {
+        if (!picked.length) return;
+        var lastIdx = picked.pop();
+        for (var t = 0; t < tiles.length; t++) { if (tiles[t].pieceIdx === lastIdx && tiles[t].tile.disabled) { tiles[t].tile.disabled = false; break; } }
+        var slot = slots[picked.length];
+        slot.textContent = '';
+        slot.classList.remove('filled', 'ok', 'bad');
+        feedback.innerHTML = '';
+        syncSeqButtons();
+    };
+    checkBtn.onclick = function() {
+        var built = '';
+        for (var p = 0; p < picked.length; p++) built += item.pieces[picked[p]];
+        var correct = (built === item.pieces.join(''));
+        if (correct) {
+            for (var i = 0; i < slots.length; i++) slots[i].classList.add('ok');
+            for (var t2 = 0; t2 < tiles.length; t2++) tiles[t2].tile.disabled = true;
+            checkBtn.disabled = true; undoBtn.disabled = true;
+            feedback.innerHTML = '<span style="color:#27AE60;">✅ رائع! الكلمة هي <strong>' + item.word + '</strong> 🌟</span>';
+            spawnConfetti(null);
+            finishRound(true);
+        } else {
+            for (var k = 0; k < slots.length; k++) slots[k].classList.add('bad');
+            feedback.innerHTML = '<span style="color:#E74C3C;">❌ ليست صحيحة.. حاول ترتيبًا آخر!</span>';
+            setTimeout(function() {
+                for (var k2 = 0; k2 < slots.length; k2++) { slots[k2].textContent = ''; slots[k2].classList.remove('filled', 'bad'); }
+                for (var t3 = 0; t3 < tiles.length; t3++) tiles[t3].tile.disabled = false;
+                picked = [];
+                syncSeqButtons();
+            }, 1000);
+        }
+    };
+}
+
+/* ---------- لعبة التوصيل ---------- */
+function renderMatchRound(stage, game, pairs) {
+    var html = '<p class="game-q-title">' + game.qtext + '</p><div class="match-wrap"><div class="match-col" id="match-words"></div><div class="match-col" id="match-pics"></div></div><div class="feedback" style="text-align:center;"></div>';
+    stage.innerHTML = html;
+    var wordsCol = stage.querySelector('#match-words');
+    var picsCol = stage.querySelector('#match-pics');
+    var feedback = stage.querySelector('.feedback');
+    var selectedWord = null;
+    var doneCount = 0;
+    var words = shuffleArray(pairs.slice());
+    var pics = shuffleArray(pairs.slice());
+    for (var i = 0; i < words.length; i++) {
+        (function(pair) {
+            var btn = document.createElement('button');
+            btn.className = 'match-word';
+            btn.textContent = pair.w;
+            btn.onclick = function() {
+                if (btn.classList.contains('done')) return;
+                var prev = wordsCol.querySelector('.selected');
+                if (prev) prev.classList.remove('selected');
+                btn.classList.add('selected');
+                selectedWord = { btn: btn, pair: pair };
+            };
+            wordsCol.appendChild(btn);
+        })(words[i]);
+    }
+    for (var j = 0; j < pics.length; j++) {
+        (function(pair) {
+            var btn = document.createElement('button');
+            btn.className = 'match-pic';
+            btn.setAttribute('data-icon', pair.icon);
+            btn.innerHTML = iconSVG(pair.icon, 44);
+            btn.onclick = function() {
+                if (btn.classList.contains('done') || !selectedWord) return;
+                var wBtn = selectedWord.btn;
+                if (selectedWord.pair === pair) {
+                    wBtn.classList.remove('selected'); wBtn.classList.add('done');
+                    btn.classList.add('done');
+                    selectedWord = null;
+                    doneCount++;
+                    playTone(true);
+                    feedback.innerHTML = '<span style="color:#27AE60;">✅ توصيلة صحيحة!</span>';
+                    if (doneCount === pairs.length) {
+                        feedback.innerHTML = '<span style="color:#27AE60;">🎉 أكملت كل التوصيلات! أحسنت 🌟</span>';
+                        spawnConfetti(null);
+                        finishRound(true);
+                    }
+                } else {
+                    wBtn.classList.add('bad'); btn.classList.add('bad');
+                    playTone(false);
+                    feedback.innerHTML = '<span style="color:#E74C3C;">❌ ليست الصورة المناسبة.. حاول مرة أخرى!</span>';
+                    setTimeout(function() {
+                        wBtn.classList.remove('bad', 'selected'); btn.classList.remove('bad');
+                        selectedWord = null;
+                    }, 700);
+                }
+            };
+            picsCol.appendChild(btn);
+        })(pics[j]);
+    }
+}
+
+/* ---------- لعبة صواب أم خطأ ---------- */
+function renderTfRound(stage, game, item) {
+    var html = '<p class="game-q-title">' + game.qtext + '</p>' +
+        '<div class="tf-sentence">' + item.s + '</div>' +
+        '<div class="tf-row"><button class="tf-btn true" id="tf-true">✅ صواب</button><button class="tf-btn false" id="tf-false">❌ خطأ</button></div>' +
+        '<div class="feedback" style="text-align:center; margin-top:14px;"></div>';
+    stage.innerHTML = html;
+    var feedback = stage.querySelector('.feedback');
+    var trueBtn = stage.querySelector('#tf-true');
+    var falseBtn = stage.querySelector('#tf-false');
+    function answer(chosen, btn, e) {
+        trueBtn.disabled = true; falseBtn.disabled = true;
+        var correct = (chosen === item.a);
+        if (correct) {
+            btn.style.boxShadow = '0 0 0 5px #D9F8E4';
+            feedback.innerHTML = '<span style="color:#27AE60;">✅ إجابة صحيحة! أحسنت 🌟</span>';
+            spawnConfetti(e);
+        } else {
+            btn.style.boxShadow = '0 0 0 5px #FBD9D5';
+            feedback.innerHTML = '<span style="color:#E74C3C;">❌ الإجابة الصحيحة هي: <strong>' + (item.a ? 'صواب' : 'خطأ') + '</strong></span>';
+        }
+        finishRound(correct);
+    }
+    trueBtn.onclick = function(e) { answer(true, trueBtn, e); };
+    falseBtn.onclick = function(e) { answer(false, falseBtn, e); };
+}
+
 
 function initApp() { showSubjects(); }
 if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initApp); } else { initApp(); }
