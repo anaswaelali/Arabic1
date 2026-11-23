@@ -291,6 +291,7 @@ body {
         <span class="stars">⭐🌟⭐</span>
     </div>
     <p id="page-subtitle" style="text-align:center; color:#777; margin-top:0; font-weight:600;">الفصل الدراسي الأول - اختر المادة لتبدأ</p>
+    <p style="text-align:center; color:#C2185B; margin:2px 0 0; font-weight:700; font-size:0.95rem;">إهداء إلى هنا ومالك ❤️</p>
 
     <div id="subjects-view"><div class="subjects-grid" id="subjects-grid"></div></div>
     <div id="units-view" class="hidden">
@@ -1382,7 +1383,7 @@ function hideAllViews() {
 }
 
 function showSubjects() {
-    appState = { view: 'subjects', subjectKey: null, unitKey: null, lessonId: null };
+    appState = { view: 'subjects', subjectKey: null, unitKey: null, lessonId: null }; gameState = null;
     hideAllViews();
     document.getElementById('subjects-view').classList.remove('hidden');
     document.getElementById('page-subtitle').textContent = 'الفصل الدراسي الأول - اختر المادة لتبدأ';
@@ -1423,7 +1424,7 @@ function renderSubjects() {
 }
 
 function showUnits(subjectKey) {
-    appState.view = 'units'; appState.subjectKey = subjectKey; appState.unitKey = null; appState.lessonId = null;
+    appState.view = 'units'; appState.subjectKey = subjectKey; appState.unitKey = null; appState.lessonId = null; gameState = null;
     var subj = subjectsData[subjectKey];
     hideAllViews();
     document.getElementById('units-view').classList.remove('hidden');
@@ -1448,10 +1449,13 @@ function showUnits(subjectKey) {
 }
 
 function backToUnits() { showUnits(appState.subjectKey); }
-function backToLessons() { showLessons(appState.unitKey); }
+function backToLessons() {
+    if (gameState) { gameState = null; showGames(); return; }
+    showLessons(appState.unitKey);
+}
 
 function showLessons(unitKey) {
-    appState.view = 'lessons'; appState.unitKey = unitKey; appState.lessonId = null;
+    appState.view = 'lessons'; appState.unitKey = unitKey; appState.lessonId = null; gameState = null;
     var subj = subjectsData[appState.subjectKey];
     var unit = subj.units[unitKey];
     hideAllViews();
@@ -1478,7 +1482,7 @@ function showLessons(unitKey) {
 }
 
 function showLessonDetail(lessonId) {
-    appState.view = 'lesson'; appState.lessonId = lessonId;
+    appState.view = 'lesson'; appState.lessonId = lessonId; gameState = null;
     var subj = subjectsData[appState.subjectKey];
     var unit = subj.units[appState.unitKey];
     var lesson = null;
@@ -1866,7 +1870,7 @@ function playTone(ok) {
 }
 
 function showGames() {
-    appState.view = 'games';
+    appState.view = 'units';  // alias: APK back-bridge maps 'units' -> showSubjects (home)
     hideAllViews();
     document.getElementById('games-view').classList.remove('hidden');
     document.getElementById('page-subtitle').textContent = 'الألعاب والتقييمات - اختر لعبة وابدأ التحدي';
@@ -1897,7 +1901,7 @@ function openGame(gameId) {
     if (!game) return;
     var pool = game.type === 'match' ? shuffleArray(game.sets) : shuffleArray(game.items);
     gameState = { game: game, round: 0, score: 0, order: pool, total: Math.min(GAME_ROUNDS, pool.length) };
-    appState.view = 'game';
+    appState.view = 'lesson';  // alias: APK back-bridge maps 'lesson' -> backToLessons (guarded -> showGames)
     hideAllViews();
     document.getElementById('game-play-view').classList.remove('hidden');
     document.getElementById('game-header').innerHTML = '<h2 style="color:#6A5AE0;">' + game.emoji + ' ' + game.title + '</h2><p>' + game.desc + '</p>';
