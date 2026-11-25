@@ -2495,7 +2495,7 @@ var LANDING_B64="UklGRi7RAABXRUJQVlA4ICLRAABwdAKdASrgAeABPj0aikOiIaElK/ScAKAHiWJ
 (function(){
  var st=document.createElement('style');st.textContent='.grade-bar{display:none!important}#landing-view{text-align:center;padding:0 0 30px}#landing-view .hero{position:relative;width:170px;height:170px;margin:0 auto;border-radius:36px;overflow:hidden;background:radial-gradient(circle at 60% 35%,#2a6b66,#0f4a4a 70%,#0a3a3c);box-shadow:0 8px 22px rgba(0,0,0,.18)}#landing-view .hero img{width:100%;height:100%;display:block;object-fit:cover}#landing-view .ded{margin:10px auto 0;padding:8px 16px;max-width:560px;background:#fff;border-radius:28px;box-shadow:0 6px 20px rgba(0,0,0,.08);color:#C2185B;font-weight:900;font-size:1.3rem;line-height:1.5}#landing-view .ded small{display:block;font-size:.95rem;color:#777;font-weight:600}#landing-view .lg{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:12px}#landing-view .gcard{flex:1 1 240px;max-width:320px;min-height:100px;border-radius:28px;color:#fff;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;padding:10px;box-shadow:0 8px 22px rgba(0,0,0,.15);font-weight:900;border:0}#landing-view .gcard .e{font-size:1.8rem}#landing-view .gcard h2{margin:0;font-size:1.5rem;color:#fff}#landing-view .gcard p{margin:0;font-size:.95rem;font-weight:600;color:#fff}';document.head.appendChild(st);
  var d=document.createElement('div');d.id='landing-view';
- d.innerHTML='<div class="hero"><img alt="هنا ومالك" src="data:image/webp;base64,'+LANDING_B64+'"></div><div class="ded">إهداء إلى هنا ومالك ❤️</div><div class="lg"><button class="gcard" style="background:linear-gradient(135deg,#FF6B9D,#FFD23F)" onclick="setGrade(1)"><span class="e">🌈</span><h2>الصف الأول الابتدائي</h2><p>المواد والدروس والألعاب</p></button><button class="gcard" style="background:linear-gradient(135deg,#2E86AB,#9B5DE5)" onclick="setGrade(4)"><span class="e">🎓</span><h2>الصف الرابع الابتدائي</h2><p>العلوم • الدراسات الاجتماعية • الرياضيات</p></button></div>';
+ d.innerHTML='<div class="hero"><img alt="هنا ومالك" src="data:image/webp;base64,'+LANDING_B64+'"></div><div class="ded">إهداء إلى هنا ومالك ❤️</div><div class="lg"><button class="gcard" style="background:linear-gradient(135deg,#FF6B9D,#FFD23F)" onclick="setGrade(1)"><span class="e">📚</span><h2>الصف الأول الابتدائي</h2><p>المواد والدروس والألعاب</p></button><button class="gcard" style="background:linear-gradient(135deg,#2E86AB,#9B5DE5)" onclick="setGrade(4)"><span class="e">🎓</span><h2>الصف الرابع الابتدائي</h2><p>العلوم • الدراسات الاجتماعية • الرياضيات</p></button></div>';
  var sv=document.getElementById('subjects-view');sv.parentNode.insertBefore(d,sv);
  var bb=document.createElement('button');bb.className='back-btn';bb.id='back-grades';bb.textContent='← العودة لاختيار الصف';bb.onclick=function(){showLanding()};sv.insertBefore(bb,sv.firstChild);
 })();
@@ -2503,7 +2503,7 @@ function showLanding(){
   appState={view:'landing',subjectKey:null,unitKey:null,lessonId:null};gameState=null;
   hideAllViews();document.getElementById('subjects-view').classList.add('hidden');
   document.getElementById('landing-view').classList.remove('hidden');
-  document.querySelector('.top-bar h1').textContent='🎓 منصة هنا ومالك';
+  document.querySelector('.top-bar h1').textContent='🎓 هنا ومالك';
   document.getElementById('page-subtitle').textContent='اختر الصف الدراسي';
   var p=document.getElementById('page-subtitle').nextElementSibling;if(p)p.style.display='none';
   document.body.classList.remove('g4');updateProgress(5);window.scrollTo(0,0);
@@ -2512,7 +2512,7 @@ var _hav=hideAllViews;hideAllViews=function(){_hav();var l=document.getElementBy
 var _ssub=showSubjects;showSubjects=function(){_ssub();document.getElementById('page-subtitle').textContent=(GRADE==4?'الصف الرابع':'الصف الأول')+' - الفصل الدراسي الأول - اختر المادة لتبدأ';};
 (function(){var _sld5=showLessonDetail;showLessonDetail=function(id){_sld5(id);if(typeof appState!=='undefined'&&appState.subjectKey==='math4'){var qc=document.getElementById('quiz-container');var hd=qc&&qc.querySelector('.quiz-header h4');if(hd)hd.textContent='✅ اختبر معلوماتك (أسئلة من كتاب الرياضيات، الإجابات مرجعية مرفقة)';}};})();
 var _rs6=renderSubjects;renderSubjects=function(){_rs6();if(GRADE==4){var ks=Object.keys(subjectsData),cs=document.querySelectorAll('#subjects-grid .subject-card .count-badge');for(var i=0;i<ks.length&&i<cs.length;i++){var n=0;Object.keys(subjectsData[ks[i]].units).forEach(function(u){subjectsData[ks[i]].units[u].lessons.forEach(function(l){n+=l.questions.length})});cs[i].textContent=n+' سؤالًا للمراجعة والتقييم';}}};
-document.title='منصة هنا ومالك';
+document.title='هنا ومالك';
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',showLanding);}else{showLanding();}
 </script>
 </body>
